@@ -23,7 +23,15 @@ What this book is meant to do is to get you on the write track and give you the 
 .PP
 But why am I qualified? Because I have experienced firsthand the trials and tribulations involved with learning how to program.
 The summer before my freshman year in high school, I decided that I wanted to learn to code.
-I made a list of languages I wanted to learn: HTML, CSS, JavaScript, Python, Java, C#, and C.
+I made a list of languages I wanted to learn:
+.CW HTML ,
+.CW CSS ,
+.CW JavaScript ,
+.CW Python ,
+.CW Java ,
+.CW C# ,
+and
+.CW C .
 My goal was to learn all those languages in one Summer, with no prior programming experience.
 I did not even know what differentiated any of the aforementioned languages.
 I had only heard of them in name.
@@ -31,7 +39,13 @@ Many would agree that this is too lofty a goal.
 However I was young, na\[:i]ve, and confused.
 .PP
 Suffice it to say that I did not reach my goal at the end of the Summer.
-By the end of the Summer I had learned HTML, a bit of CSS, JavaScript and Python.
+By the end of the Summer I had learned
+.CW HTML ,
+a bit of
+.CW CSS ,
+.CW JavaScript ,
+and
+.CW Python .
 I was nowhere near proficient, but I knew of the basic if-else, while, for, and function constructs.
 More importantly, I had fallen in love with the sensation of programming.
 To me, it was as satisfying as solving a puzzle or putting together a Lego set.
@@ -85,7 +99,8 @@ Included in the sections are interactive exercises that you may do to gain a mor
 Hopefully this book will help you avoid some of the common pitfalls and errors that befall many aspiring programmers.
 .PP
 Source code in this book will be clearly marked. Source code may be differentiated because it is offset and centered on the page, in a constant width font.
-Below is some example source code which prints hello world in C.
+Below is some example source code which prints hello world in
+.CW C .
 .SC
 #include <stdio.h>
 
@@ -181,7 +196,7 @@ If one must program on Windows\[tm], there is a bootstrap guide which will simul
 .FS
 .pdfhref -W https://github.com/mrf-dot/linuxize-school-pc
 .FE
-.H2 "Vim: The Programmer's Editor"
+.	H2 "Vim: The Programmer's Editor"
 .PP
 Vim is an editor based on keybindings rather than mouse based context menus.
 The mouse is never used in vim.
@@ -211,8 +226,12 @@ If you wish you may use my configuration\**,
 .FS
 .pdfhref -W https://raw.githubusercontent.com/mrf-dot/deb-bootstrap/main/nvim/init.vim
 .FE
-which contains shortcuts for the C, Java, and HTML programming languages.
-.H2 "UNIX: The Programmer's Operating System"
+which contains shortcuts for the
+.CW C ,
+.CW Java , and
+.CW HTML
+programming languages.
+.	H2 "UNIX: The Programmer's Operating System"
 .PP
 In computer circles oft heard are praises of UNIX and its offspring Linux, BSD, and MacOS.
 The UNIX environment may seem strange to newcomers.
@@ -233,7 +252,7 @@ Logic is the basis of all computer programming languages.
 By learning some simple rules of logic, a programmer can consolidate their code and better check it for errors.
 There are three basic logical operators that are used often in programming.
 In the next section \*QOperators\*U, these logical operators will be reviewed.
-.H2 Operators
+.	H2 Operators
 .IP \[no]
 The
 .I not
@@ -249,7 +268,7 @@ The
 .I and
 operator checks if both of two statements are true.
 If one or both statements are false, it will return false.
-.H2 "Truth table"
+.	H2 "Truth table"
 .PP
 A truth table asserts the result of a logical operation in multiple circumstances.
 In computer science, the Boolean values true and false may be represented by the numbers 1 (true) and 0 (false).
@@ -272,7 +291,7 @@ c c.
 1\[AN]1	1
 .TE
 .DE
-.H2 "De Morgan's laws"
+.	H2 "De Morgan's laws"
 .LP
 De Morgan's laws are logical proofs that stipulate
 .IP 1
@@ -290,49 +309,247 @@ Proof 1	Proof 2
 l l.
 $let x~\[mo]~\[no] left ( A~\[ca]~B right )$	$let x~\[mo]~\[no] left ( A~\[cu]~B right )$
 $x~\[nm]~A~\[ca]~B$	$x~\[nm]~A~\[cu]~B$
-$x~\[mo]~\[no]A~\[AN]~x~\[mo]~\[no]B$	$x~\[mo]~\[no]A~\[OR]~x~\[mo]~\[no]B$
+$x~\[mo]~\[no]A~\[OR]~x~\[mo]~\[no]B$	$x~\[mo]~\[no]A~\[AN]~x~\[mo]~\[no]B$
 $\[3d]~\[no] left ( A~\[ca]~B right ) = ~\[no]A~\[cu]~\[no]B$	$\[3d]~\[no] left ( A~\[cu]~B right ) = ~\[no]A~\[ca]~\[no]B$
 .TE
 .bp
 .H "Programming Constructs"
-.H2 If-Else
-.H2 Ternaries
-.H2 Loops
-.H3 While
-.H3 For
-.H3 Goto
-.H2 Primitives
-.H2 Objects
-.H2 Methods
-.H3 Parameters
-.H3 Body
-.H3 Return
-.H3 Invoking
-.H2 Arrays
-.H2 Pointers
-.bp
-.H "Beginnings: HTML, CSS, and JavaScript"
+.PP
+All programming languages are different.
+Speed, efficiency, verbosity, and comprehensibility vary wildly based on the type of language.
+However, across all programming languages, there are certain constructs that emerge.
+These constructs may be called by different names or implemented differently, but for the most part are present in multiple languages.
+By learning these abstract constructs, knowledge of them may be applied to speed up the process of learning a new language.
+.	H2 Print
+.PP
+There are three standard ways in which a programmer and a computer can communicate with each other.
+Standard output
+.I stdout ) (
+is the way in which a program can give feedback to the programmer.
+A print statement gives the programmer an insight into what the program is doing.
+It has many uses.
+One use might be to print the result of a complex equation.
+Another common reason that print statements are used are to debug programs.
+If a program seems to output the wrong result, print statements may be used to find the exact point in the program where the error is present.
+One of the simplest and first programs one writes in a language is called
+.I "Hello world" ,
+which simply prints the string \*QHello, world!\*U to
+.I stdout .
+In pseudocode a hello world program could be written like the following.
+.SC
+print "Hello, world!"
+.SE
+.PP
+Print statements may also be used to access the second stream, standard error
+.I stderr ). (
+The stream
+.I stderr
+is intended for problems that may arise in a program.
+An example usage of
+.I stderr
+would be to warn a user that a program has been forcefully terminated.
+.	H2 Input
+.PP
+Programs can obtain data from the user by accessing the third stream, standard input
+.I stdin ). (
+The
+.I stdin
+stream contains the keystrokes a user types on the keyboard.
+User input is needed in interactive programs, such as search engines or games.
+A program can use user input to determine whether to terminate or stay alive.
+The simplest use of user input is to print the data from
+.I stdin
+to
+.I stdout .
+Thus is the function of the
+.CW echo
+program found in both Windows\[tm] and UNIX shells.
+A simple input to output program can be displayed in pseudocode like this.
+.SC
+x := input()
+print x
+.SE
+.PP
+.	H2 If-Else
+.PP
+The if-else construct executes code based on the value of a logical statement.
+Typically, a logical statement, which may contain and, or, and not signs (which vary based on language).
+The
+.I "if else"
+statement is used implicitly in
+.I while
+and
+.I for
+loops, another type of structured programming construct.
+One common task done in a programming language is determining whether a number is odd or even.
+A program built for this task could be made with a simple
+.I "if else"
+statement.
+.SC
+if n mod 2 == 0
+	print "n is even"
+else
+	print "n is odd"
+.SE
+.PP
+Traditional
+.I "if else"
+statements may only take one logical statement, and execute code based on the binary true or false value of those statements.
+However, with a technique called
+.I nesting ,
+an if else statement can compute multiple scenarios under which different code is executed.
+.PP
+The game `Fizz-Buzz' describes a scenario under which different outcomes may be specified in more than two situations.
+If a number is divisible by three, then the player says \*QFizz\*U; if by five, then \*QBuzz\*U; if by both three and five, then \*QFizzbuzz\*U; otherwise, the player simply says the number.
+.SC
+if n mod 3 = 0 and n mod 5 = 0
+	print "Fizzbuzz"
+else
+	if n mod 3 = 0
+		print "Fizz"
+	else
+		if n mod 5 = 0
+			print "Buzz"
+		else
+			print n
+.SE
+Although this code is correct, the amount of indentation required makes the code hard to follow and understand at a glance.
+.PP
+To correct this, many programming languages have a way around this amount of indentation.
+In languages that consolidate white space such as
+.CW C ,
+it is a common idiom to put both
+.I else
+and
+.I if
+on the same line separated by one space.
+In languages that do not consolidate white space, a special keyword such as
+.I elif
+is used.
+The above code to calculate the response to `Fizz-Buzz' could be rewritten in this manner.
+.SC
+if n mod 3 = 0 and n mod 5 = 0
+	print "Fizzbuzz"
+elif n mod 3 = 0
+	print "Fizz"
+elif n mod 5 = 0
+	print "Buzz"
+else
+	print "Fizzbuzz"
+.SE
+In comparison to the first code, this is much easier to follow and requires far less indentation.
+.PP
+An even more consolidated version of an if statement is found in multiple languages.
+The ternary statement does not solely execute code based on a logical statement.
+Instead, it returns a value based on the logical value.
+This feature is used in variable assignment and function return statements.
+In an above example an if statement executed code based on whether a number was even or odd.
+The code both scenarios executed was a simple print statement.
+Using a ternary statement, the code could be refactored into just one print statement.
+.SC
+print "is even" if n mod 2 = 0 else "is odd"
+.SE
+.	H2 Loops
+.PP
+Besides conditional execution, there are scenarios under which a programmer would need to repeatedly execute a block of code.
+There exists multiple programming constructs for repeating, or
+.I looping
+through code.
+.PP
+The most basic of these is
+.I goto .
+All looping structures implicitly use gotos, as this is what code becomes when it is compiled down to assembly\**
+.FS
+Assembly language is the instructions that a particular CPU uses to give bytecode instructions to the central processing unit.
+.FE
+language.
+Goto statements consist of a label and a looping point.
+.SC
+LABEL:
+print "word"
+goto LABEL
+.SE
+This will print the string \*Qword\*U repeatedly until the program is terminated.
+In most real world examples, an if statement would be used to determine whether to goto the label or continue through the rest of the code.
+Why would a programmer wish to repeat code?
+One reason would be to check for input errors.
+If a program needs the input of a number, a scenario in which a user inputs multiple letters instead might crash the program; or at the very least produce incorrect calculations.
+If the code that captures the input is looped through until a number is inputted, the code will be guaranteed to produce safe and expected results.
+.SC
+NumberGet:
+n := input()
+if isnumber(n)
+	print n + 10
+else
+	goto NumberGet
+.SE
+.PP
+\# On why gotos create spaghetti code
+In early high level languages such as
+.CW FORTRAN ,
+goto statements were the only way to loop through code.
+In practice, this created code paths which could be impossible to decipher to a reader.
+As a result, code became unmaintained and fell into disrepair.
+The phrase \*QSpaghetti Code\*U is used to describe this style, as the paths the code takes are like following one noodle in a bowl of spaghetti.
+To rectify the situation, structured loops were introduced.
+These loops explicitly stated that they were present, and required a logical value to be used as an escape conditional.
+.PP
+\# While loops
+A
+.I while
+loop is the most basic type of structured loop found in programming languages.
+A while loop is merely a goto with an if statement.
+Thus, it can be easily translated into goto and if statements.
+Now, the previous example can be written like this.
+.SC
+while not isnumber(n := input())
+print n + 10
+.SE
+.PP
+\# Forever loops
+Loops are also conventionally used to repeat code forever.
+Forever, of course, means that the code will be continuously executed until the program is terminated.
+The UNIX program
+.CW yes
+uses a loop to print the string \*Qyes\*U, or a custom string provided by the user, until the program is killed.
+This program is simple to write using either goto statements or a while loop, like in the following code snippets
+.SC
+YES:
+print yes
+goto YES
+.SE
+or
+.SC
+while true
+	print yes
+.SE
+.	H2 Primitives
+.	H2 Objects
+.	H2 Methods
+\# Parameters, body, return, invoking
+.	H2 Arrays
+.	H2 Pointers
 .bp
 .H "Python: The First Frontier"
 .bp
 .H "Picking up: Moving to Statically Typed Languages"
 .bp
-.H "Java and C#: Object Oriented Programming"
+.H "Java: Object Oriented Programming"
+.bp
+.H "Shell Script: A Pragmatic Language"
 .bp
 .H "C: The Final Frontier"
 .bp
 .H "Novelties"
-.H2 "Brainfuck and Turing Machines"
-.H2 "G/TROFF"
-.H2 "Meta Computer Science"
+.	H2 "Brainfuck and Turing Machines"
+.	H2 "G/TROFF"
+.	H2 "Meta Computer Science"
 .bp
 .H "Resources"
 .bp
 .H "Exercise Keys"
-.H2 HTML
-.H2 Python
-.H2 C#
-.H2 Java
-.H2 C
-.H2 Roff
+.	H2 Python
+.	H2 Java
+.	H2 C
+.	H2 Roff
 .TC
