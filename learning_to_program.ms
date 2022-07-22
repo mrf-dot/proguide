@@ -524,11 +524,238 @@ while true
 	print yes
 .SE
 .	H2 Primitives
-.	H2 Objects
-.	H2 Methods
-\# Parameters, body, return, invoking
+.PP
+\# Overview
+A primitive is the most basic component in a programming language.
+It usually refers to some type of number, although in some languages it may also be used for strings.
+Usually, the difference between different primitive types is the amount of memory each type takes up.
+The names indicate the amount of bytes taken up by each variable of the type.
+Some languages implicitly assume the type based on how the variable is declared, while others must have types explicitly declared with the variable.
+.PP
+Besides the amount of memory used, there are typically a difference between two different types of primitives.
+.I Integers
+are whole numbers which do not have the capability of storing a decimal point.
+.I Floats
+are decimal numbers which may store a limited amount of precision and a whole number.
+In almost all programming languages there are facilities to implicitly convert between integers and floats in order to perform mathematical operations.
+It should be noted that
+.I strings ,
+which are arrays of characters, are not primitives.
+This is because a string can be broken down into its character components.
+.PP
+\# Integer
+Although the integer types theoretically represent numbers, they are often used as a metaphor for other computer science constructs.
+.I Boolean
+values represent true and false.
+They can be used to store the value of a logical statement.
+Conveniently, the values true and false may also be represented by one and zero respectively.
+In most programming languages, the number zero represents false and every other number represents true.
+Programming languages may also supply a Boolean type.
+The Boolean type ensures that a variable cannot overflow and thus become a false value without the programmers intention.
+.PP
+\# Character
+Another usage of integer types that intends to represent another unit is the character, or
+.CW char .
+The American Standard Code for Information Interchange (ASCII) is a common way that text is represented.
+It uses the values 1\*-256 to represent characters.
+For example, if a programmer wished to represent the letter `A' in ASCII, they could assign the numerical value 65 to an integer variable.
+The print function for the langauge they were programming in would interpret the integer 65 to represent the letter `A' and then print it to
+.I stdout
+or
+.I stderr .
+Words, sentences, and paragraphs might contain thousands of these integers in sequence.
+As with the boolean type, multiple programming languages provide an explicit type to hold ASCII characters.
+.PP
+\# Short and long integers
+The major differentiation between different integer primitives are the amount of bytes the numbers can take up.
+It is simple to determine the highest and lowest numbers that may be stored in a particular type if the maximum amount of bytes is already known.
+Because computers operate in base two, the maxium number is $2 sup roman{"bits"} - 1$ and the minimum number is $-2 sup roman{"bits"} + 1$ for signed integers.
+For unsigned integers, the maxium number is $2 sup { roman{"bits"} + 1 } - 1$ and the minum number is 0.
+The difference between a signed and unsigned integer is that a signed integer may represent both positive and negative values.
+Unsigned integers can represent larger numbers because in a signed integer one bit is reserved to differentiate between positive and negative numbers.
+.PP
+\# Float
+A float is an extension of the integer.
+In addition to storing a whole number, it also stores a decimal point.
+Because real computers have limited memory, floats need to be rounded to a certain level of precision.
+Note the difference here between
+.I precision
+and
+.I accuracy .
+There are many scenarios in which a floating point number may have high precision but low accuracy.
+Take for instance the operation of adding the floating point numbers
+.CW 0.1
+and
+.CW 0.2 .
+One would assume that this operation would yield the number
+.CW 0.3 .
+However, in many programming languages this is not the case.
+This is the output of adding
+.CW 0.1
+and
+.CW 0.2
+in the Python interpreter
+.SC
+>>> 0.1 + 0.2
+0.30000000000000004
+.SE
+Why does the itnerpreter have such an issue with this seaminlgy simple task?
+It all boils down to a difference in bases.
+Humans for the most part use a base ten system, where the numbers 0-9 are available for counting.
+Computers, however, only have two numbers available for counting (0 and 1).
+Therefore, when numbers are stored by a computer they are rounded in binary format rather than decimal.
+In binary 0.3 is converted into a repeating number.
+It should be noted that the same situation happens in decimal numbers as well.
+The fractional number $7 over 9$ is evalueated to the repeating decimal $0. 7 bar$.
+In computer science lingo, issues in the accuracy of floating numbers are called round-off errors.
+.PP
+There are several ways to combat round-off errors.
+One solution is to format floating point numbers to a certain level of accuracy.
+if the result of the equation tested in the Python interpreter are limited to only two decimal places, the equation will \*Qcorrectly\*U yield
+.CW 0.3 .
+Some languages provide a specific decimal type, which is immune to round-off errors.
+The simplest way to protect against round-off errors is to use plain integers whenever possible.
+In accounting programs, instead of computing pennies as the floating point number 0.01 as $1 over 100$ of a dollar, balances are computed in pennies and only displayed to the user in decimal form.
+Just as there are often different sizes of integers, languages can also provide float types with different levels of precision.
+The floating type chosen by the programmer is based on the specific needs of a variable to hold a said amount of precision.
+.	H2 Functions
+.PP
+\# Justification
+Computer code is often repetitive.
+While working on a program, especially if it is extensive, many operations will be repeated a number of times.
+The more code that is present in a program, the more likely there is to be bugs and mistakes.
+Additionally, a surplus of code makes a program harder to follow and thus more difficult to maintain.
+This issue is the reason why functions exist.
+.PP
+Let's say that a programmer is coding a program to do trigonometric operations.
+They notice that they compute the Pythagorean theorem multiple times throughout the program and wish to simpify their code.
+First they start with the equation itself.
+.EQ
+c = sqrt { a sup 2 + b sup 2 }
+.EN
+The equation takes the input of two sides of a right triangle (a and b) and outputs the length of the third side (c).
+.PP
+\# Definition
+The first part of a function is its name.
+Depending on the language, a function may need to be initialized with its return type or by a keyword such as
+.I func .
+The name of a function should describe exactly what it does.
+It should be short yet descriptive.
+A good name for a function which computes the pythagorean theorem would be
+.CW pythag .
+.SC
+func pythag
+.SE
+.PP
+\# Parameters
+The second part of a function is its parameters.
+Parameters are variables that are input into the function.
+Parameters in most cases must be explicitly declared in the function definition.
+Because the output of the Pythagorean theorem relies on the variable sizes of two sides of the right triangle, there needs to be a way for the programmer to communicate those sides to the function.
+The parameters are variables, but they only last until the function is completed.
+Like any other variable they have types, names, and can be operated on.
+For the Pythagorean function a good name for the parameters would be
+.CW a
+and
+.CW b .
+.SC
+(a, b)
+.SE
+.PP
+\# Body
+The third part of a function is the function body.
+The body is where all code operations are executed.
+A function body should be relatively short and only do one thing.
+Functions can contain other functions, and even itself.
+As a general rule of thumb, what a function does should be able to be described in one sentence.
+If it takes more than that to describe what exactly a function does, the function is too long and vague, which makes it vulnerable to mistakes and harder to read.
+In the case of the pythagorean theorem, the description is short.
+.QP
+Compute the side of the hypotenuse of a triangle based on the two adjacent legs.
+.LP
+Just as the description is short, so is the body of the function.
+First the function should check that a and b are greater than zero, and then the function should calculate the Pythagorean theorem.
+.SC
+if a <= 0 or b <= 0
+	c := -1
+else
+	c := sqrt(a^2 + b^2)
+.SE
+.PP
+\# Return
+After the function body has calculated a result, that result needs to become available to the rest of the program.
+It does no good to have simply calculated the right answer, that answer has to be revealed.
+This is the reason for the return statement.
+The return statement is the value of a function.
+Once a return statement has been reached, the function terminates until it is called again.
+.PP
+The algorithm to calculate
+.CW c
+in the Pythagorean theorem has already been defined.
+Now, the return statmeent must return c.
+.SC
+return c
+.SE
+.LP
+\# Invoking
+With this, the Pythagorean function declaration has been completed.
+.SC
+func pythag(a, b)
+	if a <= 0 or b <= 0
+		c := -1
+	else
+		c := sqrt(a^2, b^2)
+	return c
+.SE
+.PP
+The
+.CW pythag
+function can now be used throughout the program.
+To invoke the function, a programmer must call it by its name and give it the appropriate number and type of arguments.
+One application of this function would be to receive user inputted legs and then find the hypotenuse of those legs.
+If the function yields -1, which is impossible for a real triangle, the programmer will know that the input was incorrect.
+The following would be a possible implementation
+.SC
+print "Enter the first leg"
+leg1 := input()
+print "Enter the second leg"
+leg2 := input()
+hyp := pythag(leg1, leg2)
+if hyp = -1
+	print "The length of one or both legs is incorrect"
+else
+	print hyp
+.SE
+.PP
+\# Recursion
+A unique property of functions is that they can contain themselves.
+Functions that call themselves are called
+.I recursive .
+In mathematics, there are many algorithms that are recursive.
+The most famous of these is the Fibonacci Sequence.
+The Fibonacci sequence is calculated by adding the two previous numbers in the sequence together.
+The sequence starts with the numbers 0 and 1.
+In equation form, the Fibonacci sequence is denoted as such.
+.EQ
+roman F sub n = roman F sub n-1 + roman F sub n-2
+.EN
+In psuedocode, the Fibonacci sequence could be written like this, where n is the index in the sequence.
+.SC
+func fib(n)
+	if n <= 1
+		return n
+	return fib(n-1) + fib(n-2)
+.SE
+.PP
+Recursion works to simplify the amount of code.
+However, recursion is expensive in terms of computational resources.
+It is almost always a better idea to use loops instead of recursion.
+For safety, there is a recursion limit programmed into most languages.
+If a function calls itself too many times, the program will crash.
+This prevents infinite recursive loops, which would eventually take up all resources on a computer and cause a crash.
 .	H2 Arrays
 .	H2 Pointers
+.	H2 Random
 .bp
 .H "Python: The First Frontier"
 .bp
