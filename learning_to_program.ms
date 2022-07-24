@@ -10,16 +10,16 @@ Mitch Feigenbaum
 .H "Where to Start"
 .PP
 One of the most difficult parts of learning to program is knowing where to begin.
-There are hundreds of languages, computers, and programs that promise to teach you the magical art of giving instructions to machines.
-Any of these programs that promise to teach you to program \*QIn just two weeks\*U or some similar timeline are definitively a scam. With the advent of the internet, you can learn to be an expert computer hacker\**
+There are hundreds of languages, computers, and programs that promise to teach one the magical art of giving instructions to machines.
+Any of these programs that promise to teach one to program \*QIn just two weeks\*U or some similar timeline are definitively a scam. With the advent of the internet, one can learn to be an expert computer hacker\**
 .FS
 The word `hacker' is often used by the media and non-technical sources to mean someone who, often illegally, infiltrates computer systems.
 This definition may be attributed to a `cracker' rather than a `hacker'.
 The true definition of a hacker is one who is highly skilled at programming a computer and not just knowledgeable in theoretical computer science.
 .FE
 for free on your own time by yourself.
-This book will not teach you how to code, nor is it intended to do so.
-What this book is meant to do is to get you on the write track and give you the tools to succeed.
+This book will not teach one how to code, nor is it intended to do so.
+What this book is meant to do is to get one on the write track and give one the tools to succeed.
 .PP
 But why am I qualified? Because I have experienced firsthand the trials and tribulations involved with learning how to program.
 The summer before my freshman year in high school, I decided that I wanted to learn to code.
@@ -49,13 +49,13 @@ and
 I was nowhere near proficient, but I knew of the basic if-else, while, for, and function constructs.
 More importantly, I had fallen in love with the sensation of programming.
 To me, it was as satisfying as solving a puzzle or putting together a Lego set.
-Just like those activities, when you create a program, you can use it yourself or give it to your friends.
-If you get good, you can even end up selling it to people and businesses.
-For an amateur programmer, there is nothing more rewarding than seeing others using and benefiting from a program that you yourself have made.
+Just like those activities, when one create a program, one can use it themself or give it to their friends.
+If one get good, they can even end up selling it to people and businesses.
+For an amateur programmer, there is nothing more rewarding than seeing others using and benefiting from a program that they themselves have made.
 .PP
 On my GitHub\**,
 .FS
-The link to my GitHub, as well as many other resources to help you on your journey to become a hacker, are in the resources section.
+The link to my GitHub, as well as many other resources to help on teh journey to become a hacker, are in the resources section.
 .FE
 I have posted many of the projects which I have made for fun.
 In the repository labeled `Personal'\**,
@@ -73,20 +73,20 @@ Some of it is junk, some of it is brilliant, and some of it is unexplainable.
 The best way to learn computer science is not in a classroom setting; it is by example.
 That is why this book is structured in such a way.
 .PP
-If you were to take a computer science course at a university, you would start with the theoretic and eventually make your way into abstracted levels of computing like web design.
-This is a good method to learn if you only wish to know the theoretical basis behind computer science, but not optimal if your goal is to become a good programmer.
+If a person were to take a computer science course at a university, they would start with the theoretic and eventually make your way into abstracted levels of computing like web design.
+This is a good method to learn if one only wishes to know the theoretical basis behind computer science, but not optimal if your goal is to become a good programmer.
 The way that I learned to program was first through true fingers to keyboard coding.
 It was only later when I learned of the theoretical basis behind computer science.
 Don't get me wrong: theoretical computer science
 .I is
 interesting.
-However; it is in fact true that you may gain more appreciation of theoretical computer science by first learning to do real programming.
+However; it is in fact true that one may gain more appreciation of theoretical computer science by first learning to do real programming.
 It brings meaning to the common constructs in computer science like pointers, strings, mathematics, floating point numbers, loops, and conditionals.
 Learning about theoretical constructs is a big
 .I AHA
 moment.
-It brings a new meaning to the programs you have created.
-If, contrarily, you learn to program when you have already learned theoretical computer science, it takes all of the fun out of learning how your programs truly interact with the machine they are run and compiled/interpreted on\**.
+It brings a new meaning to the programs they have created.
+If, contrarily, they learn to program when they have already learned theoretical computer science, it takes all of the fun out of learning how your programs truly interact with the machine they are run and compiled/interpreted on\**.
 .FS
 Later on in this book there will be an in depth explanation on the differences between compiled and interpreted programming languages.
 .FE
@@ -95,8 +95,8 @@ As I have already mentioned, learning to program is not something that just happ
 It takes months, even years to truly learn and master.
 When you are reading through this book, do not be afraid to read slowly or reread sections.
 Computer science is a difficult subject contrary to what many code boot camps would have you believe.
-Included in the sections are interactive exercises that you may do to gain a more in depth understanding of each language.
-Hopefully this book will help you avoid some of the common pitfalls and errors that befall many aspiring programmers.
+Included in the sections are interactive exercises that will assist in gaining a more in depth understanding of each language.
+Hopefully this book will help  avoid some of the common pitfalls and errors that befall many aspiring programmers.
 .PP
 Source code in this book will be clearly marked. Source code may be differentiated because it is offset and centered on the page, in a constant width font.
 Below is some example source code which prints hello world in
@@ -143,9 +143,9 @@ Particularly if one wishes to use Unix-like operating systems such as Linux or *
 This is due to the lack of proprietary firmware such as EFI and secure/fast boot which impede operating systems other than Windows\[tm].
 The specifications do not matter very much, especially if light editors such as vim are used.
 There is no need to spring for twenty gigabytes of RAM.
-If your computer can play Minecraft with a steady frame rate, it is more than capable to write and compile programs on.
+If a computer can play Minecraft with a steady frame rate, it is more than capable to write and compile programs on.
 .IP Editor
-The editor is where you will be spending most of your time as a programmer.
+The editor is where a programmer spends most of their time.
 The method in which a program is typically written is edit\[->]compile\[->]debug.
 Most time spent in the editor is not used on strictly writing code; rather, the time is spent looking for errors, consolidating existing code, and planning out the program.
 Thus, a good editor must not only have functionality to type characters into a file but also to jump between different parts of the file and make repetitive edits such as deleting entire lines or changing all instances of a particular variable name.
@@ -171,11 +171,11 @@ It is highly recommended to get a keyboard with high key travel.
 Mechanical keyboards are the best, but gel keyboards may also do.
 Keyboards with short key travel, like those typically found on laptops, will cause repetitive strain injury.
 As an additional note, it is a de facto requirement for programming to be able to touch type.
-The higher your words per minute (WPM), the better.
+The higher the words per minute (WPM), the better.
 A rate of about forty WPM is the minimum requirement to effectively be able to write programs.
 .IP Monitor
 The monitor setup is intended to reduce eyestrain and give the programmer a view of all their code.
-A three monitor setup is optimal, as typically you will have three programs open at the same time.
+A three monitor setup is optimal, as typically a programmer will have three programs open at the same time.
 On one monitor the editor is open, where code is written, deleted, and modified.
 On the second monitor a terminal window is open, where the program is compiled and run.
 On the third monitor is documentation or a web browser for reference.
@@ -184,7 +184,7 @@ The mouse is not extremely important when programming.
 Some editors and most IDEs rely on the mouse for a number of actions.
 If a keyboard shortcut based editor such as VI or EMACS is used, the mouse will almost never be used.
 When programming the mouse will be mostly used to switch between editing and compile/debugging windows.
-If you are using a laptop, having an external wireless mouse can be more ergonomic.
+If using a laptop, having an external wireless mouse can be more ergonomic.
 .IP Notepad
 A pen and paper should be in reach when writing code.
 Writing information like variable names and procedure descriptions on paper can be quicker than having to scroll through code.
@@ -320,7 +320,64 @@ Speed, efficiency, verbosity, and comprehensibility vary wildly based on the typ
 However, across all programming languages, there are certain constructs that emerge.
 These constructs may be called by different names or implemented differently, but for the most part are present in multiple languages.
 By learning these abstract constructs, knowledge of them may be applied to speed up the process of learning a new language.
-.	H2 Print
+.	H2 Comments
+.PP \" Introduction
+Over the course of a program it is good practice to write documentation.
+This is the idea behind code comments.
+Code comments can describe the purpose of code, clarify confusing code, and help the programmer remember what a piece of code does.
+Comments are identified by a certain start and end keyword.
+When a program is run, comments are ignored and thus not interpreted as actual code.
+.PP \" When should I comment?
+A tough task for beginners is deciding when and where to comment.
+There are a few good simple rules to follow.
+.nr a 0 1
+.IP \n+a
+Comment at the start of your program.
+This comment should state the purpose of the program and the algorithm that it uses.
+If a program is about an existing concept, like calculating body mass index, it is a great idea to link to a url that describes the concept.
+List any web links that were references for the program to give proper credit.
+.SC
+/*
+ * This program calculates BMI, or body mass index.
+ * More information can be found at <this> link.
+ */
+.SE
+.IP \n+a
+Comment at function definitions.
+The same rules apply for the comment at the top of the program.
+Also list what the parameters and return mean in the context of the function.
+.SC
+/*
+ * This function calculates BMI based on
+ * weight (in kilograms) and height (in meters).
+ */
+.SE
+.IP \n+a
+Comment lines that are excessively long or complex.
+If a line is doing many different operations or is hard to read, having natural language descriptions of what the line does can be a big help for maintanence.
+This comment should describe what the line is doing in code in the natural language, as well as a justification for the complexity of the line.
+.SC
+/* This line calculates BMI from the provided arguments. */
+bmi := kg / m^2
+.SE
+.IP \n+a
+Comment out lines of code that are not in use.
+Comments can be used to make the program not execute lines of code.
+If there are errors in the program, commenting out specific lines of code can help trace the error down.
+This is a good alternative to deleting lines of code that might not necessarily be faulty.
+When a program is completed, these commented out lines of code should probably be deleted.
+.SC
+/* The following line needs to be fixed. */
+/* kg := 703 / (lb * 0) */
+.SE
+.PP \" On overcommenting
+One danger of commenting is overindulgence.
+Overcommenting can have the opposite of its intended effect; complicating code.
+It is easy to avoid overcommenting.
+If a comment contains art, then it should probably be removed.
+Also refrain from commenting on every line.
+If a program contains more comments than code, then odds are that some comments are uneeded, superflous, or distracting.
+.	H2 Input/Output
 .PP
 There are three standard ways in which a programmer and a computer can communicate with each other.
 Standard output
@@ -348,7 +405,13 @@ is intended for problems that may arise in a program.
 An example usage of
 .I stderr
 would be to warn a user that a program has been forcefully terminated.
-.	H2 Input
+.PP
+Print statements not only take in letters and numbers but also formatting commands.
+There are many characters that are difficult to represent in their true form.
+Characters like newlines (pressing enter), tabs, backspace, and return (go to the start of the line) can all be represented by escapes.
+In most programming languages, escapes are represented by the backslash
+.CW \[rs] ) (
+character.
 .PP
 Programs can obtain data from the user by accessing the third stream, standard input
 .I stdin ). (
@@ -369,7 +432,6 @@ A simple input to output program can be displayed in pseudocode like this.
 x := input()
 print x
 .SE
-.PP
 .	H2 If-Else
 .PP
 The if-else construct executes code based on the value of a logical statement.
@@ -483,8 +545,7 @@ if isnumber(n)
 else
 	goto NumberGet
 .SE
-.PP
-\# On why gotos create spaghetti code
+.PP \" On why gotos create spaghetti code
 In early high level languages such as
 .CW FORTRAN ,
 goto statements were the only way to loop through code.
@@ -493,8 +554,7 @@ As a result, code became unmaintained and fell into disrepair.
 The phrase \*QSpaghetti Code\*U is used to describe this style, as the paths the code takes are like following one noodle in a bowl of spaghetti.
 To rectify the situation, structured loops were introduced.
 These loops explicitly stated that they were present, and required a logical value to be used as an escape conditional.
-.PP
-\# While loops
+.PP \" While loops
 A
 .I while
 loop is the most basic type of structured loop found in programming languages.
@@ -505,8 +565,7 @@ Now, the previous example can be written like this.
 while not isnumber(n := input())
 print n + 10
 .SE
-.PP
-\# Forever loops
+.PP \" Forever loops
 Loops are also conventionally used to repeat code forever.
 Forever, of course, means that the code will be continuously executed until the program is terminated.
 The UNIX program
@@ -524,8 +583,7 @@ while true
 	print yes
 .SE
 .	H2 Primitives
-.PP
-\# Overview
+.PP \" Overview
 A primitive is the most basic component in a programming language.
 It usually refers to some type of number, although in some languages it may also be used for strings.
 Usually, the difference between different primitive types is the amount of memory each type takes up.
@@ -542,8 +600,7 @@ It should be noted that
 .I strings ,
 which are arrays of characters, are not primitives.
 This is because a string can be broken down into its character components.
-.PP
-\# Integer
+.PP \" Integer
 Although the integer types theoretically represent numbers, they are often used as a metaphor for other computer science constructs.
 .I Boolean
 values represent true and false.
@@ -552,8 +609,7 @@ Conveniently, the values true and false may also be represented by one and zero 
 In most programming languages, the number zero represents false and every other number represents true.
 Programming languages may also supply a Boolean type.
 The Boolean type ensures that a variable cannot overflow and thus become a false value without the programmers intention.
-.PP
-\# Character
+.PP \" Character
 Another usage of integer types that intends to represent another unit is the character, or
 .CW char .
 The American Standard Code for Information Interchange (ASCII) is a common way that text is represented.
@@ -565,16 +621,14 @@ or
 .I stderr .
 Words, sentences, and paragraphs might contain thousands of these integers in sequence.
 As with the boolean type, multiple programming languages provide an explicit type to hold ASCII characters.
-.PP
-\# Short and long integers
+.PP \" Short and long integers
 The major differentiation between different integer primitives are the amount of bytes the numbers can take up.
 It is simple to determine the highest and lowest numbers that may be stored in a particular type if the maximum amount of bytes is already known.
 Because computers operate in base two, the maxium number is $2 sup roman{"bits"} - 1$ and the minimum number is $-2 sup roman{"bits"} + 1$ for signed integers.
 For unsigned integers, the maxium number is $2 sup { roman{"bits"} + 1 } - 1$ and the minum number is 0.
 The difference between a signed and unsigned integer is that a signed integer may represent both positive and negative values.
 Unsigned integers can represent larger numbers because in a signed integer one bit is reserved to differentiate between positive and negative numbers.
-.PP
-\# Float
+.PP \" Float
 A float is an extension of the integer.
 In addition to storing a whole number, it also stores a decimal point.
 Because real computers have limited memory, floats need to be rounded to a certain level of precision.
@@ -619,8 +673,7 @@ In accounting programs, instead of computing pennies as the floating point numbe
 Just as there are often different sizes of integers, languages can also provide float types with different levels of precision.
 The floating type chosen by the programmer is based on the specific needs of a variable to hold a said amount of precision.
 .	H2 Functions
-.PP
-\# Justification
+.PP \" Justification
 Computer code is often repetitive.
 While working on a program, especially if it is extensive, many operations will be repeated a number of times.
 The more code that is present in a program, the more likely there is to be bugs and mistakes.
@@ -633,9 +686,8 @@ First they start with the equation itself.
 .EQ
 c = sqrt { a sup 2 + b sup 2 }
 .EN
-The equation takes the input of two sides of a right triangle (a and b) and outputs the length of the third side (c).
-.PP
-\# Definition
+The equation takes the input of the two legs of a right triangle (a and b) and outputs the length of the hypotenuse (c).
+.PP \" Definition
 The first part of a function is its name.
 Depending on the language, a function may need to be initialized with its return type or by a keyword such as
 .I func .
@@ -646,8 +698,7 @@ A good name for a function which computes the pythagorean theorem would be
 .SC
 func pythag
 .SE
-.PP
-\# Parameters
+.PP \" Parameters
 The second part of a function is its parameters.
 Parameters are variables that are input into the function.
 Parameters in most cases must be explicitly declared in the function definition.
@@ -661,18 +712,21 @@ and
 .SC
 (a, b)
 .SE
-.PP
-\# Body
+.PP \" Body
 The third part of a function is the function body.
 The body is where all code operations are executed.
 A function body should be relatively short and only do one thing.
 Functions can contain other functions, and even itself.
 As a general rule of thumb, what a function does should be able to be described in one sentence.
+This sentence can double as the description of a function contained in a code comment.
 If it takes more than that to describe what exactly a function does, the function is too long and vague, which makes it vulnerable to mistakes and harder to read.
 In the case of the pythagorean theorem, the description is short.
-.QP
-Compute the side of the hypotenuse of a triangle based on the two adjacent legs.
-.LP
+.SC
+/*
+ * Compute the hypotenuse of a triangle
+ * based on the two adjacent legs.
+ */
+.SE
 Just as the description is short, so is the body of the function.
 First the function should check that a and b are greater than zero, and then the function should calculate the Pythagorean theorem.
 .SC
@@ -681,8 +735,7 @@ if a <= 0 or b <= 0
 else
 	c := sqrt(a^2 + b^2)
 .SE
-.PP
-\# Return
+.PP \" Return
 After the function body has calculated a result, that result needs to become available to the rest of the program.
 It does no good to have simply calculated the right answer, that answer has to be revealed.
 This is the reason for the return statement.
@@ -696,11 +749,14 @@ Now, the return statmeent must return c.
 .SC
 return c
 .SE
-.LP
-\# Invoking
+.LP \" Invoking
 With this, the Pythagorean function declaration has been completed.
 .SC
 func pythag(a, b)
+	/*
+	 * Compute the hypotenuse of a triangle
+	 * based on the two adjacent legs.
+	 */
 	if a <= 0 or b <= 0
 		c := -1
 	else
@@ -726,8 +782,7 @@ if hyp = -1
 else
 	print hyp
 .SE
-.PP
-\# Recursion
+.PP \" Recursion
 A unique property of functions is that they can contain themselves.
 Functions that call themselves are called
 .I recursive .
@@ -754,23 +809,318 @@ For safety, there is a recursion limit programmed into most languages.
 If a function calls itself too many times, the program will crash.
 This prevents infinite recursive loops, which would eventually take up all resources on a computer and cause a crash.
 .	H2 Arrays
+.PP \" Introduction to Arrays
+There are many instances where just using primitves for variables does not suffice for a programmer's needs.
+Often a program will need to hold hundreds of numbers from a data set.
+Assigning a variable to each of these numbers is inefficient and limiting.
+Instead, a data set can be stored in one variable.
+.PP \" Initialization
+What arrays look like vary based on language implementation.
+Each language varies about the complexity of what can be stored in an array.
+In some languages, the array must be initialized with its size and the type of primitives it holds.
+Contrarily, some langauges will implicitly create arrays and assume their size.
+The simplist initialization sequence to make an array looks similar to this.
+.SC
+arr := [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+.SE
+.PP \" Looping
+An advantage of arrays compared to standalone variables is that each element is in sequence.
+Therefore, they can be looped through.
+Arrays are zero indexed, meaning that the first element is at index zero of the array.
+Operations like finding the average of an array of integers are exceedingly simple.
+.SC
+i := 0
+sum := 0
+sz := sizeof arr
+while i < sz
+	sum := sum + arr[i]
+print sum / sz
+.SE
+Knowing the size of the array is important, because a program could crash or exert undefinded behavior if it goes outside the bounds of an array.
+.PP \" Strings
+Strings are a type of array that hold integers.
+However, when printed in their char format, they form ASCII characters.
+Strings are often initialized with double quotes (").
+They are often terminated with a null byte (zero).
+.SC
+s := "hello"
+print s
+.SE
+Which is in fact equivalent to declaring an array of characters into s (depending on the language with or without a null byte) and then printing that array variable.
+.SC
+s := [ 104, 101, 108, 108, 111, 000 ]
+print s
+.SE
+.PP \" 2D arrays (Matrix)
+An interesting property of arrays is that they can be initialized to hold arrays.
+This concept is similar to Matrices in theretical mathematics.
+Nesting can expand beyond one level, so three dimensional, four dimensional, and beyond are all possible.
+However, in most real instances two dimensional arrays suffice.
+One common use for two dimensional arrays is to simulate a game board.
+A tic tac toe could be represented by a two dimensional array.
+.SC
+tictactoe := [[\[aq]X\[aq] \[aq]X\[aq], \[aq]O\[aq]], [\[aq]O\[aq], \[aq]X\[aq], \[aq]O\[aq]], [\[aq]X\[aq], \[aq]O\[aq], \[aq]X\[aq]]]
+.SE
+This array can be formatted like a gameboard by using the newline ascii character.
+.SC
+i := 0
+while i < sizeof tictactoe
+	j := 0
+	while j < sizeof tictactoe[i]
+		print tictactoe[i][j]
+		j := j + 1
+	print \[aq]\\n\[aq]
+	i := i + 1
+.SE
 .	H2 Pointers
+.PP \" Intro
+Where are variables stored?
+How are arrays linked together?
+The memory used by a program can be thought of as a one dimensional array.
+Within that array are stored all the memory used by a computer.
+At certain points in that array the computer allocates memory to store the value of variables.
+A variable is in reality a name attributed to a certain address in memory where its value is stored.
+.PP
+Earlier in the chapter the differences in the sizes of primitives was discussed.
+In reference to memory as a whole, the memory for primitives is allocated at an address chosen by the computer and then that address is assigned to the variable.
+But this fact still does not explain how arrays work.
+.PP \" arrays
+The way that arrays are allocated and looped through in memory is actually quite simple.
+When the array is initialized, the computer allocates memory in a row for all the elements in the array.
+When array elements are accessed, what the code in reality is doing is adding index provided to the initial elements location in memory and incrementing that location by the index multiplied by the amount of memory provided to the type of each array element.
+This means that
+.SC
+arr[i]
+.SE
+is actually this.
+.SC
+*(arr + i)
+.SE
+Also note that pointers are commonly referred to by the asterisk, which has many uses in programming languages besides multiplication.
+What the asterisk means is decided based on context.
+.PP \" Danger
+Pointers access raw memory without any safety in between.
+Thus, accessing and manipulating pointers can be dangerous.
+Great care should be exercised whenever pointers are used.
+If available, a construct in a language that abstracts away memory manipulation should be used.
 .	H2 Random
+.PP \" Why is randomness needed
+Randomness is a frequently used concept in computer science.
+Randomness is used to encrypt passwords and for simulations.
+The use of random elements is frequently used in video games as well.
+The applications of randomness in computing has been the subject of hunders of academic papers
+A working understanding of the basic principles of random number generation is needed to understand how to make a host of applications in programming languages.
+.PP \" Seeding
+The most simple (and secure) way to obtain random numbers is from a truly random source.
+In most operating systems, there are sources of true randomness, which compute random streams of characters based on variables like startup time, disk speed, and temperature.
+Unfortunately, truly random numbers are extremely expensive on computing resources and is also limited.
+These truly random sources do have an important purpose though.
+They are used as the seeds for random number generators.
+.PP \" psudo random number generators
+Pseudo random number generators (PRNG) are used to generate multiple random numbers.
+Because obtaining truly random numbers is so computationally expensive, it is more efficient to use an algorithm to generate unpredictable numbers.
+PRNG algorithms generate numbers that, without knowing the seed, are impossible to predict.
+With that noted, if the seed is known, the random number can also be predicted.
+This is why it is important to get the number from a cryptographically random source.u
+.PP \" getting random numbers in range
+.PP \" Cryptographic vs non-cryptographic
 .bp
 .H "Python: The First Frontier"
+.	H2 Introduction
+.PP \" What makes Python unique
+.PP \" First language
+.	H2 "Pythonic Code"
+.PP \" Pythons whitespace
+.PP \" comments
+.PP \" Input and output (hello world)
+.PP \" types, arrays, and variables
+.PP \" for and while loops
+.PP \" multiline strings and multiline comments
+.PP \" best practices: put everything in a function
+.	H2 F-Strings
+.PP \" what are f strings?
+.PP \" puting variables in strings
+.PP \" float formatting
+.PP \" Whitespace formatting
+.PP \" executing code in strings
+.	H2 Files
+.PP \" basic file input output
+.PP \" Read a file
+.PP \" create a file
+.PP \" write a file
+.PP \" the importance of file safety
+.	H2 Modules
+.PP \" How libraries work
+.PP \" Math
+.PP \" Random
+.PP \" OS
+.PP \" JSON
+.PP \" RE (regex)
+.	H2 Critiques
+.PP \" Slowness
+.PP \" Types
+.PP \" Idiosyncracies
+.PP \" Reliance on modules
+.PP \" Community (reputation as a beginner language)
+.H2 Practice
+\" Make a program that takes two numbers as input and adds them as output
+\" Make a program that prints 10 random numbers
+\" Make a program that stores user
 .bp
 .H "Picking up: Moving to Statically Typed Languages"
+.	H2 "Compilation"
+.PP \" Basics of compilation
+.PP \" Compilation vs interpreted
+.PP \" Compilation Errors
+.	H2 "Explicit Typing"
+.PP \" implicit vs explicit typing
+.PP \" type mismatches
+.PP \" Clarification of code
+.PP \" limitiations compared to dynamic typing
+.	H2 "Speed"
+.PP \" What makes compiled languages faster
+.PP \" compile time Optimizations
+.PP \" type inferencing is time and resource intensive
+.	H2 "Difficulty"
+.PP \" verbosity compared to languages like python
+.PP \" whitespace doesnt matter
+.PP \" Time to write a program vs time program takes to execute argument
 .bp
 .H "Java: Object Oriented Programming"
+.	H2 "Main Method"
+.PP \" Bracketing
+.PP \" Variable assignment and reserved keywords
+.PP \" Output and error
+.PP \" Input
+.PP \" Math (floor, ceil, sqrt, pow, random)
+.PP \" primitive boxing (Integer, Float, Double)
+.PP \" arrays and arraylists
+.PP \" if, else, ternaries
+.PP \" Switch/case
+.PP \" while, for, and foreach
+.PP \" random with math.random
+.PP \" public static void main (string args)
+.	H2 "Methods and Classes"
+.PP \" Declaring a method
+.PP \" Overloading
+.PP \" Static
+.PP \" Invoking a class object as a variable
+.PP \" Creating a class
+.PP \" Public, private, protected
+.PP \" Constructors
+.PP \" Overriding with super
+.	H2 "Javadocs"
+.PP \" javadocs instead of comments
+.PP \" Writing javadocs
+.PP \" @param, @return, @see
+.PP \" embedding html into javadocs
+.	H2 "Compilation"
+.PP \" javac
+.PP \" java
+.	H2 "Practice"
 .bp
 .H "Shell Script: A Pragmatic Language"
+.PP \" what is an itneractive shell
+.	H2 "Languages"
+.PP \" What are the different shell scripting languages (bourne shell, bash, zsh, fish, powershell)
+.PP \" posix compliant shell
+.PP \" Why (almost) all shells are basically the same
+.	H2 Programs
+.PP \" Explenation of simplicity of command line programs (UNIX PHILOSOPHY)
+.PP \" core programs
+.IP \f[C]cat\f[]
+Takes multiple file names as input and concatenates their content as output.
+.IP \f[C]cal\f[]
+Displays a calendar for a specific month, or year.
+.IP \f[C]cp\f[]
+Copies the content of one or more files to another file or directory.
+.IP \f[C]date\f[]
+Displays the current time, day, month, and year.
+.IP \f[C]dict\f[]
+Shows the definition of an inputted word.
+.IP \f[C]echo\f[]
+Copies an input string to output.
+.IP \f[C]editor\f[]
+Launches the user's default editor.
+.IP \f[C]find\f[]
+Searches for a particular file name or characteristic and returns all files matching that description.
+.IP \f[C]grep\f[]
+Searches for text patterns within a file.
+.IP \f[C]ls\f[]
+Lists files in a directory.
+.IP \f[C]man\f[]
+Displays documentation for a specific command.
+.IP \f[C]mount/umount\f[]
+Adds or removes an internal or external drive from the file system.
+.IP \f[C]mv\f[]
+Moves the path of one or more files to another path.
+.IP \f[C]rm\f[]
+Deletes files
+.BI permanently .
+.IP \f[C]sudo\f[]
+Executes a command with root (superuser) permissions.
+.IP \f[C]sudoedit\f[]
+Edits a file with root permissions (the same as
+.CW "sudo -e" ).
+.IP \f[C]uname\f[]
+Displays information about the operating system.
+.	H2 "Piping and selective execution"
+.PP \" how to execute one program
+.PP \" How shell script executes programs in a unique way
+.PP \" return codes
+.PP \" Common symbols
+.IP <
+.IP >
+.IP &
+.IP |
+.IP &&
+.IP ||
+.IP []
+.IP \`\`
+.EQ
+delim off
+.EN
+.IP $
+.IP $()
+.IP $(())
+.EQ
+delim on
+.EN
+.	H2 "Complex Elements"
+.PP \" if-else
+.PP \" while and for
+.PP \" single vs double strings
+.PP \" prompt (PS1)
 .bp
 .H "C: The Final Frontier"
+.PP \" history (reference the chist pdf by ritchie)
+.PP \" why c is a low level high level language
+.	H2 "Basic Properties"
+.PP \" whats in stdio.h and hello world
+.PP \" main method
+.PP \" types
+.PP \" type safety
+.PP \" functions
+.	H2 Preprocessing
+.PP \" include files
+.PP \" Magic numbers and strings with define
+.PP \" Macros with define
+.	H2 Memory
+.PP \" Declaring arrays
+.PP \" Pointers
+.PP \" Structs
+.PP \" Malloc and free
+.PP \" Calloc
+.PP \" Reollac and reollac array
+.PP \" C Strings
+.PP \" String operations
+.	H2 Practice
 .bp
-.H "Novelties"
-.	H2 "Brainfuck and Turing Machines"
-.	H2 "G/TROFF"
-.	H2 "Meta Computer Science"
+.H "Brainfuck and Turing Machines"
+.PP \" What is a turing machine
+.PP \" Theory behind brainfuck
+.PP \" Symbols in brainfuck
+.PP \" Hello world in brainfuck
 .bp
 .H "Resources"
 .bp
@@ -778,5 +1128,4 @@ This prevents infinite recursive loops, which would eventually take up all resou
 .	H2 Python
 .	H2 Java
 .	H2 C
-.	H2 Roff
 .TC
