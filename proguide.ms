@@ -921,9 +921,48 @@ Pseudo random number generators (PRNG) are used to generate multiple random numb
 Because obtaining truly random numbers is so computationally expensive, it is more efficient to use an algorithm to generate unpredictable numbers.
 PRNG algorithms generate numbers that, without knowing the seed, are impossible to predict.
 With that noted, if the seed is known, the random number can also be predicted.
-This is why it is important to get the number from a cryptographically random source.u
+This is why it is important to get the number from a cryptographically random source.
 .PP \" getting random numbers in range
+Once there exists an efficient way to get multiple random numbers, one facility that is still needed is a way to get a number in a certain range.
+For example, in a list randomization algorithm, one needs to be able to switch the index of one element of the list with another.
+There are two approaches to do this.
+In some languages, the random number is a very large.
+In order to get a number in range, the modulus operator is used.
+To get a number in the range of 1 (inclusive) and ten (exclusive), one would have to use a modulus of ten plus one.
+.SC
+min := 1
+max := 10
+r := random()
+print max mod r + min
+.SE
+.PP
+In other languages, the random number emitted is a floating number between 0 and 1.
+In these languages, getting a random number between one and ten would involve multiplication and addition rather than the modulus operator
+.SC
+min := 1
+max := 10
+r := random
+print r * max + min
+.SE
+.PP
+The randomization of an array is done using the Fischer-Yates algorithm.
+In this algorithm, the rndint() function is a variant of one of the two above methods to get a number with an inclusive minimum value and exclusive maxium value.
+.SC
+arr := [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+i := sizeof arr
+while i > 0
+	j := rndint(0, i + 1)
+	tmp := arr[i]
+	arr[i] := arr[j]
+	arr[j] := tmp
+	i := i - 1
+.SE
 .PP \" Cryptographic vs non-cryptographic
+One critical distinction between randomization algorithms is whether the algoirthm is or is not cryptographically secure.
+A cryptographically secure pseudo random number generator (CSPRNG) contains a sufficient amoutn of unpredictability to be used in secure applications like encryption.
+A critical element of CSPRNGs is that they must be seeded with a truly random number.
+A novice and na\[:i]ve approach to seeding PRNGs is to use the current time.
+This approach is not cryptographically secure because, even if the PRNG has a very extensive algorithm, that algorithm can be predicted if the seed is known.
 .bp
 .H "Python: The First Frontier"
 .	H2 Introduction
