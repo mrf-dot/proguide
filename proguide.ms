@@ -1,4 +1,4 @@
-.so format.ms
+.\".so format.ms
 .EQ
 delim $$
 define let %roman{"let "}%
@@ -55,7 +55,7 @@ For an amateur programmer, there is nothing more rewarding than seeing others us
 .PP
 On my GitHub\**,
 .FS
-The link to my GitHub, as well as many other resources to help on teh journey to become a hacker, are in the resources section.
+The link to my GitHub, as well as many other resources to help on the journey to become a hacker, are in the resources section.
 .FE
 I have posted many of the projects which I have made for fun.
 In the repository labeled `Personal'\**,
@@ -946,7 +946,7 @@ print r * max + min
 .SE
 .PP
 The randomization of an array is done using the Fischer-Yates algorithm.
-In this algorithm, the rndint() function is a variant of one of the two above methods to get a number with an inclusive minimum value and exclusive maxium value.
+In this algorithm, the rndint() function is a variant of one of the two above methods to get a number with an inclusive minimum value and exclusive maximum value.
 .SC
 arr := [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 i := sizeof arr
@@ -958,8 +958,8 @@ while i > 0
 	i := i - 1
 .SE
 .PP \" Cryptographic vs non-cryptographic
-One critical distinction between randomization algorithms is whether the algoirthm is or is not cryptographically secure.
-A cryptographically secure pseudo random number generator (CSPRNG) contains a sufficient amoutn of unpredictability to be used in secure applications like encryption.
+One critical distinction between randomization algorithms is whether the algorithm is or is not cryptographically secure.
+A cryptographically secure pseudo random number generator (CSPRNG) contains a sufficient amount of unpredictability to be used in secure applications like encryption.
 A critical element of CSPRNGs is that they must be seeded with a truly random number.
 A novice and na\[:i]ve approach to seeding PRNGs is to use the current time.
 This approach is not cryptographically secure because, even if the PRNG has a very extensive algorithm, that algorithm can be predicted if the seed is known.
@@ -967,13 +967,140 @@ This approach is not cryptographically secure because, even if the PRNG has a ve
 .H "Python: The First Frontier"
 .	H2 Introduction
 .PP \" What makes Python unique
+Python is a language that is unique among established programming langauges.
+Its quirks include using whitespace instead of brackets, extensive formatted strings, and being a solely interpreted language.
+It is the fastest growing programming langauge and used in a number of commericial and free software applications.
+Python is also notable for its simplicity.
+Programs can be made in Python with virtualy no boilerplate.
 .PP \" First language
+Becasue of Python's use of whitespace and lack of boilerplate, it is often used a s a beginner langauge.
+Delving into Python requires virtually no knowledge of the base components of a computer and memory such as pointers.
+Python is also a safe langauge.
+If one were to write a faulty program in C, it could cause a segmentation fault or worse permanetly corrupt the computer's memory.]
+Python programs are interpreted and have extensive safety measures programmed in, so the risk to the programmers software and hardware are virtually zero.
 .	H2 "Pythonic Code"
 .PP \" Pythons whitespace
+One of the most unique elements of Python is its use of whitespace.
+This difference can be difficult to adapt to for experienced programmers.
+However, for beginners, this element of the language can be helpful.
+Parentheses still exist in the language, but their use is strictly to impact the order of operations.
+Brackets are nonexistent.
+Lines are terminated by the newline character (pressing enter) rather than by semicolons.
+.SC
+statement 1
+statement 2
+.SE
+.PP
+Requireing whitespace is a good way to make sure that programmers use the best programming practices.
+In Python, proper indentation is not best practice: its required.
+Misleading indentation levels is one of the leading causes for a program to not work, as it will cuase a programmer to either use too many or too little brackets.
+In Python, because brackets do not exist, it is easy to find and correct this error.
+.PP
+In Python, statmeents like if statmenets are formatted without brackets or parentheses, and contain a colon before the indentation level increases.
+.SC
+if x:
+	pass
+.SE
+In most other programming languages, an if statement looks like this.
+.SC
+if (x) {
+}
+.SE
+One may see that the first code example looks much simpler and allows the reader to clearly see the indentation level.
+It also looks far less cluttered and verbose.
 .PP \" comments
+Comments in Python come in two varieties.
+Single line comments are delimited by a newline character
+thus they may only take up one line.
+They begin with a hash character
+.CW # ). (
+.SC
+# This is a single line comment
+.SE
+.PP
+Multiline comments technically do not exist in Python.
+However, there is a trick to make them work.
+If a mutliline string is not assigned to a variable, it will be ignored by the interpreter.
+This property can be used to create multiline comments.
+Multiline comments are delimited by three double quotes
+.CW \[dq]\[dq]\[dq] ). (
+.SC
+"""
+This is a
+multiline comment.
+"""
+.SE
+.PP \" types
+Types are not explicitly declared in Python.
+Based on the value provided to a variable, a type will be inferred.
+There are five main types: integers
+.CW int ), (
+floats
+.CW float ), (
+strings
+.CW str ), (
+lists, and dictionaries
+.CW dict ). (
+.PP \" Variable Assignment
+Variable assignment is practically the same as in psuedocode.
+A variable is simply set to equal a value.
+There is no variable decleration.
+.SC
+x = 2 # declares an integer
+y = 0.5 # declares a float
+z = "A sentence." # declares a string
+.SE
+Variables may also be reassigned to be different types.
+A variable initialilized as an integer could be reinitialized to be a string and vice versa.
+.SC
+var = 9 # initialized as an integer
+var = "nine" # reinitialized as a string
+.SE
+.PP \" Arrays
+Arrays can be declared in Python using the left bracket
+.CW [ ) (
+and
+.CW ] ) (
+characters.
+They can contain any combination of types, which is another unique property of Python.
+A single array can contain integers, floats, strings, dicts, and other lists all at once.
+The elements of an array are separated by commas.
+.SC
+arr = [1, 5, 3.0, "a string", 8.3, [1, 2, 3], {"a": 1, "b", 2}]
+.SE
+.PP \" Dicts
+Dictionaries, or
+.CW dicts ), (
+are similar structures to arrays.
+They contain keys and values.
+They may be initialized like this.
+.SC
+d = {"one": 1, "two": 2, "three", 3}
+.SE
+.PP \" Walrus notation
+Walrus notation is a new element recently added to the Python langauge standard.
+It allows for variable assignments to appear within a statment.
+Walrus notation uses the
+.CW :=
+symbol (a colon and an equal sign) to assign values to variables.
+All variable assignments must be within parentheses or they will cause an error.
+.SC
+2 + (x := 3) # Evaluates to five
+.SE
 .PP \" Input and output (hello world)
-.PP \" types, arrays, and variables
+Python has included in the base language methods to produce input and output.
+Output is produced with the print statement.
+At its base level, a print statement will output a string with a newline appened to the end.
+Thus, a classic hello world program could be produced like this.
+.SC
+print("Hello, world!")
+.SE
+Print statments can also output integers, floats, dictionaries, and arrays.
+.PP \" If, elif, else statmenets
+.PP \" pass statement
+.PP \" ternaries
 .PP \" for and while loops
+.PP \" break and continue
 .PP \" multiline strings and multiline comments
 .PP \" best practices: put everything in a function
 .	H2 F-Strings
