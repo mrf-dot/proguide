@@ -56,6 +56,8 @@
 	set updatetime=300
 " Give more concise messages
 	set shortmess+=acs
+" Don't show autocompletion menu
+ 	set pumheight=1
 " Set plugin home directories
 	let g:nvim_system_wide = 1
 	let g:coc_data_home = stdpath('config').'/coc'

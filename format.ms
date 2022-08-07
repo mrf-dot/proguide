@@ -14,13 +14,6 @@
 \\*(SN\t\t\\$1
 .XE
 ..
-.de H3
-.NH 3
-\\$1
-.XS
-\\*(SN\t\t\t\\$1
-.XE
-..
 .de SC
 .DS B
 .fam C

@@ -1,4 +1,14 @@
-.\".so format.ms
+.so format.ms
+.de EX
+.LP
+\\$1
+.nr PS 9.5
+.SC
+..
+.de ED
+.SE
+.nr PS 12
+..
 .EQ
 delim $$
 define let %roman{"let "}%
@@ -18,7 +28,6 @@ This definition may be attributed to a `cracker' rather than a `hacker'.
 The true definition of a hacker is one who is highly skilled at programming a computer and not just knowledgeable in theoretical computer science.
 .FE
 for free on your own time by yourself.
-This book will not teach one how to code, nor is it intended to do so.
 What this book is meant to do is to get one on the write track and give one the tools to succeed.
 .PP
 But why am I qualified? Because I have experienced firsthand the trials and tribulations involved with learning how to program.
@@ -96,7 +105,7 @@ It takes months, even years to truly learn and master.
 When you are reading through this book, do not be afraid to read slowly or reread sections.
 Computer science is a difficult subject contrary to what many code boot camps would have you believe.
 Included in the sections are interactive exercises that will assist in gaining a more in depth understanding of each language.
-Hopefully this book will help  avoid some of the common pitfalls and errors that befall many aspiring programmers.
+Hopefully this book will help avoid some of the common pitfalls and errors that befall many aspiring programmers.
 .PP
 Source code in this book will be clearly marked. Source code may be differentiated because it is offset and centered on the page, in a constant width font.
 Below is some example source code which prints hello world in
@@ -295,11 +304,11 @@ c c.
 .LP
 De Morgan's laws are logical proofs that stipulate
 .IP 1
-The compliment of not A or B is equivalent to not A and not B and
+The compliment of not A or B is equivalent to not A and not B.
 .IP 2
 The compliment of not A and B is equivalent to not A or not B.
-The following proofs show the validity of De Morgan's laws.
 .LP
+The following proofs show the validity of De Morgan's laws.
 .TS H
 expand;
 lB lB.
@@ -965,7 +974,6 @@ A novice and na\[:i]ve approach to seeding PRNGs is to use the current time.
 This approach is not cryptographically secure because, even if the PRNG has a very extensive algorithm, that algorithm can be predicted if the seed is known.
 .bp
 .H "Python: The First Frontier"
-.	H2 Introduction
 .PP \" What makes Python unique
 Python is a language that is unique among established programming langauges.
 Its quirks include using whitespace instead of brackets, extensive formatted strings, and being a solely interpreted language.
@@ -973,7 +981,7 @@ It is the fastest growing programming langauge and used in a number of commerici
 Python is also notable for its simplicity.
 Programs can be made in Python with virtualy no boilerplate.
 .PP \" First language
-Becasue of Python's use of whitespace and lack of boilerplate, it is often used a s a beginner langauge.
+Becasue of Python's use of whitespace and lack of boilerplate, it is often used as a beginner langauge.
 Delving into Python requires virtually no knowledge of the base components of a computer and memory such as pointers.
 Python is also a safe langauge.
 If one were to write a faulty program in C, it could cause a segmentation fault or worse permanetly corrupt the computer's memory.]
@@ -1050,6 +1058,8 @@ x = 2 # declares an integer
 y = 0.5 # declares a float
 z = "A sentence." # declares a string
 .SE
+It should be noted that a string may be between single or double quotes.
+However, it is best practice to maintain one style of string decledration (either single or double quotes) throughout a program.
 Variables may also be reassigned to be different types.
 A variable initialilized as an integer could be reinitialized to be a string and vice versa.
 .SC
@@ -1087,7 +1097,7 @@ All variable assignments must be within parentheses or they will cause an error.
 .SC
 2 + (x := 3) # Evaluates to five
 .SE
-.PP \" Input and output (hello world)
+.PP \" output (hello world)
 Python has included in the base language methods to produce input and output.
 Output is produced with the print statement.
 At its base level, a print statement will output a string with a newline appened to the end.
@@ -1096,58 +1106,673 @@ Thus, a classic hello world program could be produced like this.
 print("Hello, world!")
 .SE
 Print statments can also output integers, floats, dictionaries, and arrays.
-.PP \" If, elif, else statmenets
+.PP \" input
+Standard input in Python is gathered from the
+.CW input
+function.
+This function will return a string containing every characetr the user inputted up until they press the return (enter) key.
+A simple program that converts input to output could be written thusly.
+.SC
+print(input())
+.SE
+The input function takes an optional prompt parameter, which is displayed on the same line as the input.
+This prompt can be used to tell the user what they should enter as input.
+A prompt could ask the user for their name and then store it in a variable.
+.SC
+name = input("What is your name?: ")
+.SE
+.PP \" casts
+Casts convert values of one type into values of another type.
+In order to be eligible for conversion, a value must reasonably be able to represent another type.
+A string containing only a whole number (eg \*Q123456\*U) would be eligible for conversion to an integer.
+However, a string containing letters and numbers (eg \*QABC123DEF\*U) would not be eligible for conversion into an integer or float.
+One place where casts are often used in Python is when using the input function.
+The input function returns a string, but oftentimes a program must ask a user for an integer or float.
+In these instances a cast may be used.
+Take for example a program which takes two numbers from a user and stores the product in an integer variable.
+.SC
+x = input("Enter a number: ")
+y = input("Enter another number: ")
+z = int(x) * int(y)
+.SE
+.PP \" If, else statmenets
+If statements in Python are represented by the
+.CW if ,
+.CW elif ,
+and
+.CW else
+keywords.
+The conditional portion of the statement is terminated with a colon
+.CW : ). (
+A simple if statement in Python takes this form.
+.SC
+if x: #do y
+.SE
+Any code on the same line of the if statement or indented below the if statement will be executed if the conditional evalueates to true.
+The else statement similarly is terminated by a colon and will execute code on the same line or below if the conditional evaluates to false.
+.SC
+if x: #do y
+else: #do z
+.SE
+.PP \" elif
+Because Python takes whitespace into account, the else if construct found in other programming langauges is impossible to implement in Python.
+Instead, nested conditionals are represetned with the
+.CW elif
+keyword.
+If all if and elif statements in a conditional statement evaluete to false, the code in the else statement is executed, if the else statement is part of that construct.
+The elif statement can be used if code should be executed based on whether a conditional has various characetristiscs.
+When calculating a letter grade from a percentage, the code must display different outcomes for all grades A-F.
+A conditional using if, elif, and else could represent this.
+.SC
+if (grade >= 90):
+	print("A")
+elif (grade >= 80):
+	print("B")
+elif (grade >= 70):
+	print("C")
+elif (grade >= 60):
+	print("D")
+else:
+	print("F")
+.SE
 .PP \" pass statement
+The
+.CW pass
+statement is used as a placeholder for code.
+If there is no code to be executed in a conditional statement, Python's interpreter will not be able to recognize when the statement ends.
+Thus is the reason for the pass statement.
+.SC
+if x:
+print("This causes an error.")
+.SE
+The above code will cause an error because there is no code on the same line or indented below the conditional.
+When writing code, there are scenarios in which a conditional or other construct may be created and left empty for later use.
+The pass statement allows a conditional to not throw an error and not execute any actual code.
+.SC
+if x:
+	pass
+print("This does not cause an error!")
+.SE
 .PP \" ternaries
-.PP \" for and while loops
+The Python language contains a construct for variable assignment using conditionals on one line.
+Ternary structures in the Python language use the if and else keywords.
+Based on whether a conditional is true or false one of two statements will be assigned.
+Ternaries in Python take this form.
+.SC
+var = x if y else z
+.SE
+This form is different from most other ternary statements in programming languages which usually put the condition first and follow it with the assignment values.
+Ternaries may also be used to assign values to parameters in functions.
+In the print function, a ternary could be used to print one of two strings.
+.SC
+print("one" if x == 1 else "two")
+.SE
+.PP \" while loops
+While loops in Python take a similar form to if statements.
+.SC
+while x: pass
+.SE
+As long as the conditional is true, the code one the same line or indented in the while loop will be repeated.
+.PP \" for loops
+For loops are enhanced forms of while loops.
+A Python for loops iterates through the content of a list.
+The next element of the list is assigned to the temporary looping variable at each iteration of the list until the list is done.
+A for loop could be used to print every element of a list on a seperate line.
+.SC
+for x in arr: print(x)
+.SE
+The equivalent code in while loop form would be thus.
+.SC
+iter = 0
+while iter < len(arr):
+	x = arr[iter]
+	print(x)
+	iter += 1
+.SE
+.PP \" range object
+For loops are also used to repeat code for a certain amount of iterations.
+This function is fulfilled with a function called
+.CW range .
+The range function returns an array of numbers in sequence.
+Range takes three parameters, of which two are optional.
+If only one parameter is supplied, the range function will generate a list with the numbers from zero to that parameter (exclusive).
+This parameter is known as the `stop'.
+If two parameters are supplied, the first indicates the minimum numerical value in the list called the `start', and the second parameter is the stop.
+Finally, if three parameters are supplied, the first is the start, the second is the stop, and the third indicates the number by which each value from the start to the stop is incremented by, called the `step'.
+The numbers 1\*-10 (exclusive) only containing every other number in that range could be contained in this range decleercation.
+.SC
+range(1, 10, 2)
+.SE
+Because steps can be negative, it is possible to make a decrementing list.
+This range declearation displays the numbers 10\*-1
+.SC
+range(10, 1, -1)
+.SE
 .PP \" break and continue
-.PP \" multiline strings and multiline comments
+The
+.CW break
+and
+.CW continue
+keywords can be used to manipulate looping cycles.
+The break keyword will exit a loop regardless of whether the conditional is valid.
+The continue keyword will immedieatly enter the next iteration of a loop without executing any of the code below it in the loop.
+.PP \" else statement in loops
+The else keyword has a second meaning when applied to loops.
+When the else keyword is used immediately after a for or while loop, it indicates that a loop has finished successfully without the use of the break keyword.
+The else keyword makes logical sense in this position if a loop is simply thought of as a conditional that executes its code and then repeats itself until its conditional is false.
+In that case the else statement has the same meaning as in the if statement.
+.PP \" enhanced for loop in list
+There exists a version of a for loop that is similar in structure to the ternary conditional statement.
+It fills a list with the results of one line of code executed in a for loop.
+The enhanced for loop is somewhat complicated especially for new programmers.
+It however is extrememly powerful.
+This example of an enhanced for loop fills a list with string versions of the numbers in a range.
+.SC
+x = [str(x) for x in range(10)]
+.SE
+.PP \" functions
+Functions in Python take the following form.
+.SC
+def func(p1, p2="val", *args, **kwargs):
+	# code to be executed
+	return value
+.SE
+A function must first be declared with the
+.CW def
+keyword.
+After the def keyword is the functions name.
+succeeding the function name are the parameters, which are enclosed between parentheses.
+There are four types of parameters that may be present in function definitions.
+The first type, represented by
+.CW p1
+in the above function, must be supplied to the function and may contain variables of any type.
+Variables can be made optional and have a default value, such as
+.CW p2
+in the sample function.
+Args, denoted by a single preceding asterisk, are lists and can take any number of arguments, including zero.
+when supplying a function arguments where an args is a paramenter, it can be like this.
+.SC
+f(1, 2, 3, 4, 5, 6)
+.SE
+Kwargs, denoted by two preceding asterisks, are dictionaries and may include a variable amount of arguments.
+The arguemnts are supplied with an equal sign, with the left operand being the key and the right operand being the value.
+.SC
+f(a=1, b=2, c=3)
+.SE
+After the closing parenthesis, a colon is used to denote where the function body begins.
+Indented is the code that is to be executed when the function is called.
+Following the executed code a function may optionally return a value.
+Values are returned using the
+.CW return
+statement.
 .PP \" best practices: put everything in a function
+The Python language is specifically purposed to allow for programs to be made with virtually no boilerplate.
+However, it is best practice to put everything in a function.
+Keeping all code in functions allows code to be called multiple times and also allows code to be imported into other files without executing automatically.
+Previously, the hello world program for Python was established as
+.SC
+print("Hello, world!")
+.SE
+In the real world, it would be better practice to write this as
+.SC
+def main():
+	print("Hello world!")
+
+if __name__ == "__main__":
+	main()
+.SE
+Now if the code from this file is imported into another file, that file could use the functions from this file without executing any code.
 .	H2 F-Strings
 .PP \" what are f strings?
+A unique structure that demonstrates the simplicity and power of Python is the \*QF String\*U (short for \*Qformat string\*U.
+F-Strings allow a programmer to store types other than strings inside of strings.
+These strings also allow for formatting instructions, like only displaying the first two decimal points of a floating number.
+What adds to an F-strings power is the fact that it can take code and format it.
+This allows for complexities like mathematical operations, spacial formatting, and mathematical operations all inside of a string.
 .PP \" puting variables in strings
-.PP \" float formatting
-.PP \" Whitespace formatting
-.PP \" executing code in strings
+Python F-Strings follow a basic form.
+They are formatted as regular strings with a proceding lowercase
+.I f .
+.SC
+print(f"This is an f string")
+.SE
+Variables or code may be inserted into the f string between curly brackets
+.CW {} ). (
+.SC
+x := 3
+print(f"The value of x is {x}")
+.SE
+Using Walrus case, a variable may be assigned within an F-String.
+This variable may be called at a later point in the string.
+Walrus case allows for the preceding code to be written on one line.
+.SC
+print(f"The value of x is {(x := 3)}")
+.SE
+.PP \" float and decimal formatting
+F-Strings allow for the formatting of floats and integers.
+Formatting instructions are placed after the variable or code and are placed after a colon
+.CW : ). (
+Below is a quick reference for using F-Strings.
+.IP :
+A
+.I colon
+denotes following format instructions.
+With the exception of the equal sign
+.CW = ), (
+All the below symbols must appear after the colon.
+.IP <
+The
+.I "left angle bracket"
+denotes that the variable should be output left-aligned.
+The amount of spaces by which the should be left aligned is determined by a following number.
+.SC
+f"{x:<20}" # left aligns variable x by twenty spaces
+.SE
+.IP >
+The
+.I "right angle bracket"
+denotes a variable should be right aligned.
+As with the left bracket, the amount of spaces is determined by a following number.
+.IP +
+The
+.I plus
+sign forces an outputted number to display a preceding plus sign if that number is positive.
+.IP %
+The
+.I percent
+sign displays a number as a percentage.
+The number is displayed multiplied by 100 and with a succeeding percent sign.
+.IP ,
+The
+.I comma
+operator formats a number with a comma every three digits.
+As an example, if one wished to place comma seperaters at every three digits in an integer, the formatting instruction would be such.
+.SC
+print(f"One million comma delimited is {1000000:,}")
+.SE
+The resulting output is this.
+.SC
+One million comma delimited is 1,000,000
+.SE
+.IP #
+The
+.I hash
+operator denotes the base that a number should be displayed in.
+This operator supports the following bases, which are placed succeeding the # mark and represneted by an individual lowercase letter.
+.DS C
+.TS H
+allbox;
+cB cB cB.
+Letter	Name	Base
+.TH
+.T&
+c c c.
+b	binary	2
+o	octal	8
+x	hexadecimal	16
+.TE
+.DE
+When a base other than decimal (10) is used the formatter places a zero and the base letter preceding the number.
+If one were to attempt to print the number 16 and format it as a hexidecimal number with the hash operator, it would be displayed as
+.CW 0x10 .
+.IP =
+The
+.I equal
+operator is used to display a variable along with its name.
+It has applications in program debugging.
+In a previous example, the number one million was placed into an F-String and formatted.
+In practice, any number within code should be assigned to a varaible so that it is documented in code.
+.SC
+mill = 1000000
+.SE
+The value and variable mill may be printed with the equal sign within an F-String
+.SC
+print(f"{mill=}")
+.SE
+This outputs
+.CW "mill=1000000" .
+Whitespace is preserved around the equal sign.
+This means that if the f string is changed to have preceding and succeeding whitespace,
+.SC
+f"{mill = }"
+.SE
+It may now be outputted as this.
+.SC
+mill = 1000000
+.SE
+Because the equal sign is not after the colon, it allows the value of the variable to be manipluated by any format specifier.
+The output of
+.SC
+print(f"{mill = :,}")
+.SE
+would be
+.SC
+mill = 1,000,000
+.SE
+.IP type-letters
+Type letters can be used to denote whether a variable is an integer, exponent, float, or string.
+Usage of an operator can prevent errors such as displaying an integer number as a float.
+a number preceding a type letter specefies how many digits a number should be aligned with.
+The type letters are d (integer), e (scientific notation), f (float), and s (string).
+.LP \" executing code in strings
+F-Strings are not only capable of displaying variables.
+They may also be used to execute code.
+Mathematical operations, user input, variable assignment, and string multiplication may all occur with F-Strings.
+The below code takes two variables (x and y) and adds them together inside of an F-String and displays hte sum.
+.SC
+x = 1
+y = 2
+print(f"the sum of x and y is {x+y}")
+.SE
+.PP
+String multiplication is also a string operation that may be performed in an F String.
+The multiplication
+.CW * ) (
+operator may be used not only to multiply integers and floats but also can multiply strings.
+The multiplication operation,
+.SC
+"xy" * 3
+.SE
+would produce the string
+.SC
+"xyxyxy"
+.SE
+This operation may also be done in an F-String.
+However, there is one caveat.
+If the double quote operator is used within curly brackets, it may signal to the interpreter that the string is terminated and will thus crash the program.
+Therefore, when a string is within an F-String, the single quote
+.CW \[lq] ) (
+operator should be used.
+The same string multiplication operation from above could be displayed in an F-String using this technique.
+.SC
+print(f"{'xy' * 3}")
+.SE
+.PP \" Muliline strings
+Multiline strings are denoted by triple single or double quotes.
+They are unique in that they preserve whitespacde such as tabs, spaces, and newlines.
+They may also be made into f strings with a preceding lowercase f.
 .	H2 Files
-.PP \" basic file input output
-.PP \" Read a file
-.PP \" create a file
-.PP \" write a file
-.PP \" the importance of file safety
-.	H2 Modules
+.PP \" why?
+When making a program there are scenarios under which data must be stored.
+Thus, a programming language needs facilities to read, write, and create files.
+Python is able to do all these file operations.
+the file reading operation is simple and intuitive.
+It uses various functions to open and close files, as well as perform operaitons on files as a whole.
+.PP \" open function
+The open function is used to open a file stream for manipulation.
+It takes two arguments.
+The first argument is a relative or absolute path to the file.
+The second argument is a string containing a list of file permissions.
+Within this string may be the letters from the following chart.
+.DS C
+.TS H
+allbox;
+cB cB.
+Letter	Permission
+.TH
+.T&
+c c.
+a	append
+b	binary
+r	read
+t	text
+w	write
+x	create
+.TE
+.DE
+As an example, if one wished to open a file named
+.CW file.txt
+for reading, and assign the file to a variable named f.
+.SC
+f = open("file.txt", "r")
+.SE
+For safety, only the permissions needed should be specified in the string.
+If a file meant for reading only were to be given a write permission, it could permanently erase the file or jumble its data.
+All file operations are permanent, so extreme caution should be exercised.
+.PP \" .read(),
+It is extremely expensive to make changes to a file on the disk.
+Therefore, it is a more efficient to only write the changes made to a file after all manipulation is done.
+Therefore, buffers are used when performing file operations.
+A file stream is first open with the
+.CW open()
+function.
+Then, the file is read from the disk into random access memory (RAM).
+The content of the file in memory is called a
+.I buffer .
+A file buffer can be created in Python using the
+.CW .read()
+function.
+This function returns the raw characters within the file in string format.
+In practice, this output is assigned to another variable.
+This variable is then used to make any file manipulation that the programmer sees fit.
+.PP \#.splitlines(), and .readlines()
+If one is only used to reading files in a text editor, they may be accustomed to a file having mutliple \*Qlines\*U.
+Lines do not exist in a file.
+Rather, they are used in editors to represent the newline character.
+While this varies based on operating system, Python can automatically write with to a file with the appropriate newline characters.
+The
+.CW .splitlines()
+function converts a string into an array of strings with newline characters used as delimiters.
+Thus, if one wanted to read a file and and split the files content into a newline delimited array, they could use the
+.CW .read()
+and
+.CW .splitlines()
+functions in conjunction.
+.SC
+f.read().splitlines()
+.SE
+Because this operation is so often used, Python has a special function to replicate this behavior called
+.CW .readlines() .
+The
+.CW .write()
+and
+.CW .writelines()
+functions work like the
+.CW .read()
+and
+.CW .readlines()
+functions but in reverse.
+The write functions take either a string or a list of strings respectively.
+They change the current content of the file to that specified by the string or list of strings.
+.PP \" close function (and "with open" which automatically closes a file stream)
+Whenever a file is open, it uses computing resources from the disk.
+This, as previously mentioned, is resource intensive.
+Thus, it is important to close the file stream whenver it is not beint operated on.
+the
+.CW .close()
+function does exactly this.
+Once a file has been used completely, it may be closed like this.
+.SC
+f.close()
+.SE
+The need to remember whether a file is open or closed can be mitigated with a construct.
+Using the
+.CW with
+keyword, a file may be opened and closed automatically.
+When the with block is completed, the file and variable it was assigned to are deallocated.
+Any file operations such as creating a buffer are done within the with statement.
+This construction using the with statement opens a file and reads it into a buffer.
+.SC
+with open("file.txt", "r") as f:
+	buf = f.read()
+.SE
+This construction using the with statement writes a buffer to a file.
+.SC
+with open("file.txt", "w") as f:
+	f.write(buf)
+.SE
+.	H2 Libraries
 .PP \" How libraries work
+.PP \" the import, from, and as keywords
 .PP \" Math
 .PP \" Random
-.PP \" OS
-.PP \" JSON
-.PP \" RE (regex)
-.	H2 Critiques
-.PP \" Slowness
-.PP \" Types
-.PP \" Idiosyncracies
-.PP \" Reliance on modules
-.PP \" Community (reputation as a beginner language)
-.H2 Practice
-\" Make a program that takes two numbers as input and adds them as output
-\" Make a program that prints 10 random numbers
-\" Make a program that stores user
+.	H2 Practice
+.LP
+For some hands-on experience with Python, complete the following challenges.
+.nr a 0 1
+.IP \n+a
+The first challenge involves using f-strings.
+The program will only be one line of code, that prints an f-string.
+Within that f-string two numbers will be taken as input and added together.
+The sum of those two numbers will be displayed as output.
+.IP \n+a
+The next challenge involves importing modules.
+Ten random numbers between the numbers 1 (inclusive) and 10 (exclusive) will be generated and stored in an list.
+Then that list will be printed.
+.IP \n+a
+The final challenge will involve loops, conditionals, and importation.
+A random number will be generate in the range of 1 (inclusive) and 10,000 (exclusive).
+Then the user will have 20 tries to guess the number.
+If the number the user inputted is the random number generated, a congratulatory message is displayed and the program exits.
+If the user's number is greater than the generated number, a message is displayed telling the user that their number is to high.
+Otherwise a message is displayed telling the user that the number they generated was too low.
+If the user expends all twenty guesses, a message is displayed telling the user that they failed to guess the number in the alloted attempts.
+The generated number that the user failed to guess will also be displayed in that message.
 .bp
 .H "Picking up: Moving to Statically Typed Languages"
-.	H2 "Compilation"
+.PP \" Brief overview
+Thus far only the Python language has been discussed.
+The Python language is quite simliar to psueodocode in its form.
+Types, memory, and program execution are all abstracted away.
+This fact, while making Python a great beginner language, also makes it extremely innefficient.
+Every abstraction that Python makes requires that more computing resources be used.
+.PP \" easy for computer / easy for programmer
+In any programming language, a compromise is struck between being computer friendly and programmer friendly.
+At their core, every coding language eventually becomes machine code, binary electrical pulses in silicon.
+Thus the simplest programming language would be one where a programmer were to write binary ones and zeros in a sequence.
+However, this is practically impossible.
+There just isn't enough time for humans to write machine code.
+Therefore, machine code is abstracted.
+With each abstraction more optimizations are lost.
+Generalizations must be made about operations.
+As the amount of memory and storage available to computers has increased exponentially, programming languages have become more and more abstracted.
+Languages that are \*Qfaster\*U often require the programmer to learn more about the fundamnetal components of a computer such as memory management and logic gates.
+.PP \" Danger
+There exists a danger to using lower level languages.
+In higher level languages, because basic computing constructs are abstracted, there is less risk that a program may enact damge to a computer or result in data loss.
+In lower level languages these tasks are left ot the programmer rather than the compiler or interpreter.
+Many programmers begin using heavilly abstracted high level languages such as JavaScript and Python.
+By the time that these programmers move on to learning and using lower level langauges, they already ahave the foundations to deal with low level obfuscations.
+.	H2 Compilation
 .PP \" Basics of compilation
+Program compilation is the process by which the plaintext programming languages is converted into machine readable code.
+Compilers consist of multiple passes.
+During each pass the words written by the programmer are converted into a more machine readable form.
+While all compilers are different and may have a different number of passes, most follow a similar form.
+First compiler directives are read.
+These are embedded into source code and act as explicitit instructions to the compiler.
+After this the code is split into individual directions, or tokens.
+The tokens are then formed into a synactic tree, which explains the flow of the program.
+This tree is then expressed in terms of object files.
+These object files are then combined into a single tree, written in assembly code.
+From this point the assembly code is converted into their machine instruction counterparts and the porgram is ready to be executed.
 .PP \" Compilation vs interpreted
+There are benefits and disadvantages to using compilation rather than interpretation.
+Interpreted programs do not need to be compiled.
+Because compiled programs are far larger than their source code, programs written in interpreted langauges are far more economical to store.
+Interpreted programs may also attempt to correct errors at run time, which is impossible with already compiled programs.
+Intepreted languages can be more easilly edited and debugged because source code cna be changed without the need for recompilation.
+However, there are some notable drawbacks to intepreted langauges.
+Because interpreted programs are read one line at a time, it is difficult to make optimizations like automatically concatenating strings or adding two integer constants together.
+As the program must be converted into machine code in real time, intepreted programs are more resource intensive.
+Conversely, compiled programs must only convert their source code to machine code once, at compile time.
+Reading a file one line at a time and converting those instructions into byte code has other disatvantages as well.
+At compile time, misleading indentation, out of bounds arrays, and otherwise valid source code that could lead to runtime errors can be warned about.
+This feature is notably not possible in interpreted languages.
 .PP \" Compilation Errors
+There are three basic errors that a programmer may make when writing a program.
+Compiler errors are caught at compile time before a program is run.
+They usually have to do with syntax irregularities and undefined variables and functions.
+Because these errors are caught by the compiler, they are typically the easiest to find and fix.
+The second type of error is a runtime error.
+These involve code that is synactically correct but nevertheless computationally wrong.
+a for loop which attempts to access too high an index of an array is techinally valid from a syntax standpoint but is definitely not a safe or intended behavior.
+Even though such a theoretical program may compile successfuly, this program would likely crash when it was run.
+Some programming languages display helpful messages as to why the program crashed.
+Others will just return an error code specifiying that the program did not terminate successfully.
+Smart compilers emit warnings as well as errors.
+These warnings can be ignored by the programmer if they so please, but warn about common errors and undefined behaviors such as dividing by zero.
+The third type of error is a logic error.
+Logic errors are typically the hardest to spot and do not result in either a compiler error nor a program crash.
+However, logic errors do cause a program to produce unexpected or incorrect output.
+These types of errors can be the result of simple mistakes like not enclosing part of an equation in parentheses.
+The best way to detect logic errors is to includie multiple debugging (print) statements throughout a program to determine the exact point where the error occurs and then studying that point.
+Often it is a good idea to have someone who did not work on that particular function of the program to help fix the error as they can help bring a new perspective and elimnate the tunnel vision a programmer may have.
+.PP \" Compiler optimizations
+Compiler optimizations are ways in which source code can be simplified to both reduce the number of operations and reduce the resources needed to run a program.
+The amount of compiler optimizations present in a compiled program is typically given by an argument to the compiler.
+The level of optimization required is a tradeoff.
+With each level, the program will be come more efficient and less resource intensive.
+However, the more a program is optimized, its binary size will increase and it will be more prone to bugs and errors.
+Some optimizations should always be enabled.
+One place where optimizations are most commonly used is to do addition, subtraction, multiplication, and division on integer constants.
+For example, a line where a variable is declared as
+.SC
+x := 2 * 3
+.SE
+A simple optimization would be to do the multiplication operation at compile time and change the line to
+.SC
+x := 6
+.SE
+A more aggressive form of optimization is loop optimization.
+Loops tend to be resource intensive because they repeat the same code multiple times.
+However, with some clever changes, a loop can be simplified or removed entirely.
+Take, for instance, a piece of code that declares a variable,
+.CW y .
+This variable is to be assigned every value in a for loop, 1-100, and then printed to the user.
+.SC
+y := 0
+while y < 100
+	y := y + 1
+print y
+.SE
+This code is unecessarily complicated, and has an extra 100 operations more than it needs.
+A loop optimization could totally remove the loop and reduce the code to two lines.
+Because y is garunteeed to have a final value of 100, y can be declared as equalling 100 and then printed.
+.SC
+y := 100
+print y
+.SE
 .	H2 "Explicit Typing"
-.PP \" implicit vs explicit typing
-.PP \" type mismatches
-.PP \" Clarification of code
-.PP \" limitiations compared to dynamic typing
-.	H2 "Speed"
+.PP \" strong vs weak typing
+There are two approaches to combing the type of a variable.
+In weak typing, when variables are used in operations such as addition, variables implicitly change type as to avoid errors.
+While this results in less runtime errors, this can cause undefined behavior not specified by the programmer.
+In strongly typed languages, variables do not implicitly change type and type changes must be specified by the programmer.
+In most languages a combination of implicit and explicit type changes are used.
+When doing operations together on integers and floats, implicit typing may be used to allow the answer to be of either type integer or type float.
+There are also
+.I casts ,
+which allow the programmer to specify that a variable be interpreted as another type.
+Casts must be to a valid type.
+If one tries to cast a large integer type to a small integer type, this may result in an error as the small integer type does not have enough space to store the larger integer.
+.PP \" implicit vs explicit type decleration
+Programming languages have two approaches to declearing the type of a vairable.
+In dynamic typing, a variable is declared without its type.
+Some languages must still declare the variable using a keyword such as
+.CW let
+or
+.CW var .
+Other languages, however, use
+.I duck
+typing.
+Duck typing allows a programmer to declare a variable in a simple assignment.
+This method is the simplist way to declare a variable for a programmer, but very taxing on the machine.
+Duck typed languages are impossible to compile because the variable and its decleration must be created in real time.
+The method of typing used in most compiled languages is explicit typing.
+When a variable is declared, its type is also declared.
+This type cannot change for the duration of the variable's existance.
+When a variable is declared, additional information, such as whether its value may be changed, if it is accessible from anywhere in the program, and whether it is local (only lasts for the duration of a function) or global (lasts for the duration of a program) all must be specified by the programmer.
+Again, this is a tradeoff of programmer effort and computing resources.
+An upside to explicit typing is that errors from type inferencing or decleration may be spotted at compile time.
+Some languages, like Microsoft's TypeScript\[tm], exist solely for this reason.
+TypeScript was created to add explicit typing to JavaScript, the programming langauge used for internet sites.
+By using TypeScript, which compiles to JavaScript, companies have been able to fix many errors in their web applications that result from weak and implict typing.
+.	H2 Speed
 .PP \" What makes compiled languages faster
 .PP \" compile time Optimizations
 .PP \" type inferencing is time and resource intensive
-.	H2 "Difficulty"
+.	H2 Difficulty
 .PP \" verbosity compared to languages like python
 .PP \" whitespace doesnt matter
 .PP \" Time to write a program vs time program takes to execute argument
@@ -1157,15 +1782,17 @@ Print statments can also output integers, floats, dictionaries, and arrays.
 .PP \" Bracketing
 .PP \" Variable assignment and reserved keywords
 .PP \" Output and error
-.PP \" Input
-.PP \" Math (floor, ceil, sqrt, pow, random)
-.PP \" primitive boxing (Integer, Float, Double)
-.PP \" arrays and arraylists
 .PP \" if, else, ternaries
 .PP \" Switch/case
-.PP \" while, for, and foreach
-.PP \" random with math.random
+.PP \" while, for
 .PP \" public static void main (string args)
+.	H2 Modules
+.PP \" Input
+.PP \" Math (floor, ceil, sqrt, pow, random)
+.PP \" random with math.random
+.PP \" primitive boxing (Integer, Float, Double)
+.PP \" arrays and arraylists
+.PP \" foreach
 .	H2 "Methods and Classes"
 .PP \" Declaring a method
 .PP \" Overloading
@@ -1175,15 +1802,15 @@ Print statments can also output integers, floats, dictionaries, and arrays.
 .PP \" Public, private, protected
 .PP \" Constructors
 .PP \" Overriding with super
-.	H2 "Javadocs"
+.	H2 Javadocs
 .PP \" javadocs instead of comments
 .PP \" Writing javadocs
 .PP \" @param, @return, @see
 .PP \" embedding html into javadocs
-.	H2 "Compilation"
+.	H2 Compilation
 .PP \" javac
 .PP \" java
-.	H2 "Practice"
+.	H2 Practice
 .bp
 .H "Shell Script: A Pragmatic Language"
 .PP \" what is an itneractive shell
@@ -1292,6 +1919,30 @@ delim on
 .bp
 .H "Exercise Keys"
 .	H2 Python
+.nr a 0 1
+.EX \n+a
+print(f"The sum is {int(input('Enter a number: '))+int(input('Enter another number: '))}.")
+.ED
+.EX \n+a
+from random import randrange
+rlist = [randrange(1, 10) for x in range(10)]
+print(rlist)
+.ED
+.EX \n+a
+from random import randrange
+rndnum = randrange(1, 10000)
+for x in range(20):
+    guess = int(input("Guess a number between 1 and 10,000: "))
+    if guess == rndnum:
+        print("Congratulations! you guessed the number.")
+        break
+    elif guess > rndnum:
+        print("You guessed too high.")
+    else:
+        print("You guessed too low.")
+else:
+    print(f"You failed to guess the number {rndnum} in 10 tries")
+.ED
 .	H2 Java
 .	H2 C
 .TC
