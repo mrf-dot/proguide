@@ -1038,6 +1038,25 @@ This is a
 multiline comment.
 """
 .SE
+.PP \" Mathematical operators
+Python provides several operators to perform basic mathematical operations.
+.DS C
+.TS H
+allbox;
+cB cB.
+Symbol	Operation
+.TH
+.T&
+c c.
++	Addition and string concatenation
+-	Subtraction
+*	Multiplication and string repetition
+**	Exponentiation (eg ten squared is \f[C]10**2\f[])
+/	Division (float)
+//	Floor division (integer)
+%	Modulus (ie remainder of a quotient)
+.TE
+.DE
 .PP \" types
 Types are not explicitly declared in Python.
 Based on the value provided to a variable, a type will be inferred.
@@ -1164,13 +1183,13 @@ The elif statement can be used if code should be executed based on whether a con
 When calculating a letter grade from a percentage, the code must display different outcomes for all grades A-F.
 A conditional using if, elif, and else could represent this.
 .SC
-if (grade >= 90):
+if grade >= 90:
 	print("A")
-elif (grade >= 80):
+elif grade >= 80:
 	print("B")
-elif (grade >= 70):
+elif grade >= 70:
 	print("C")
-elif (grade >= 60):
+elif grade >= 60:
 	print("D")
 else:
 	print("F")
@@ -1481,7 +1500,7 @@ This operation may also be done in an F-String.
 However, there is one caveat.
 If the double quote operator is used within curly brackets, it may signal to the interpreter that the string is terminated and will thus crash the program.
 Therefore, when a string is within an F-String, the single quote
-.CW \[lq] ) (
+.CW ' ) (
 operator should be used.
 The same string multiplication operation from above could be displayed in an F-String using this technique.
 .SC
@@ -1603,9 +1622,80 @@ with open("file.txt", "w") as f:
 .SE
 .	H2 Libraries
 .PP \" How libraries work
+In many scenarios, the task a programmer is trying to perform has already been done in an optimized form.
+Using existing code for functions can speed up the development process and make bugs less prevalent.
+Python modules allow a programmer to \*Qimport\*U existing code implementaitons into their own programs.
 .PP \" the import, from, and as keywords
+There exists certain keywords that allow a programmer to use existing libraries in their code.
+The import keyword specifies exactly what libaries will be made available.
+To say, import the random module, this line would do so.
+.SC
+import random
+.SE
+Once a module is imported its functions or classes can be called with the dot
+.CW . ) (
+operator.
+To recall the randrange function, which generates a random number within two inclusive numbers, the name of the module random would need to preceed the function name randrange.
+This code generates a random number between one and ten inclusive.
+.SC
+random.randrange(1, 10)
+.SE
+In some cases a programmer may need only one function from a module.
+Instead of importing the whole libary, the from keyword allows a programmer to import a specific function or functions into the program.
+To only import the randrange function, one could write this.
+.SC
+from random import randrange
+.SE
+Then the module with a dot operator may be omitted.
+.SC
+randrange(1, 10)
+.SE
+Using the cleany star
+.CW * ), (
+All functions, classes, and variables in a module are accessible in code without using the module namespace.
+.SC
+from random import *
+.SE
+This is strongly discouraged, because it can cause naming ocnflicts and typically adds many variables, functions, and classes that will never be used.
+The as keyword changes the name of the namespace of the module.
+The as keyword has already been previously used to assign itself to a file.
+One useage of the as keyword would be to assign a shorter name to an often used module.
+Because rnd is a common way programmers abbreviate the word random, a Python programmer may wish to make the random module callable by this shorter name.
+This request is possible with the as keyword.
+.SC
+import random as rnd
+.SE
 .PP \" Math
+The math module is used to perform mathematical operations that are not available with the default math operators (+,-,/,*,**,%).
+The math operator contains the constant variables e, inf, nan, pi, and tau.
+It also contains functions to perform trigonometry and algebra such as sin(), sqrt(), and gcd().
+In some instances these functions add to functionality already native in Python.
+Using only default Python operators, the square root of a number can be found by using the exponentiation operator of the number and 0.5
+.SC
+n ** 0.5
+.SE
+The sqrt function provides this functionality as a function rather than as a clever workaround.
 .PP \" Random
+The random module contains functions for performing random operations.
+Inititially it is worth noting that the random module is not
+.I cryptographically
+random.
+The random module is great for use in simulations that require many random numbers but do not require them to be cryptographically random.
+It should not, however, be used in places where security is needed such as password hashing.
+For applications requireing cryptographically random numbers, the secrets module should be used.
+The secrets module contains many of the same functions of the random module but in a cryptographically secure form.
+Below are listed some of the most commonly used functions in the random module.
+.IP choice(arr)
+The choice function returns a random element from a list.
+.IP shuffle(arr)
+The shuffle function takes a list as input and randomizes the order of the content in the list.
+.IP randbytes(n)
+The randbytes produces n amount of randomly generated bytes.
+.IP random()
+The random function returns a float between 0.0 (inclusive) and 1.0 (exclusive).
+.IP "randrange(start, stop=None, step=1)"
+The randrange function returns a random number between start (inclusive), stop (exclusive), and divisible by the step.
+If stop is not provided, its value is substituted by step.
 .	H2 Practice
 .LP
 For some hands-on experience with Python, complete the following challenges.
@@ -1768,14 +1858,39 @@ An upside to explicit typing is that errors from type inferencing or decleration
 Some languages, like Microsoft's TypeScript\[tm], exist solely for this reason.
 TypeScript was created to add explicit typing to JavaScript, the programming langauge used for internet sites.
 By using TypeScript, which compiles to JavaScript, companies have been able to fix many errors in their web applications that result from weak and implict typing.
-.	H2 Speed
-.PP \" What makes compiled languages faster
-.PP \" compile time Optimizations
-.PP \" type inferencing is time and resource intensive
+.PP \" Speed
+The main characteristic that seperates explicit and implicit typing is speed.
+When types are declared explicitly, the compiler must perform less operations to allocaate memory and characterisitcs of a variable.
+Because implicit typing requires that the compiler assign types to variables in real time, implicit typing is impossible to impliment in compiled langauges.
+Explici typing puts the burden of allocating memory to variables on the programmer rather than on the compiler (and by proxy the computer).
+In almost all cases this tradeoff is worth it, especially if a program is used thousands or millions of times as would be the case in a production environment.
 .	H2 Difficulty
 .PP \" verbosity compared to languages like python
+In general, compiled languages tend to be more verbose than interpreted ones.
+This is due to the fact that many tasks that aret typically designated to the interpreter, like typecasting and memory management, are instead placed on the programmer.
+Languages that use object oriented programming (oop) like Java and C# have added verbosity because they use many namespaces and classes.
+OOP associates operations that might be done n other languages using operators and functions into classes and objects.
+Ths method of programming is somewhat more organizaed for large scale projects but in smaller scale applications is hideously overcomplicated.
+OOP languages also favor verbosity over short names as it makes the code self documenting.
 .PP \" whitespace doesnt matter
+A difficult element for new programmers being introuduced to more traditional programming languages is that whitespace is optional.
+Statmeents end based on the precense of a line ending character such as a semicolon rather than a newline.
+Instead of indentation brackets are used to denote conditional execution.
+This allows for interesting concepts to become realized such as else for loops, as demonstrated below in C code.
+.SC
+if (x == 1) {
+	puts("X is 1");
+} else for (int i = 0; i < x; i++) {
+	printf("i is %d\\n", i);
+}
+.SE
+Some of the most common syntax errors are forgetting an ending bracket or a semicolon at the end of a statement, issues which are much less prevalent in languages that use whitespace as delimiters.
 .PP \" Time to write a program vs time program takes to execute argument
+An argument against the verbosity and apparant complexity of compiled and low level languages is that it takes more time for the programmer to write a program than for the program to execute.
+This argument is valid only in certain cases.
+If, as an example, one wants to find the answer to a math problem, a short program written in an interpreted langauge could work.
+However, if a program is meant for business applciations and will be executed millions of times and needs to be able to run a variety of computers, it should probably be made in a faster language even if it would be more work and time for the programmer.
+It is up to the programmer to make this tradeoff and decide if making a program in a lower level language is worth it for their needs.
 .bp
 .H "Java: Object Oriented Programming"
 .	H2 "Main Method"
@@ -1785,7 +1900,7 @@ By using TypeScript, which compiles to JavaScript, companies have been able to f
 .PP \" if, else, ternaries
 .PP \" Switch/case
 .PP \" while, for
-.PP \" public static void main (string args)
+.PP \" psvm
 .	H2 Modules
 .PP \" Input
 .PP \" Math (floor, ceil, sqrt, pow, random)
