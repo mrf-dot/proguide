@@ -32,15 +32,7 @@ What this book is meant to do is to get one on the write track and give one the 
 .PP
 But why am I qualified? Because I have experienced firsthand the trials and tribulations involved with learning how to program.
 The summer before my freshman year in high school, I decided that I wanted to learn to code.
-I made a list of languages I wanted to learn:
-.CW HTML ,
-.CW CSS ,
-.CW JavaScript ,
-.CW Python ,
-.CW Java ,
-.CW C# ,
-and
-.CW C .
+I made a list of languages I wanted to learn: HTML, CSS, JavaScript, Python, Java, C#, and C.
 My goal was to learn all those languages in one Summer, with no prior programming experience.
 I did not even know what differentiated any of the aforementioned languages.
 I had only heard of them in name.
@@ -48,13 +40,7 @@ Many would agree that this is too lofty a goal.
 However I was young, na\[:i]ve, and confused.
 .PP
 Suffice it to say that I did not reach my goal at the end of the Summer.
-By the end of the Summer I had learned
-.CW HTML ,
-a bit of
-.CW CSS ,
-.CW JavaScript ,
-and
-.CW Python .
+By the end of the Summer I had learned HTML, a bit of CSS, JavaScript, and Python.
 I was nowhere near proficient, but I knew of the basic if-else, while, for, and function constructs.
 More importantly, I had fallen in love with the sensation of programming.
 To me, it was as satisfying as solving a puzzle or putting together a Lego set.
@@ -1500,11 +1486,11 @@ This operation may also be done in an F-String.
 However, there is one caveat.
 If the double quote operator is used within curly brackets, it may signal to the interpreter that the string is terminated and will thus crash the program.
 Therefore, when a string is within an F-String, the single quote
-.CW ' ) (
+.CW \[aq] ) (
 operator should be used.
 The same string multiplication operation from above could be displayed in an F-String using this technique.
 .SC
-print(f"{'xy' * 3}")
+print(f"{\[aq]xy\[aq] * 3}")
 .SE
 .PP \" Muliline strings
 Multiline strings are denoted by triple single or double quotes.
@@ -1895,6 +1881,45 @@ It is up to the programmer to make this tradeoff and decide if making a program 
 .H "Java: Object Oriented Programming"
 .	H2 "Main Method"
 .PP \" Bracketing
+The first characteristic that is new to programmers starting out in Java from a language like Python is Java's use of brackets.
+Brackets are used to enclose multiple commands to be executed.
+If only one statement is executed, brackets may be ommited in most structures.
+However, if multiple commands are executed based on a conditional brackets must be used.
+There are several different styles of bracketing, each with their own advantages and disatvantages.
+.IP Allman
+.SC
+if (x)
+{
+	statement 1;
+	statement 2;
+}
+else
+{
+	statement 3;
+	statement 4;
+}
+.SE
+.IP K&R
+.SC
+if (x) {
+	statement 1;
+	statement 2;
+} else {
+	statement 3;
+	statement 4;
+}
+.SE
+.IP Lisp
+.SC
+if (x)
+	{statement 1;
+	statement 2;}
+else
+	{statement 3;
+	statement 4;}
+.SE
+.LP
+In this book, the K&R style of bracketing will be used, as it is the de-facto standard in most programming languages.
 .PP \" Variable assignment and reserved keywords
 .PP \" Output and error
 .PP \" if, else, ternaries
