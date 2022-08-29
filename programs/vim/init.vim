@@ -97,7 +97,7 @@ augroup END
 augroup Prose
 	autocmd!
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man,*.mla set filetype=groff
-	autocmd BufRead,BufNewFile *.txt,*.md,*.wiki set textwidth=79
+	autocmd BufRead,BufNewFile *.txt,*.md, set textwidth=79
 	autocmd BufRead,BufNewFile *.md,*.wiki set nowrap
 augroup END
 
