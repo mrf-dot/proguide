@@ -115,7 +115,7 @@ Use whatever is comfortable and inspiring.
 The type of computer a hacker needs varies based on the what they intend to do with it.
 I am not an expert on building PCs, so I am not qualified to give recommendations on specific parts to be used to build a computer.
 For a simple setup it might be optimal to get a laptop instead, especially if the prospective programmer is on a budget or must get a laptop anyways for school or work.
-Particularly if one wishes to use Unix-like operating systems such as Linux or *BSD, the Lenovo Thinkpad\[tm]\** is prized.
+Particularly if one wishes to use UNIX-like operating systems such as Linux or *BSD, the Lenovo Thinkpad\[tm]\** is prized.
 .FS
 Particularly old models such as the X220.
 .FE
@@ -128,14 +128,21 @@ $10 sup 9$ bytes\**
 .FS
 A byte is eight bits
 .FE
-of RAM.
+of RAM\**.
+.FS
+Random Access Memory
+.FE
 If a computer can play Minecraft with a steady frame rate, it is more than capable to write and compile programs on.
 .H2 "Operating System"
 .PP
-A Unix-like operating system is ideal for programming.
-They have native access to the latest GNU tools for programming are by default equipped with command line editors and programs.
+A UNIX-like operating system is ideal for programming.
+They have native access to the latest GNU\**
+.FS
+GNU's Not UNIX
+.FE
+tools for programming are by default equipped with command line editors and programs.
 Programming on the command line in an operating system such as Windows\[tm] requires the installation of a host of software and a bit of tweaking.
-If one must program on Windows\[tm], there is a bootstrap guide which will simulate a Unix environment to the farthest extent without requiring a switch to Unix or administrator privileges\**.
+If one must program on Windows\[tm], there is a bootstrap guide which will simulate a UNIX environment to the farthest extent without requiring a switch to UNIX or administrator privileges\**.
 .FS
 .pdfhref -W https://github.com/mrf-dot/linuxize-school-pc
 .FE
@@ -854,7 +861,6 @@ while i < sizeof tictactoe
 	print \[aq]\\n\[aq]
 	i := i + 1
 .SE
-.	H2 Lists
 .	H2 Pointers
 .PP \" Intro
 Where are variables stored?
@@ -890,6 +896,24 @@ Great care should be exercised whenever pointers are used.
 If available, a construct in a language that abstracts away memory manipulation should be used.
 .bp
 .H "Important Constructs"
+.	H2 Lists
+.PP
+Lists are structures that are an alternative to arrays.
+Unlike arrays, they do not need to be initialized as containing a certain number of elements.
+Lists are made up of objects that contain the value of a variable and a pointer to the next element in the list.
+Lists are considered to have a dynamic size because they can have as many elements as the memory available.
+.PP
+Because lists are dynamic structures, they require certain functions to be available to manipulate them.
+As standard, most lists will have functions to add, remove, and access certain elements.
+These functions will do the complicated work of creating objects to append or prepend to the list, or to insert at a certain \*Qindex\*U.
+.SC
+list.append(1)
+list.append(2)
+list.append(3)
+.SE
+.SC
+1\[->]2\[->]3
+.SE
 .	H2 Random
 .PP \" Why is randomness needed
 Randomness is a frequently used concept in computer science.
@@ -1659,10 +1683,7 @@ Therefore, buffers are used when performing file operations.
 A file stream is first open with the
 .CW open()
 function.
-Then, the file is read from the disk into RAM\**.
-.FS
-Random Access Memory
-.FE
+Then, the file is read from the disk into RAM
 The content of the file in memory is called a
 .I buffer .
 A file buffer can be created in Python using the
@@ -1833,7 +1854,7 @@ Otherwise a message is displayed telling the user that the number they generated
 If the user expends all twenty guesses, a message is displayed telling the user that they failed to guess the number in the allotted attempts.
 The generated number that the user failed to guess will also be displayed in that message.
 .bp
-.H "Picking up: Moving to Statically Typed Languages"
+.H "Picking up: Moving to Low Level Languages"
 .PP \" Brief overview
 Thus far only the Python language has been discussed.
 The Python language is quite similar to pseudocode in its form.
@@ -1937,11 +1958,8 @@ This argument is valid only in certain cases.
 If, as an example, one wants to find the answer to a math problem, a short program written in an interpreted language could work.
 However, if a program is meant for business applications and will be executed millions of times and needs to be able to run a variety of computers, it should probably be made in a faster language even if it would be more work and time for the programmer.
 It is up to the programmer to make this trade-off and decide if making a program in a lower level language is worth it for their needs.
-.bp
-.H "Java: Object Oriented Programming"
-.	H2 "Main Method"
 .PP \" Bracketing
-The first characteristic that is new to programmers starting out in Java from a language like Python is Java's use of brackets.
+The first characteristic that is new to programmers starting out in lower level languages from a language like Python is their use of brackets.
 Brackets are used to enclose multiple commands to be executed.
 If only one statement is executed, brackets may be omitted in most structures.
 However, if multiple commands are executed based on a conditional brackets must be used.
@@ -1980,6 +1998,9 @@ else
 .SE
 .LP
 In this book, the K&R style of bracketing will be used, as it is the de-facto standard in most programming languages.
+.bp
+.H "Java: Object Oriented Programming"
+.	H2 "Main Method"
 .PP \" Reserved keywords
 In Java, certain words\**
 .FS
@@ -2304,9 +2325,65 @@ An ArrayList that holds instances of the Temperature class would be initialized 
 ArrayList<Temperature> tempArray = new ArrayList<Temperature>();
 .SE
 .	H2 Modules
+.PP \" import
+Java has many external functionalities available under its module system.
+These modules are located under a certain namespace.
+The Scanner module is not in the standard Java base language.
+However, it can be accessed under the
+.CW java.util
+namespace.
+Thus to access the scanner in Java, its namespace must be explicitly called.
+.SC
+java.util.Scanner scan = new java.util.Scanner;
+.SE
+This method of calling namespaces is clunky.
+If one were to open two or three scanners, the code would begin to look hopelessly obfuscated.
+The
+.CW import
+keyword is used to access namespaces in code without explicit naming.
+If a module is imported, it can be called without the need to write its full path name.
+.SC
+import java.util.Scanner;
+Scanner scan = new Scanner(System.in);
+.SE
 .PP \" Input
+The module for accessing file streams in Java is called
+.CW java.util.Scanner .
+The scanner class is initialized with the file stream being passed.
+To access standard input, the module will have System.in passed to its constructor.
+.SC
+Scanner scan = new Scanner(System.in);
+.SE
+The Scanner module has two basic methods:
+.I hasNext
+and
+.I next .
+The next methods return the next instance of a certain type or pattern.
+The hasNext methods return whether a Boolean value based on if there is an instance of a type or pattern within the stream.
+This allows for type safety when gettin user input, such as assigning the value of the input to an integer variable.
+.SC
+if (scan.hasNextInt())
+	int i = scan.nextInt();
+.SE
 .PP \" Math (floor, ceil, sqrt, pow, random)
+The Math class is natively in the Java namespace.
+It has functions to perform multiple mathematical functions, such as floor division, logarithms, and trigonometry.
+The Math class contains hundreds of different functions, which may be accessed with the dot operator.
+.SC
+Math.floor(4.3) // returns 4.0
+.SE
 .PP \" random with math.random
+Another feature included in the Math class is RNG\**.
+.FS
+Random Number Generation
+.FE
+The
+.CW Math.random()
+function returns a random floating point number rainging from 0.0 to 1.0 (exclusive).
+The float multiplication method explained in section 5.2 is used to generate numbers in range.
+.SC
+(int) (Math.random() * 10 + 1) // Integer 1-10
+.SE
 .PP \" primitive boxing (Integer, Float, Double)
 .PP \" arrays and arraylists
 .PP \" foreach
