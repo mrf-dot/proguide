@@ -837,7 +837,7 @@ Depending on the language with or without a null byte
 .FE
 and then printing that array variable.
 .SC
-s := [ 104, 101, 108, 108, 111, 000 ]
+s := [104, 101, 108, 108, 111, 000]
 print s
 .SE
 .PP \" 2D arrays (Matrix)
@@ -1057,7 +1057,6 @@ Delving into Python requires virtually no knowledge of the base components of a 
 Python is also a safe language.
 If one were to write a faulty program in C, it could cause a segmentation fault or worse permanently corrupt the computer's memory.
 Python programs are interpreted and have extensive safety measures programmed in, so the risk to the programmers software and hardware are virtually zero.
-.	H2 "Pythonic Code"
 .PP \" Pythons whitespace
 One of the most unique elements of Python is its use of whitespace.
 This difference can be difficult to adapt to for experienced programmers.
@@ -2000,7 +1999,6 @@ else
 In this book, the K&R style of bracketing will be used, as it is the de-facto standard in most programming languages.
 .bp
 .H "Java: Object Oriented Programming"
-.	H2 "Main Method"
 .PP \" Reserved keywords
 In Java, certain words\**
 .FS
@@ -2220,6 +2218,21 @@ public Temperature(char system, int degree) {
 	this.degree = degree;
 }
 .SE
+.PP \" toString
+The
+.CW toString()
+method is the representation of a class that is used when it is output.
+It by default is a hash code where the class is stored in memory.
+The user can define their own
+.CW toString()
+method to display what they wish to display when the class is represented.
+.SC
+public String toString() {
+	return "System " + system + " Degree " + degree;
+}
+.SE
+.PP \" .equals
+\m[red]FILL THIS IN ABOUT JAVA EQUALS METHOD\m[]
 .PP \" Declaring a method
 In Java, methods are declared with their return type in a similar fashion to how variables are declared.
 Methods, unlike variables, can have a
@@ -2365,6 +2378,8 @@ This allows for type safety when gettin user input, such as assigning the value 
 if (scan.hasNextInt())
 	int i = scan.nextInt();
 .SE
+.PP \" Date and time (LocalDate)
+\m[red]FILL IN ABOUT JAVA METHODS TO GET CURRENT DATE AND TIME\m[]
 .PP \" Math (floor, ceil, sqrt, pow, random)
 The Math class is natively in the Java namespace.
 It has functions to perform multiple mathematical functions, such as floor division, logarithms, and trigonometry.
@@ -2379,23 +2394,189 @@ Random Number Generation
 .FE
 The
 .CW Math.random()
-function returns a random floating point number rainging from 0.0 to 1.0 (exclusive).
+function returns a random floating point number ranging from 0.0 to 1.0 (exclusive).
 The float multiplication method explained in section 5.2 is used to generate numbers in range.
 .SC
-(int) (Math.random() * 10 + 1) // Integer 1-10
+(int) (Math.random() * 10 + 1); // Integer 1-10
 .SE
 .PP \" primitive boxing (Integer, Float, Double)
-.PP \" arrays and arraylists
+There are several operations that are commonly performed on primitive types.
+Some common functionalities would be checking if a char is uppercase, obtaining the string representation of an int, or converting a string representation of a double into a double typed variable.
+The primitive boxed typed in Java are
+.CW Boolean \**,
+.FS
+boolean
+.FE
+.CW Byte \**,
+.FS
+byte
+.FE
+.CW Character \**,
+.FS
+char
+.FE
+.CW Float \**,
+.FS
+float
+.FE
+.CW Integer \**,
+.FS
+int
+.FE
+.CW Long \**,
+.FS
+long
+.FE
+.CW Short \**,
+.FS
+short
+.FE
+and
+.CW Double \**.
+.FS
+double
+.FE
+The functions associated with the box types are accessible with the dot operator.
+.SC
+Character.isUpper(\[aq]C\[aq]);
+.SE
+Box types can be initialized by passing their respective primitive type to their constructor.
+.SC
+Float f = new Float(2.34);
+.SE
+Once a box type variable is initialized, it will implicitly use the functions within that type.
+.SC
+f.toString();
+.SE
+.PP \" arrays
+Arrays are a type of object in Java.
+Thus, they have implicit functions and properties that may be accessed with the dot operator.
+Arrays are typed as a primitive or class type followed by open and closed square brackets\**.
+.FS
+.CW []
+.FE
+Arrays are also initialized with a certain size.
+This can be done implicitly by providing the contents of an array surrounded by curly brackets\**
+.FS
+.CW {}
+.FE
+and seperated by commas\**
+.FS
+.CW ,
+.FE
+at initilization.
+.SC
+int[] digits = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+.SE
+If the array's contents are not initially provided, an instance of an array object must be created with the new keyword, passing the size of the array within the square brackets.
+.SC
+float[] decimals = new float[10];
+.SE
+Once initialized, the array's size is stored in the
+.CW .length
+property.
+Array elements can be accessed by putting the index in square brackets after the variable name.
+.SC
+System.out.println(digits[0]); // Prints 1
+.SE
+Using this method, a variable at a specific index can be modified.
+.SC
+digits[1] = 9;
+.SE
+.PP \" ArrayLists
+ArrayLists are lists that still retain some properties of arrays.
+They are accessible under the namespace
+.CW java.util.ArrayList .
+Like arrays, they can only contain one type.
+However, elements can be infinitely appended or inserted.
+ArrayLists can only hold classes.
+This requires the use of primitive boxes if primitives are to be used with ArrayLists.
+They can be initialized by putting the class to be stored in angle brackets.
+.SC
+ArrayList<Integer> al = new ArrayList<Integer>();
+.SE
+ArrayLists cannot be directly assigned variables.
+Thus, they require the use of object specific functions to be manipulated.
+.IP "\f[C].add(int index, E element)\f[]"
+Insert an element at a specific index of the list and shifts all following indices to the right.
+.IP "\f[C].add(E element)\f[]"
+Append an element to the ArrayList.
+.IP "\f[C].remove(int index)\f[]"
+Remove an element from a certain index of the list and shift all following elements to the left.
+.IP "\f[C].get(int index)\f[]"
+Return the value of the element at a certain index.
+.IP "\f[C].set(int index, E element)\f[]"
+Reinitialize the value of a certain list index.
+.IP "\f[C].size()\f[]"
+Return the amount of items in the list.
+.LP
+ArrayLists, because of their versatility and dynamic sizing, are often used in place of more traditional arrays.
 .PP \" foreach
-.	H2 Javadocs
-.PP \" Javadocs instead of comments
-.PP \" Writing Javadocs
-.PP \" @param, @return, @see
-.PP \" embedding html into javadocs
+The for-each loop is a construct in Java that allows for more concise iteration through arrays and ArrayLists.
+It automatically iterates through a list or array object from the first to the last element.
+It first has a decleration of a temporary variable to store each elemenet of the list, then, after a colon\**
+.FS
+.CW :
+.FE
+it contains the list that is to be iterated upon.
+The elements passed to the temporary variable are copies of the original variable.
+Thus, modifing the temporary variable does nothing to the original variable's value.
+.SC
+for (int i: digits)
+	i += 3
+.SE
+The functionalities of the for-each loop are useful for objectives such as finding the average of an array of integers.
+.SC
+int sum = 0;
+for (int i: digits)
+	sum += i;
+float average = sum / digits.length;
+System.out.println("The average of digits is " + average);
+.SE
 .	H2 Practice
+.LP
+For some hands-on experience with Java, complete the following challenges.
+.PP
+Create a class called
+.CW Book .
+Within it create a constructor to initialize two properties.
+.BU
+\f[C]title\f[]
+.BU
+\f[C]author\f[]
+.LP
+If the title is less than two characters long, print out a message that the title is short.
+If the author is greater than thirty characters, print out a message that the author's name is long.
+Create the following get and set methods within the class.
+.BU
+.CW getTitle()
+.BU
+.CW getAuthor()
+.BU
+.CW "setTitle(String title)"
+.BU
+.CW "setAuthor(String author)"
+.LP
+In addition, create a method called
+.CW amountOfBooks() ,
+which returns the amount of times an instance of the Book class has been created\**.
+.FS
+Hint: reread the section on static variables
+.FE
+.PP \" Add/remove/insert/get/set pages
+\m[red]FILL IN ABOUT REQUIRED PAGE METHODS\m[]
+.PP \" Journal Class
+Extend the Book class to a subclass called
+.CW Journal ,
+which will add the date (provided by the user) to the first line of a page. this is done by overriding the page method to add another parameter for the day of the week (string).j
+Make the inherited addPage method inaccessible to a user outside of the class (review the section on permissions).
+There are two additional overloaded addPage methods which add parameters for the month and year.
+Prepended to every page will be the day of the week (optionally followed by the month and year) with a newline character. Finally, make a constructor that takes a book as an argument and converts it into a Journal. This then iterates through all pages of the book and adds them to the journal, while also adding the current date with a newline appended to the top of each page with the
+.CW java.time.LocalDate.now()
+method.
 .bp
 .H "Shell Script: A Pragmatic Language"
-.PP \" what is an itneractive shell
+.PP \" what is an interactive shell
 .	H2 "Languages"
 .PP \" What are the different shell scripting languages (Bourne shell, bash, ZSH, fish, PowerShell)
 .PP \" POSIX compliant shell
@@ -2496,10 +2677,14 @@ delim on
 .PP \" C Strings
 .PP \" String operations
 .	H2 Practice
+.LP
+For some hands-on experience with C, complete the following challenges.
+.nr a 0 1
+.IP \n+a
 .bp
 .H "Resources"
-.LP
-.B "Truth table" \**
+.SH
+Truth table\f[R]\**\f[]
 .FS
 A truth table asserts the result of a logical operation in multiple circumstances.
 .FE
@@ -2517,8 +2702,8 @@ c c c c c c c c.
 0	0	1	1	0	0	0	1
 .TE
 .DE
-.LP
-.B "De Morgan's law proofs" \**
+.SH
+De Morgan's law proofs\f[R]\**\f[]
 .FS
 De Morgan's laws are logical proofs that stipulate that the compliment of not A or B is equivalent to not A and not B and the compliment of not A and B is equivalent to not A or not B.
 .FE
@@ -2536,8 +2721,8 @@ $x~\[mo]~\[no]A~\[OR]~x~\[mo]~\[no]B$	$x~\[mo]~\[no]A~\[AN]~x~\[mo]~\[no]B$
 $\[3d]~\[no] left ( A~\[ca]~B right ) = ~\[no]A~\[cu]~\[no]B$	$\[3d]~\[no] left ( A~\[cu]~B right ) = ~\[no]A~\[ca]~\[no]B$
 .TE
 .DE
-.LP
-.B Setup
+.SH
+Setup
 .PP
 Programming setups are a happy compromise between comfort and professionalism.
 Keep in mind that you will be spending hours in hacking sessions, so make sure that the chair you use will be comfortable to sit in for long periods of time.
@@ -2547,8 +2732,8 @@ Linux and Git creator Linus Torvalds has a setup in which he uses his computer w
 .FS
 .pdfhref -W https://www.youtube.com/watch?v=SOXeXauRAm0
 .FE
-.LP
-.B Keyboard
+.SH
+Keyboard
 .PP
 The keyboard is the primary way that a programmer interacts with a computer.
 It is highly recommended to get a keyboard with high key travel.
