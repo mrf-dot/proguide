@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+
 class Book {
 	private String title;
 	private String author;
-	private int pages = 0;
+	ArrayList<String> pages = new ArrayList<String>();
 	private static int books = 0;
+
 	public Book(String title, String author) {
 		this.title = title;
 		this.author = author;
@@ -33,20 +36,27 @@ class Book {
 		return books;
 	}
 
-	public int length() {
-		return pages;
-	}
-}
-
-class Journal extends Book {
-	public Journal(String title, String author) {
-		super(title, author);
+	public void addPage(String page) {
+		pages.add(page);
 	}
 
-	public Journal(Book other) {
-		super(other.getTitle(), other.getAuthor());
-		// add pages below here
+	public void insertPage(String page, int index) {
+		pages.add(index, page);
 	}
 
-	private void addPage(String page) {}
+	public String removePage(int index) {
+		return pages.remove(index);
+	}
+
+	public String getPage(int index) {
+		return pages.get(index);
+	}
+
+	public void setPage(String page, int index) {
+		pages.set(index, page);
+	}
+
+	public int pages() {
+		return pages.size();
+	}
 }

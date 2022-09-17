@@ -56,8 +56,6 @@
 	set updatetime=300
 " Give more concise messages
 	set shortmess+=acs
-" Don't show autocompletion menu
- 	set pumheight=1
 " Set plugin home directories
 	let g:nvim_system_wide = 1
 	let g:coc_data_home = stdpath('config').'/coc'
@@ -96,8 +94,8 @@ augroup END
 
 augroup Prose
 	autocmd!
-	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man,*.mla set filetype=groff
-	autocmd BufRead,BufNewFile *.txt,*.md, set textwidth=79
+	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
+	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man,*.md,*.wiki set textwidth=79
 	autocmd BufRead,BufNewFile *.md,*.wiki set nowrap
 augroup END
 
@@ -105,14 +103,14 @@ augroup CShortcuts
 	autocmd!
 	autocmd FileType c imap _f for (int i = 0; i < z; i++) {<ESC>Fzcw
 	autocmd FileType c imap _g if (argc == 1) {
-				\<CR>fputs(HELP, stderr);
+				\<CR>help();
 				\<CR>return 1;
 				\<CR>}
  				\<CR>int c;
  				\<CR>while ((c = getopt(argc, argv, "z")) != -1)
  				\<CR>switch(c) {
  				\<CR>case 'h':
- 				\<CR>fputs(HELP, stdout);
+ 				\<CR>help();
  				\<CR>break;
  				\<CR>case '?':
  				\<CR>default:

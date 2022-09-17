@@ -18,10 +18,12 @@
 .LP
 \\$1
 .nr PS 9.5
-.SC
+.BD
+.fam C
 ..
 .de ED
-.SE
+.fam T
+.DE
 .nr PS 12
 ..
 .EQ
@@ -36,31 +38,29 @@ Mitch Feigenbaum
 .PP
 One of the most difficult parts of learning to program is knowing where to begin.
 There are hundreds of languages, computers, and programs that promise to teach one the magical art of giving instructions to machines.
-Any of these programs that promise to teach one to program \*QIn just two weeks\*U or some similar timeline are definitively a scam. With the advent of the internet, one can learn to be an expert computer hacker\**
+Any of these programs that promise to teach one to program \*QIn just two weeks\*U or some similar timeline are definitively a scam. With the advent of the internet, one can learn to be an expert computer hacker for free on your own time.\**
 .FS
 The word `hacker' is often used by the media and non-technical sources to mean someone who, often illegally, infiltrates computer systems.
 This definition may be attributed to a `cracker' rather than a `hacker'.
 The true definition of a hacker is one who is highly skilled at programming a computer and not just knowledgeable in theoretical computer science.
 .FE
-for free on your own time by yourself.
 What this book is meant to do is to get one on the write track and give one the tools to succeed.
 .PP
-On my GitHub\**,
+On my GitHub, I have posted many of the projects which I have made for fun.\**
 .FS
 The link to my GitHub, as well as many other resources to help on the journey to become a hacker, are in the resources section.
 .FE
-I have posted many of the projects which I have made for fun.
-In the repository labeled `Personal'\**,
-.FS
-.pdfhref -W https://github.com/mrf-dot/Personal.git
-.FE
-which is reserved for miscellaneous personal code that cannot itself warrant its own repository, I have written the following description.
+In the repository labeled `Personal', which is reserved for miscellaneous
+personal code that cannot itself warrant its own repository, I have written the following description.
 .QP
 These are some personal files I have.
 I will probably upload here periodically.
 There is no real structure to this.
 Just stuff I made.
-Some of it is junk, some of it is brilliant, and some of it is unexplainable.
+Some of it is junk, some of it is brilliant, and some of it is unexplainable.\**
+.FS
+.pdfhref -W https://github.com/mrf-dot/Personal.git
+.FE
 .LP
 The best way to learn computer science is not in a classroom setting; it is by example.
 That is why this book is structured in such a way.
@@ -91,7 +91,7 @@ It takes months, even years to truly learn and master.
 When you are reading through this book, do not be afraid to read slowly or reread sections.
 Computer science is a difficult subject contrary to what many code boot camps would have you believe.
 Included in the sections are interactive exercises that will assist in gaining a more in depth understanding of each language.
-Hopefully this book will help avoid some of the common pitfalls and errors that befall many aspiring programmers\**.
+Hopefully this book will help avoid some of the common pitfalls and errors that befall many aspiring programmers.\**
 .FS
 Source code in this book will be clearly marked. Source code may be differentiated because it is offset and centered on the page, in a constant width font.
 .FE
@@ -115,34 +115,29 @@ Use whatever is comfortable and inspiring.
 The type of computer a hacker needs varies based on the what they intend to do with it.
 I am not an expert on building PCs, so I am not qualified to give recommendations on specific parts to be used to build a computer.
 For a simple setup it might be optimal to get a laptop instead, especially if the prospective programmer is on a budget or must get a laptop anyways for school or work.
-Particularly if one wishes to use UNIX-like operating systems such as Linux or *BSD, the Lenovo Thinkpad\[tm]\** is prized.
-.FS
-Particularly old models such as the X220.
-.FE
+Particularly if one wishes to use UNIX-like operating systems such as Linux or *BSD, the Lenovo Thinkpad\[tm], especially older models such as the X220, are prized.
 This is due to the lack of proprietary firmware such as EFI and secure/fast boot which impede operating systems other than Windows\[tm].
 The specifications do not matter very much, especially if light editors such as vim are used.
-There is no need to spring for twenty gigabytes\**
+There is no need to spring for twenty gigabytes of RAM.\**\**\**
 .FS
-$10 sup 9$ bytes\**
+A gigabyte is $10 sup 9$ bytes
 .FE
 .FS
 A byte is eight bits
 .FE
-of RAM\**.
 .FS
-Random Access Memory
+RAM | Random Access Memory
 .FE
 If a computer can play Minecraft with a steady frame rate, it is more than capable to write and compile programs on.
 .H2 "Operating System"
 .PP
 A UNIX-like operating system is ideal for programming.
-They have native access to the latest GNU\**
+They have native access to the latest GNU tools for programming.\**
 .FS
-GNU's Not UNIX
+GNU | GNU's Not UNIX
 .FE
-tools for programming are by default equipped with command line editors and programs.
 Programming on the command line in an operating system such as Windows\[tm] requires the installation of a host of software and a bit of tweaking.
-If one must program on Windows\[tm], there is a bootstrap guide which will simulate a UNIX environment to the farthest extent without requiring a switch to UNIX or administrator privileges\**.
+If one must program on Windows\[tm], there is a bootstrap guide which will simulate a UNIX environment to the farthest extent without requiring a switch to UNIX or administrator privileges.\**
 .FS
 .pdfhref -W https://github.com/mrf-dot/linuxize-school-pc
 .FE
@@ -150,19 +145,15 @@ If one must program on Windows\[tm], there is a bootstrap guide which will simul
 In computer circles oft heard are praises of UNIX and its offspring Linux, BSD, and MacOS.
 The UNIX environment may seem strange to newcomers.
 One principal of the UNIX environment which seems particularly odd is that everything is a file.
-Programs are a file, directories\**
-.FS
-Folders
-.FE
-are files, and even hard drives are files.
+Programs are files, directories are files, and even hard drives are files.
 This idiom however is in the interest of simplicity.
 By stating that every object is a file, it allows for a programmer to specify the creation of a file without giving it superfluous information.
 Information such as type, permissions, and creation are stored in structures called inodes, which link to the physical file on the drive.
-Programs on UNIX are simple and general by design, and can yield specific input through mechanisms such as piping and conditional execution. This book will not go in depth on the specifics of the UNIX operating system or the shell, but the AT&T Documentary \*QThe UNIX Operating System\*U\**
+Programs on UNIX are simple and general by design, and can yield specific input through mechanisms such as piping and conditional execution. This book will not go in depth on the specifics of the UNIX operating system or the shell, but the AT&T Documentary \*QThe UNIX Operating System\*U
+is a great reference for starting out in UNIX.\**
 .FS
 .pdfhref -W https://www.youtube.com/watch?v=tc4ROCJYbm0
 .FE
-is a great reference for starting out in UNIX.
 .H2 Editor
 .PP
 The editor is where a programmer spends most of their time.
@@ -170,9 +161,9 @@ The method in which a program is typically written is edit\[->]compile\[->]debug
 Most time spent in the editor is not used on strictly writing code; rather, the time is spent looking for errors, consolidating existing code, and planning out the program.
 Thus, a good editor must not only have functionality to type characters into a file but also to jump between different parts of the file and make repetitive edits such as deleting entire lines or changing all instances of a particular variable name.
 In my experience the best editor for programming is VI, as it has native functionality to quickly perform repetitive actions through muscle memory.
-Many new programmers start out using an IDE\**
+Many new programmers start out using an IDE.\**
 .FS
-Integrated Development Environment
+IDE | Integrated Development Environment
 .FE
 IDEs may be useful for large projects, but can be confusing or misleading to those new to writing code.
 It is best to start out using an editor such as Vim, and, if the functionality of an IDE is truly needed, switching to an IDE later.
@@ -185,29 +176,23 @@ The mouse is never used in vim.
 Rather, different modes are entered to modify text.
 In my opinion, Vim is the best editor for programming.
 It allows a level of modification at such high speed that it is sure to give improvements over simple editors like notepad, and its free and open source.
-If you wish to use VI, I recommend using Neovim\**
+If you wish to use VI, I recommend using Neovim as this version tends to be the most up to date and features many features out of the box that must be specified with a build of Vim.\**
 .FS
 .pdfhref -W https://neovim.io
 .FE
-as this version tends to be the most up to date and features many features out of the box that must be specified with a build of Vim.
 It also has some features enabled by default like syntax highlighting and language servers that must specifically be enabled with Vim.
 Using a VI based editor is a learning curve, but those who put in the effort unequivocally do not regret it.
-If you wish to use Neovim, install it using the instructions for your particular operating system\**.
-Once Neovim is installed, you may learn how to use it with the following shell\**
+If you wish to use Neovim, install it using the instructions for your particular operating system.\**
+.FS
+My aforementioned Linuxize PC guide for Windows\[tm] installs Neovim and my configuration automatically.
+.FE
+Once Neovim is installed, you may learn how to use it with the following shell command and configuration.\**
 .FS
 The `shell' is the language used when you open up a command prompt.
-.FE
-command and configuration\**.
-.FS
-My aforementioned Linuxize PC guide for Windows\[tm] installs Neovim and my configuration automatically
-It contains shortcuts for the C, Java, and HTML programming languages.
 .FE
 .SC
 nvim -c Tutor
 .SE
-.FS
-.pdfhref -W https://raw.githubusercontent.com/mrf-dot/deb-bootstrap/main/nvim/init.vim
-.FE
 .	H2 Interpeter
 .PP
 An interpreter is best thought of as a filter.
@@ -281,7 +266,7 @@ Loops tend to be resource intensive because they repeat the same code multiple t
 However, with some clever changes, a loop can be simplified or removed entirely.
 Take, for instance, a piece of code that declares a variable,
 .CW y .
-This variable is to be assigned every value in a for loop, 1-100, and then printed to the user.
+This variable is to be assigned every value in a for loop, 1\*-100, and then printed to the user.
 .SC
 y := 0
 while y < 100
@@ -298,11 +283,11 @@ print y
 .	H2 Streams
 .PP
 There are three standard ways in which a programmer and a computer can communicate with each other.
-.I stdout \**
+.I stdout
+is the way in which a program can give feedback to the programmer.\**
 .FS
-Standard Output
+stdout | Standard Output
 .FE
-is the way in which a program can give feedback to the programmer.
 A print statement gives the programmer an insight into what the program is doing.
 It has many uses.
 One use might be to print the result of a complex equation.
@@ -317,9 +302,9 @@ print "Hello, world!"
 .SE
 .PP
 Print statements may also be used to access the second stream,
-.I stderr \**.
+.I stderr .\**
 .FS
-Standard Error
+stderr | Standard Error
 .FE
 The stream stderr
 is intended for problems that may arise in a program.
@@ -327,24 +312,19 @@ An example usage of stderr would be to warn a user that a program has been force
 .PP
 Print statements not only take in letters and numbers but also formatting commands.
 There are many characters that are difficult to represent in their true form.
-Characters like newlines,\**
+Characters like newlines, tabs, backspace, and return can all be represented by escapes.\**\**
 .FS
-Pressing enter
+A newline is equivalent to pressing the enter key.
 .FE
-tabs, backspace, and return\**
 .FS
-Go to the start of the line
+The return goes to the first character of the current line.
 .FE
-can all be represented by escapes.
-In most programming languages, escapes are represented by the backslash\**.
-.FS
-.CW \[rs]
-.FE
+In most programming languages, escapes are represented by the backslash character.
 .PP
 Programs can obtain data from the user by accessing the third stream,
-.I stdin \**.
+.I stdin .\**
 .FS
-Standard Input
+stdin | Standard Input
 .FE
 The stdin stream contains the keystrokes a user types on the keyboard.
 User input is needed in interactive programs, such as search engines or games.
@@ -369,11 +349,10 @@ There are three basic logical operators that are used often in programming.
 The
 .I not
 operator negates the statement.
-It checks if the compliment\**
+It checks if the compliment of a logical statement is true.\**
 .FS
-Opposite
+Compliment is used to mean opposite in theoretical logic.
 .FE
-of a logical statement is true.
 .IP \[OR]
 The
 .I or
@@ -389,22 +368,21 @@ By combining these operators together, two additional operators emerge.
 These operators are less used but nevertheless applicable and useful.
 .IP \[c+]
 The
-.I xor\**
+.I xor
+operator returns true only if both statements have a complimentary value.\**
 .FS
-$p \[c+] q = (p \[AN] \[no] q) \[OR] (\[no] p \[AN] q)$
+$p \[c+] q \[mo] (p \[AN] \[no] q) \[OR] (\[no] p \[AN] q)$
 .FE
-operator returns true only if both statements have a complimentary value.
 .IP \[<>]
 The
-.I xand \**
+.I xand
+operator returns true only if both statements are the same value.\**\**
 .FS
-$p \[<>] q = (p \[AN] q) \[OR] (\[no]p \[AN] \[no]q)$
+$p \[<>] q \[mo] (p \[AN] q) \[OR] (\[no]p \[AN] \[no]q)$
 .FE
-operator\**
 .FS
 The xand operator is also referred to as the xnor operator as it is the logical compliment of xor.
 .FE
-returns true only if both statements are the same value.
 .	H2 If-Else
 .PP
 The if-else construct executes code based on the value of a logical statement.
@@ -492,18 +470,17 @@ through code.
 .PP
 The most basic of these is
 .I goto .
-All looping structures implicitly use gotos, as this is what code becomes when it is compiled down to assembly\**
+All looping structures implicitly use gotos, as this is what code becomes when it is compiled down to assembly language.\**
 .FS
 Assembly language is the instructions that a particular CPU uses to give bytecode instructions to the central processing unit.
 .FE
-language.
 Goto statements consist of a label and a looping point.
 .SC
 LABEL:
 print "word"
 goto LABEL
 .SE
-This will print the string \*Qword\*U repeatedly until the program is terminated.
+This preceding code segment will print the string \*Qword\*U repeatedly until the program is terminated.
 In most real world examples, an if statement would be used to determine whether to goto the label or continue through the rest of the code.
 Why would a programmer wish to repeat code?
 One reason would be to check for input errors.
@@ -564,10 +541,10 @@ This issue is the reason why functions exist.
 .PP
 Let's say that a programmer is coding a program to do trigonometric operations.
 They notice that they compute the Pythagorean theorem multiple times throughout the program and wish to simpify their code.
-First they start with the equation itself\**.
-.FS
-$c = sqrt { a sup 2 + b sup 2 }$
-.FE
+First they start with the equation itself.
+.EQ
+c = sqrt { a sup 2 + b sup 2 }
+.EN
 The equation takes the input of the two legs of a right triangle (a and b) and outputs the length of the hypotenuse (c).
 .PP \" Definition
 The first part of a function is its name.
@@ -670,10 +647,10 @@ Functions that call themselves are called
 .I recursive .
 In mathematics, there are many algorithms that are recursive.
 The most famous of these is the Fibonacci Sequence.
-The Fibonacci sequence is calculated by adding the two previous numbers in the sequence together\**.
-.FS
-$roman F sub n = roman F sub n-1 + roman F sub n-2$
-.FE
+The Fibonacci sequence is calculated by adding the two previous numbers in the sequence together.
+.EQ
+roman F sub n = roman F sub n-1 + roman F sub n-2
+.EN
 The sequence starts with the numbers 0 and 1.
 In equation form, the Fibonacci sequence is denoted as such.
 In pseudocode, the Fibonacci sequence could be written like this, where n is the index in the sequence.
@@ -721,12 +698,12 @@ The Boolean type ensures that a variable cannot overflow and thus become a false
 .PP \" Character
 Another usage of integer types that intends to represent another unit is the character, or
 .CW char .
-.I ASCII \**
+.I ASCII
+is a common way that text is represented.\**
 .FS
-The American Standard Code for Information Interchange
+ASCII | American Standard Code for Information Interchange
 .FE
-is a common way that text is represented.
-It uses the values 1-256 to represent characters.
+ASCII uses the values 1\*-256 to represent characters.
 For example, if a programmer wished to represent the letter `A' in ASCII, they could assign the numerical value 65 to an integer variable.
 The print function for the language they were programming in would interpret the integer 65 to represent the letter `A' and then print it to stdout or stderr.
 Words, sentences, and paragraphs might contain thousands of these integers in sequence.
@@ -765,17 +742,14 @@ in the Python interpreter
 .SE
 Why does the interpreter have such an issue with this seemingly simple task?
 It all boils down to a difference in bases.
-Humans for the most part use a base ten system, where the numbers 0-9 are available for counting.
-Computers, however, only have two numbers available for counting\**.
-.FS
-0 and 1
-.FE
+Humans for the most part use a base ten system, where the numbers 0\*-9 are available for counting.
+Computers, however, only have two numbers available for counting, 0 and 1.
 Therefore, when numbers are stored by a computer they are rounded in binary format rather than decimal.
 In binary 0.3 is converted into a repeating number.
 It should be noted that the same situation happens in decimal numbers as well.
 The fractional number $7 over 9$ is evaluated to the repeating decimal $0. 7 bar$.
 .PP
-There are several ways to combat round-off errors\**.
+There are several ways to combat round-off errors.\**
 .FS
 In computer science lingo, issues in the accuracy of floating numbers are called round-off errors.
 .FE
@@ -819,11 +793,8 @@ Knowing the size of the array is important, because a program could crash or exe
 .PP \" Strings
 Strings are a type of array that hold integers.
 However, when printed in their char format, they form ASCII characters.
-Strings are often initialized with double quotes\**.
-.FS
-"
-.FE
-They are often terminated with a null byte\**.
+Strings are often initialized with the double quote character.
+They are terminated with a null byte.\**
 .FS
 A null byte is represented by the ASCII value zero.
 .FE
@@ -831,11 +802,7 @@ A null byte is represented by the ASCII value zero.
 s := "hello"
 print s
 .SE
-Which is equivalent to declaring an array of characters into s\**
-.FS
-Depending on the language with or without a null byte
-.FE
-and then printing that array variable.
+Which is equivalent to declaring an array of characters into s and then printing that array variable.
 .SC
 s := [104, 101, 108, 108, 111, 000]
 print s
@@ -878,24 +845,16 @@ The way that arrays are allocated and looped through in memory is actually quite
 When the array is initialized, the computer allocates memory in a row for all the elements in the array.
 When array elements are accessed, what the code in reality is doing is adding index provided to the initial elements location in memory and incrementing that location by the index multiplied by the amount of memory provided to the type of each array element.
 This means that
-.SC
-arr[i]
-.SE
-is actually this\**.
-.FS
-Pointers are commonly referred to by the asterisk, which has many uses in programming languages besides multiplication.
-What the asterisk means is decided based on context.
-.FE
-.SC
-*(arr + i)
-.SE
+.CW arr[i]
+is equivalent to
+.CW "\[->](arr + i)" .
 .PP \" Danger
 Pointers access raw memory without any safety in between.
 Thus, accessing and manipulating pointers can be dangerous.
 Great care should be exercised whenever pointers are used.
 If available, a construct in a language that abstracts away memory manipulation should be used.
 .bp
-.H "Important Constructs"
+.H Constructs
 .	H2 Lists
 .PP
 Lists are structures that are an alternative to arrays.
@@ -928,11 +887,11 @@ Unfortunately, truly random numbers are extremely expensive on computing resourc
 These truly random sources do have an important purpose though.
 They are used as the seeds for random number generators.
 .PP \" pseudo random number generators
-.I PRNG \**
+.I PRNG
+are used to generate multiple random numbers.\**
 .FS
-Pseudo Random Number Generator
+PRNG | Pseudo Random Number Generator
 .FE
-are used to generate multiple random numbers.
 Because obtaining truly random numbers is so computationally expensive, it is more efficient to use an algorithm to generate unpredictable numbers.
 PRNG algorithms generate numbers that, without knowing the seed, are impossible to predict.
 With that noted, if the seed is known, the random number can also be predicted.
@@ -975,11 +934,11 @@ while i > 0
 .PP \" Cryptographic vs non-cryptographic
 One critical distinction between randomization algorithms is whether the algorithm is or is not cryptographically secure.
 A
-.I CSPRNG \**
+.I CSPRNG
+contains a sufficient amount of unpredictability to be used in secure applications like encryption.\**
 .FS
-Cryptographically Secure Pseudo Random Number Generator
+CSPRNG | Cryptographically Secure Pseudo Random Number Generator
 .FE
-contains a sufficient amount of unpredictability to be used in secure applications like encryption.
 A critical element of CSPRNGs is that they must be seeded with a truly random number.
 A novice and na\[:i]ve approach to seeding PRNGs is to use the current time.
 This approach is not cryptographically secure because, even if the PRNG has a very extensive algorithm, that algorithm can be predicted if the seed is known.
@@ -1047,9 +1006,9 @@ Python is a language that is unique among established programming languages.
 Its quirks include using whitespace instead of brackets, extensive formatted strings, and being a solely interpreted language.
 It is the fastest growing programming language and used in a number of commercial and free software applications.
 Python is also notable for its simplicity.
-Programs can be made in Python with virtually no boilerplate\**.
+Programs can be made in Python with virtually no boilerplate.\**
 .FS
-Code that must be present in a program but does not impact uniquely program execution
+Boilerplate is code that must be present in a program but does not impact uniquely program execution.
 .FE
 .PP \" First language
 Because of Python's use of whitespace and lack of boilerplate, it is often used as a beginner language.
@@ -1090,11 +1049,7 @@ It also looks far less cluttered and verbose.
 Comments in Python come in two varieties.
 Single line comments are delimited by a newline character
 thus they may only take up one line.
-They begin with a hash\**
-.FS
-.CW #
-.FE
-character.
+They begin with a hash character.
 .SC
 # This is a single line comment
 .SE
@@ -1103,10 +1058,7 @@ Multiline comments technically do not exist in Python.
 However, there is a trick to make them work.
 If a multiline string is not assigned to a variable, it will be ignored by the interpreter.
 This property can be used to create multiline comments.
-Multiline comments are delimited by three double quotes\**.
-.FS
-.CW \[dq]\[dq]\[dq]
-.FE
+Multiline comments are delimited by three double quote characters.
 .SC
 """
 This is a
@@ -1136,31 +1088,13 @@ c c.
 Types are not explicitly declared in Python.
 Based on the value provided to a variable, a type will be inferred.
 There are six main types that will be discussed in this book:
-.CW bool \**,
-.FS
-Boolean
-.FE
-.CW int \**,
-.FS
-Integers
-.FE
-.CW float \**,
-.FS
-Floats
-.FE
-.CW str \**,
-.FS
-Strings
-.FE
-.CW list \**,
-.FS
-Lists
-.FE
+.CW bool ,
+.CW int ,
+.CW float ,
+.CW str ,
+.CW list ,
 and
-.CW dict \**.
-.FS
-Dictionaries
-.FE
+.CW dict .
 .PP \" Variable Assignment
 Variable assignment is practically the same as in pseudocode.
 A variable is simply set to equal a value.
@@ -1172,11 +1106,7 @@ y = 0.5 # declares a float
 z = "A sentence." # declares a string
 .SE
 It should be noted that a string may be between single or double quotes.
-However, it is best practice to maintain one style of string declaration\**
-.FS
-Either single or double quotes
-.FE
-throughout a program.
+However, it is best practice to maintain one style of string declaration throughout a program.
 Variables may also be reassigned to be different types.
 A variable initialized as an integer could be reinitialized to be a string and vice versa.
 .SC
@@ -1196,15 +1126,7 @@ True + True
 .SE
 yields the integer two.
 .PP \" Arrays
-Lists can be declared in Python using the left bracket\**
-.FS
-.CW [
-.FE
-and right bracket\**
-.FS
-.CW ]
-.FE
-characters.
+Lists can be declared in Python using the left square bracket and right square bracket characters.
 They can contain any combination of types, which is another unique property of Python.
 A single list can contain integers, floats, strings, dicts, and other lists all at once.
 The elements of a list are separated by commas.
@@ -1273,10 +1195,7 @@ If statements in Python are represented by the
 and
 .CW else
 keywords.
-The conditional portion of the statement is terminated with a colon\**
-.FS
-.CW :
-.FE
+The conditional portion of the statement is terminated with a colon.
 A simple if statement in Python takes this form.
 .SC
 if x: #do y
@@ -1372,12 +1291,12 @@ If only one parameter is supplied, the range function will generate a list with 
 This parameter is known as the `stop'.
 If two parameters are supplied, the first indicates the minimum numerical value in the list called the `start', and the second parameter is the stop.
 Finally, if three parameters are supplied, the first is the start, the second is the stop, and the third indicates the number by which each value from the start to the stop is incremented by, called the `step'.
-The numbers 1-10 (exclusive) only containing every other number in that range could be contained in this range deceleration.
+The numbers 1\*-10 (exclusive) only containing every other number in that range could be contained in this range deceleration.
 .SC
 range(1, 10, 2)
 .SE
 Because steps can be negative, it is possible to make a decrementing list.
-This range declaration displays the numbers 10-1
+This range declaration displays the numbers 10\*-1
 .SC
 range(10, 1, -1)
 .SE
@@ -1469,10 +1388,7 @@ They are formatted as regular strings with a preceding lowercase
 .SC
 print(f"This is an f string")
 .SE
-Variables or code may be inserted into the f string between curly brackets\**
-.FS
-.CW {}
-.FE
+Variables or code may be inserted into the f string between left curly bracket and right curly bracket characters.
 .SC
 x := 3
 print(f"The value of x is {x}")
@@ -1492,11 +1408,7 @@ Below is a quick reference for using F-Strings.
 A
 .I colon
 denotes following format instructions.
-With the exception of the equal sign\**
-.FS
-.CW =
-.FE
-All the below symbols must appear after the colon.
+With the exception of the equal sign All the below symbols must appear after the colon.
 .IP <
 The
 .I "left angle bracket"
@@ -1550,11 +1462,10 @@ d, n	decimal	10
 x	hexadecimal	16
 .TE
 .DE
-When a base other than decimal\**
+When a base other than decimal is used the formatter places a zero and the base letter preceding the number.\**
 .FS
-10
+Decimal is base 10.
 .FE
-is used the formatter places a zero and the base letter preceding the number.
 If one were to attempt to print the number 16 and format it as a hexadecimal number with the hash operator, it would be displayed as
 .CW 0x10 .
 .IP =
@@ -1608,11 +1519,7 @@ print(f"the sum of x and y is {x+y}")
 .SE
 .PP
 String multiplication is also a string operation that may be performed in an F String.
-The multiplication operator\**
-.FS
-.CW *
-.FE
-may be used not only to multiply integers and floats but also can multiply strings.
+The asterisk character may be used not only to multiply integers and floats but also can multiply strings.
 The multiplication operation,
 .SC
 "xy" * 3
@@ -1624,11 +1531,7 @@ would produce the string
 This operation may also be done in an F-String.
 However, there is one caveat.
 If the double quote operator is used within curly brackets, it may signal to the interpreter that the string is terminated and will thus crash the program.
-Therefore, when a string is within an F-String, the single quote\**
-.FS
-.CW \[aq]
-.FE
-operator should be used.
+Therefore, when a string is within an F-String, the single quote character should be used.
 The same string multiplication operation from above could be displayed in an F-String using this technique.
 .SC
 print(f"{\[aq]xy\[aq] * 3}")
@@ -1759,11 +1662,7 @@ To say, import the random module, this line would do so.
 .SC
 import random
 .SE
-Once a module is imported its functions or classes can be called with the dot\**
-.FS
-.CW .
-.FE
-operator.
+Once a module is imported its functions or classes can be called with the dot operator.
 To recall the randrange function, which generates a random number within two inclusive numbers, the name of the module random would need to precede the function name randrange.
 This code generates a random number between one and ten inclusive.
 .SC
@@ -1779,11 +1678,7 @@ Then the module with a dot operator may be omitted.
 .SC
 randrange(1, 10)
 .SE
-Using the cleany star\**,
-.FS
-.CW *
-.FE
-All functions, classes, and variables in a module are accessible in code without using the module namespace.
+Using the asterisk character, all functions, classes, and variables in a module are made accessible without using the module namespace.
 .SC
 from random import *
 .SE
@@ -1797,14 +1692,14 @@ This request is possible with the as keyword.
 import random as rnd
 .SE
 .PP \" Math
-The math module is used to perform mathematical operations that are not available with the default math operators.\**
+The math module is used to perform mathematical operations that are not available with the native math operators.\**
 .FS
-+,-,/,*,**,%
+Python native math operators: +,-,/,*,**,%
 .FE
 The math operator contains the constant variables e, inf, nan, pi, and tau.
 It also contains functions to perform trigonometry and algebra such as sin(), sqrt(), and gcd().
 In some instances these functions add to functionality already native in Python.
-Using only default Python operators, the square root of a number can be found by using the exponentiation operator of the number and 0.5
+Using only native Python operators, the square root of a number can be found by using the exponentiation operator of the number and 0.5
 .SC
 n ** 0.5
 .SE
@@ -1906,15 +1801,13 @@ Duck typed languages are impossible to compile because the variable and its decl
 The method of typing used in most compiled languages is explicit typing.
 When a variable is declared, its type is also declared.
 This type cannot change for the duration of the variable's existence.
-When a variable is declared, additional information, such as whether its value may be changed, if it is accessible from anywhere in the program, and whether it is local\**
+When a variable is declared, additional information, such as whether its value may be changed, if it is accessible from anywhere in the program, and whether it is local or global all must be specified by the programmer.\**\**
 .FS
-Only lasts for the duration of a function
+Local variables only last for the duration of a function.
 .FE
-or global\**
 .FS
-Lasts for the duration of a program
+Global variables lasts for the duration of a program.
 .FE
-all must be specified by the programmer.
 Again, this is a trade-off of programmer effort and computing resources.
 An upside to explicit typing is that errors from type inferencing or declaration may be spotted at compile time.
 Some languages, like Microsoft's TypeScript\[tm], exist solely for this reason.
@@ -1930,11 +1823,10 @@ In almost all cases this trade-off is worth it, especially if a program is used 
 .PP \" verbosity compared to languages like python
 In general, compiled languages tend to be more verbose than interpreted ones.
 This is due to the fact that many tasks that are typically designated to the interpreter, like casting and memory management, are instead placed on the programmer.
-Languages that use OOP\**
+Languages that use OOP like Java and C# have added verbosity because they use many namespaces and classes.\**
 .FS
-Object Oriented Programming
+OOP | Object Oriented Programming
 .FE
-like Java and C# have added verbosity because they use many namespaces and classes.
 OOP associates operations that might be done n other languages using operators and functions into classes and objects.
 This method of programming is somewhat more organized for large scale projects but in smaller scale applications is hideously overcomplicated.
 OOP languages also favor verbosity over short names as it makes the code self documenting.
@@ -1957,6 +1849,7 @@ This argument is valid only in certain cases.
 If, as an example, one wants to find the answer to a math problem, a short program written in an interpreted language could work.
 However, if a program is meant for business applications and will be executed millions of times and needs to be able to run a variety of computers, it should probably be made in a faster language even if it would be more work and time for the programmer.
 It is up to the programmer to make this trade-off and decide if making a program in a lower level language is worth it for their needs.
+.	H2 "Brackets"
 .PP \" Bracketing
 The first characteristic that is new to programmers starting out in lower level languages from a language like Python is their use of brackets.
 Brackets are used to enclose multiple commands to be executed.
@@ -1973,7 +1866,6 @@ if (x)
 else
 {
 	statement 3;
-	statement 4;
 }
 .SE
 .IP K&R
@@ -1983,7 +1875,6 @@ if (x) {
 	statement 2;
 } else {
 	statement 3;
-	statement 4;
 }
 .SE
 .IP Lisp
@@ -1992,19 +1883,17 @@ if (x)
 	{statement 1;
 	statement 2;}
 else
-	{statement 3;
-	statement 4;}
+	{statement 3;}
 .SE
 .LP
 In this book, the K&R style of bracketing will be used, as it is the de-facto standard in most programming languages.
 .bp
 .H "Java: Object Oriented Programming"
 .PP \" Reserved keywords
-In Java, certain words\**
+In Java, certain words are not available for variable assignment.\**
 .FS
-abstract assert boolean break byte case catch char class const continue default double do else enum extends false final finally float for goto if implements import instanceof int interface long native new null package private protected public return short static strictfp super switch synchronized this throw throws transient true try void volatile while
+Java Keywords: abstract assert boolean break byte case catch char class const continue default double do else enum extends false final finally float for goto if implements import instanceof int interface long native new null package private protected public return short static strictfp super switch synchronized this throw throws transient true try void volatile while
 .FE
-are not available for variable assignment.
 These are known as reserved keywords.
 They represent an element in Java processed by the compiler as an instruction.
 .PP \" Variable assignment
@@ -2014,10 +1903,7 @@ There are eight primitives available to the programmer in Java.
 The primary differences between these data types is the amount of bytes of memory they can hold.
 They range from the
 .CW boolean
-type, which may only hold one bit\**,
-.FS
-A binary true or false
-.FE
+type, which may only hold one bit,
 to the
 .CW long
 type, which can hold eight bytes.
@@ -2029,11 +1915,11 @@ Stdout and stderr may be accessed with the
 and
 .CW System.err.print
 functions respectively.
-Variables of different types can be concatenated into a string with the concatenation\**
-.FS
-.CW +
-.FE
-operator.
+Variables of different types can be concatenated into a string with the plus character.
+.SC
+String cat = "" + 1 + \[aq]c\[aq] + "another string"
+System.out.print(cat) // outputs "1canother string"
+.SE
 If the suffix
 .CW ln
 is added to the end of either of the two above functions, a newline character will be appended.
@@ -2072,7 +1958,7 @@ statement is executed.
 The break keyword is used to exit the switch statement.
 If the break keyword is not used, what is known as fall-through occurs.
 The default statement is always executed unless a break or return statement is executed beforehand.
-One usage of a switch statement could be to print the ordinal notation of a number 1-5.
+One usage of a switch statement could be to print the ordinal notation of a number 1\*-5.
 .SC
 switch(n) {
 	case 1:
@@ -2121,7 +2007,7 @@ The first statement below the loop declaration (or everything in curly brackets 
 .SC
 System.out.println(i);
 .SE
-Put together, the above for loop prints every number 0-99.
+Put together, the above for loop prints every number 0\*-99.
 .SC
 for (int i = 0; i < 100; i++) {
 	System.out.println(i);
@@ -2388,9 +2274,9 @@ The Math class contains hundreds of different functions, which may be accessed w
 Math.floor(4.3) // returns 4.0
 .SE
 .PP \" random with math.random
-Another feature included in the Math class is RNG\**.
+Another feature included in the Math class is RNG.\**
 .FS
-Random Number Generation
+RNG | Random Number Generation
 .FE
 The
 .CW Math.random()
@@ -2403,39 +2289,23 @@ The float multiplication method explained in section 5.2 is used to generate num
 There are several operations that are commonly performed on primitive types.
 Some common functionalities would be checking if a char is uppercase, obtaining the string representation of an int, or converting a string representation of a double into a double typed variable.
 The primitive boxed typed in Java are
-.CW Boolean \**,
-.FS
-boolean
-.FE
-.CW Byte \**,
-.FS
-byte
-.FE
-.CW Character \**,
-.FS
-char
-.FE
-.CW Float \**,
-.FS
-float
-.FE
-.CW Integer \**,
-.FS
-int
-.FE
-.CW Long \**,
-.FS
-long
-.FE
-.CW Short \**,
-.FS
-short
-.FE
+.CW Boolean
+(boolean),
+.CW Byte
+(byte),
+.CW Character
+(char),
+.CW Float
+(float),
+.CW Integer
+(int),
+.CW Long
+(long),
+.CW Short
+(short),
 and
-.CW Double \**.
-.FS
-double
-.FE
+.CW Double
+(double),
 The functions associated with the box types are accessible with the dot operator.
 .SC
 Character.isUpper(\[aq]C\[aq]);
@@ -2451,20 +2321,9 @@ f.toString();
 .PP \" arrays
 Arrays are a type of object in Java.
 Thus, they have implicit functions and properties that may be accessed with the dot operator.
-Arrays are typed as a primitive or class type followed by open and closed square brackets\**.
-.FS
-.CW []
-.FE
+Arrays are typed as a primitive or class type followed by left square bracket and right square bracket characters.
 Arrays are also initialized with a certain size.
-This can be done implicitly by providing the contents of an array surrounded by curly brackets\**
-.FS
-.CW {}
-.FE
-and seperated by commas\**
-.FS
-.CW ,
-.FE
-at initilization.
+This can be done implicitly by providing the contents of an array surrounded by left curly bracket and right curly bracket characters and seperated by commas at initialization.
 .SC
 int[] digits = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 .SE
@@ -2502,7 +2361,7 @@ Insert an element at a specific index of the list and shifts all following indic
 .IP "\f[C].add(E element)\f[]"
 Append an element to the ArrayList.
 .IP "\f[C].remove(int index)\f[]"
-Remove an element from a certain index of the list and shift all following elements to the left.
+Remove an element from a certain index of the list and shift all following elements to the left. Additionally, the element that was removed is returned.
 .IP "\f[C].get(int index)\f[]"
 Return the value of the element at a certain index.
 .IP "\f[C].set(int index, E element)\f[]"
@@ -2514,11 +2373,7 @@ ArrayLists, because of their versatility and dynamic sizing, are often used in p
 .PP \" foreach
 The for-each loop is a construct in Java that allows for more concise iteration through arrays and ArrayLists.
 It automatically iterates through a list or array object from the first to the last element.
-It first has a decleration of a temporary variable to store each elemenet of the list, then, after a colon\**
-.FS
-.CW :
-.FE
-it contains the list that is to be iterated upon.
+It first has a decleration of a temporary variable to store each elemenet of the list, then, after a colon character, it contains the list that is to be iterated upon.
 The elements passed to the temporary variable are copies of the original variable.
 Thus, modifing the temporary variable does nothing to the original variable's value.
 .SC
@@ -2559,31 +2414,75 @@ Create the following get and set methods within the class.
 .LP
 In addition, create a method called
 .CW amountOfBooks() ,
-which returns the amount of times an instance of the Book class has been created\**.
+which returns the amount of times an instance of the Book class has been created.\**
 .FS
 Hint: reread the section on static variables
 .FE
 .PP \" Add/remove/insert/get/set pages
-\m[red]FILL IN ABOUT REQUIRED PAGE METHODS\m[]
+The function of the Book class is to contain the pages of the book. A \*Qpage\*U is a string provided by the user. Like a physical book, pages will need to be in sequential order. Create the following methods to manipulate the pages in the book.
+.IP "\f[C]addPage(String page)\f[]"
+Append a page to the book.
+.IP "\f[C]insertPage(String page, int index)\f[]"
+Insert a page at a certain page number in the book, shifting all following pages to the right in the index.
+.IP "\f[C]removePage(int index)\f[]"
+Remove a page at a certain index, shifting all following pages to the left in the index. Return the content of the page that was removed.
+.IP "\f[C]getPage(int index)\f[]"
+Return the content of the page at a certain index of the book.
+.IP "\f[C]setPage(String page, int index)\f[]"
+Replace the page at a certain index with another page, keeping all indices the same.
+.IP "\f[C]pages()\f[]"
+Return the amount of pages that are currently in the book.
 .PP \" Journal Class
 Extend the Book class to a subclass called
 .CW Journal ,
-which will add the date (provided by the user) to the first line of a page. this is done by overriding the page method to add another parameter for the day of the week (string).j
-Make the inherited addPage method inaccessible to a user outside of the class (review the section on permissions).
-There are two additional overloaded addPage methods which add parameters for the month and year.
-Prepended to every page will be the day of the week (optionally followed by the month and year) with a newline character. Finally, make a constructor that takes a book as an argument and converts it into a Journal. This then iterates through all pages of the book and adds them to the journal, while also adding the current date with a newline appended to the top of each page with the
+which will add the date (provided by the user) to the first line of a page. this is done by overloading the addPage, insertPage, and setPage methods to add another parameter for the day of the week (string).
+Additionally, the addPage, insertPage, and setPage methods should be overriden so that if no date (in string form) is provided by the user, the current date followed by a newline is added to the top of the page.
+Finally, make a constructor that takes a book as an argument and converts it into a Journal. This then iterates through all pages of the book and adds them to the journal, while also adding the current date with a newline appended to the top of each page with the
 .CW java.time.LocalDate.now()
 method.
 .bp
 .H "Shell Script: A Pragmatic Language"
 .PP \" what is an interactive shell
+Shell script is notably different from any language discussed thus far.
+It is mainly used interactively, with the user entering each line in real time.
+Scripts can be stored in files for later use, but most time in the shell is spent manually entering commands.
+The shell, in its simplest terms, is a way to launch programs.
 .	H2 "Languages"
 .PP \" What are the different shell scripting languages (Bourne shell, bash, ZSH, fish, PowerShell)
+Shell script is a blanket term for a number of different langauges across a variety of systems.
+Each language that falls under the category of `shell script' has its own traits.
+A few of the most popular shell languages are POSIX compliant shell, BASH, and PowerShell.\**\**
+.FS
+POSIX | Portable Operating System Interface
+.FE
+.FS
+BASH | Bourne Again Shell
+.FE
+The command prompt in Windows\[tm] is also a shell, although it differs greatly from other shells currently in use.
 .PP \" POSIX compliant shell
-.PP \" Why (almost) all shells are basically the same
+The shell that will be discussed and used in this chapter will be POSIX compliant shell, or SH as it is commonly reffered to as.
+This choice is due to its universality, simplicity, and standardization.
+SH is available by default on all UNIX and UNIX-like operating systems.
+Even on Windows\[tm], where POSIX-compliant shell is not available by default, users have the option of either using PowerShell (which can validly accept most SH commands) or WSL.\**
+.FS
+WSL | Windows Subsystem for Linux
+.FE
+SH syntax consists of a relatively small amount of rules that can be easily understood and remembered.
+Unlike some shells such as PowerShell and Fish, SH syntax has remained the same since the twentieth century, and it is unlikely that any large changes to the standard will happen.
+All implementations of SH must follow the guidelines set in the POSIX standard.
+Therefore, the SH instructions in this book are unlikely to become obsolete in the future.
 .	H2 Programs
-.PP \" Explenation of simplicity of command line programs (UNIX PHILOSOPHY)
+.PP \" Explanation of simplicity of command line programs (UNIX PHILOSOPHY)
+Sh programs tend to be very general.
+They do one job, and they do that job well.
+For more specific tasks several programs can be used together.
+Programs are not part of the shell, but are executable files.
+The shell only calls the executable.
+Using a shell command can often be quicker and easier than making a program in a traditional programming language like Java.
 .PP \" core programs
+There are a few basic command line programs that are available across many operating systems.
+On a system today, there may be more than a thousand different executables available to the user.
+By knowing of just a few basic programs, a programmer can utilize the shell for doing work.
 .IP \f[C]cat\f[]
 Takes multiple file names as input and concatenates their content as output.
 .IP \f[C]cal\f[]
@@ -2614,22 +2513,22 @@ Moves the path of one or more files to another path.
 Deletes files
 .BI permanently .
 .IP \f[C]sudo\f[]
-Executes a command with root\**
+Executes a command with root permissions.\**
 .FS
-Root is also known as superuser
+Root is also known as superuser, hence sudo (\f[B]S\f[]uper \f[B]U\f[]ser \f[B]DO\f[]).
 .FE
-permissions.
 .IP \f[C]sudoedit\f[]
-Edits a file with root permissions\**.
+Edits a file with root permissions.\**
 .FS
-Equivalent to \f[C]sudo -e\f[]
+The sudoedit command is equivalent to \f[C]sudo -e\f[].
 .FE
-.IP \f[C]uname\f[]
-Displays information about the operating system.
+.IP \f[C]wc\f[]
+Count the number of characters, words, and lines in a file.
 .	H2 "Piping and selective execution"
 .PP \" how to execute one program
-.PP \" How shell script executes programs in a unique way
+.PP \" flags (- and --)
 .PP \" return codes
+.PP \" How shell script executes programs in a unique way
 .PP \" Common symbols
 .IP <
 .IP >
@@ -2657,7 +2556,6 @@ delim on
 .H "C: The Final Frontier"
 .PP \" history (reference the chist pdf by ritchie)
 .PP \" why c is a low level high level language
-.	H2 "Basic Properties"
 .PP \" whats in stdio.h and hello world
 .PP \" main method
 .PP \" types
@@ -2715,10 +2613,10 @@ Proof 1	Proof 2
 .TH
 .T&
 l l.
-$let x~\[mo]~\[no] left ( A~\[ca]~B right )$	$let x~\[mo]~\[no] left ( A~\[cu]~B right )$
-$x~\[nm]~A~\[ca]~B$	$x~\[nm]~A~\[cu]~B$
+$let x~\[mo]~\[no] left ( A\[AN]B right )$	$let x~\[mo]~\[no] left ( A\[OR]B right )$
+$x~\[nm]~A\[AN]B$	$x~\[nm]~A\[OR]B$
 $x~\[mo]~\[no]A~\[OR]~x~\[mo]~\[no]B$	$x~\[mo]~\[no]A~\[AN]~x~\[mo]~\[no]B$
-$\[3d]~\[no] left ( A~\[ca]~B right ) = ~\[no]A~\[cu]~\[no]B$	$\[3d]~\[no] left ( A~\[cu]~B right ) = ~\[no]A~\[ca]~\[no]B$
+$\[3d]~\[no] left ( A\[AN]B right ) = ~\[no]A\[OR]\[no]B$	$\[3d]~\[no] left ( A\[OR]B right ) = ~\[no]A\[AN]\[no]B$
 .TE
 .DE
 .SH
@@ -2774,5 +2672,109 @@ else:
     print(f"You failed to guess the number {rndnum} in 10 tries")
 .ED
 .	H2 Java
+.EX "Book Class"
+import java.util.ArrayList;
+
+class Book {
+	private String title
+	private String author;
+	ArrayList<String> pages = new ArrayList<String>();
+	private static int books = 0;
+
+	public Book(String title, String author) {
+		this.title = title;
+		this.author = author;
+		if (title.length() < 2)
+			System.out.println("Wow, that title is SHORT!");
+		if (author.length() > 30)
+			System.out.println("Wow, that name is LONG!");
+		books++;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public int amountOfBooks() {
+		return books;
+	}
+
+	public void addPage(String page) {
+		pages.add(page);
+	}
+
+	public void insertPage(String page, int index) {
+		pages.add(index, page);
+	}
+
+	public String removePage(int index) {
+		return pages.remove(index);
+	}
+
+	public String getPage(int index) {
+		return pages.get(index);
+	}
+
+	public void setPage(String page, int index) {
+		pages.set(index, page);
+	}
+
+	public int pages() {
+		return pages.size();
+	}
+
+}
+.ED
+.EX "Journal Class"
+import java.time.LocalDate;
+
+class Journal extends Book {
+	public Journal(String title, String author) {
+		super(title, author);
+	}
+
+	public Journal(Book other) {
+		super(other.getTitle(), other.getAuthor());
+		for (int i = 0; i < other.pages(); i++)
+			addPage(other.getPage(i));
+	}
+
+	public void addPage(String page) {
+		addPage(page, "" + LocalDate.now());
+	}
+
+	public void addPage(String page, String date) {
+		super.addPage(date + "\\n" + page);
+	}
+
+	public void insertPage(String page, int index) {
+		insertPage(page, "" + LocalDate.now(), index);
+	}
+
+	public void insertPage(String page, String date, int index) {
+		super.insertPage(date + "\\n" + page, index);
+	}
+
+	public void setPage(String page, int index) {
+		setPage(page, "" + LocalDate.now(), index);
+	}
+
+	public void setPage(String page, String date, int index) {
+		super.setPage(date + "\\n" + page, index);
+	}
+}
+.ED
 .	H2 C
 .TC
