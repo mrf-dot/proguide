@@ -30,6 +30,7 @@
 delim $$
 define let %roman{"let "}%
 .EN
+.RP no
 .TL
 Programming: An Ultimate Guide
 .AU
@@ -50,8 +51,7 @@ On my GitHub, I have posted many of the projects which I have made for fun.\**
 .FS
 The link to my GitHub, as well as many other resources to help on the journey to become a hacker, are in the resources section.
 .FE
-In the repository labeled `Personal', which is reserved for miscellaneous
-personal code that cannot itself warrant its own repository, I have written the following description.
+In the repository labeled `Personal', which is reserved for miscellaneous personal code that cannot itself warrant its own repository, I have written the following description.
 .QP
 These are some personal files I have.
 I will probably upload here periodically.
@@ -73,7 +73,7 @@ Don't get me wrong: theoretical computer science
 .I is
 interesting.
 However; it is in fact true that one may gain more appreciation of theoretical computer science by first learning to do real programming.
-It brings meaning to the common constructs in computer science like pointers, strings, mathematics, floating point numbers, loops, and conditionals.
+It brings meaning to the common constructs in computer science like pointers, strings, arithmetic, floating point numbers, loops, and conditionals.
 Learning about theoretical constructs is a big
 .I AHA
 moment.
@@ -97,8 +97,7 @@ Source code in this book will be clearly marked. Source code may be differentiat
 .FE
 .bp
 .H Tools
-.PP
-No doubt the first thing a programmer must do when setting out in their career is creating their programming environment.
+.PP No doubt the first thing a programmer must do when setting out in their career is creating their programming environment.
 Your programming environment is as much about the type of programs you use as what is in your physical surroundings.
 In the next part of this section, I will make some suggestions on the setups that are optimal for good programming practices.
 If these instructions are followed, it will set the programmer up for future success.
@@ -118,7 +117,7 @@ For a simple setup it might be optimal to get a laptop instead, especially if th
 Particularly if one wishes to use UNIX-like operating systems such as Linux or *BSD, the Lenovo Thinkpad\[tm], especially older models such as the X220, are prized.
 This is due to the lack of proprietary firmware such as EFI and secure/fast boot which impede operating systems other than Windows\[tm].
 The specifications do not matter very much, especially if light editors such as vim are used.
-There is no need to spring for twenty gigabytes of RAM.\**\**\**
+There is no need to spring for twenty gigabytes of RAM.\** \** \**
 .FS
 A gigabyte is $10 sup 9$ bytes
 .FE
@@ -312,7 +311,7 @@ An example usage of stderr would be to warn a user that a program has been force
 .PP
 Print statements not only take in letters and numbers but also formatting commands.
 There are many characters that are difficult to represent in their true form.
-Characters like newlines, tabs, backspace, and return can all be represented by escapes.\**\**
+Characters like newlines, tabs, backspace, and return can all be represented by escapes.\** \**
 .FS
 A newline is equivalent to pressing the enter key.
 .FE
@@ -376,7 +375,7 @@ $p \[c+] q \[mo] (p \[AN] \[no] q) \[OR] (\[no] p \[AN] q)$
 .IP \[<>]
 The
 .I xand
-operator returns true only if both statements are the same value.\**\**
+operator returns true only if both statements are the same value.\** \**
 .FS
 $p \[<>] q \[mo] (p \[AN] q) \[OR] (\[no]p \[AN] \[no]q)$
 .FE
@@ -540,7 +539,7 @@ Additionally, a surplus of code makes a program harder to follow and thus more d
 This issue is the reason why functions exist.
 .PP
 Let's say that a programmer is coding a program to do trigonometric operations.
-They notice that they compute the Pythagorean theorem multiple times throughout the program and wish to simpify their code.
+They notice that they compute the Pythagorean theorem multiple times throughout the program and wish to simplify their code.
 First they start with the equation itself.
 .EQ
 c = sqrt { a sup 2 + b sup 2 }
@@ -711,7 +710,7 @@ As with the Boolean type, multiple programming languages provide an explicit typ
 .PP \" Short and long integers
 The major differentiation between different integer primitives are the amount of bytes the numbers can take up.
 It is simple to determine the highest and lowest numbers that may be stored in a particular type if the maximum amount of bytes is already known.
-Because computers operate in base two, the maximum number is $2 sup roman{"bits"} - 1$ and the minimum number is $-2 sup roman{"bits"} + 1$ for signed integers.
+Because computers operate in base two, the maximum number is $2 sup roman{"bits"} - 1$ and the minimum number is $- 2 sup roman{"bits"} + 1$ for signed integers.
 For unsigned integers, the maximum number is $2 sup { roman{"bits"} + 1 } - 1$ and the minimum number is 0.
 The difference between a signed and unsigned integer is that a signed integer may represent both positive and negative values.
 Unsigned integers can represent larger numbers because in a signed integer one bit is reserved to differentiate between positive and negative numbers.
@@ -1801,7 +1800,7 @@ Duck typed languages are impossible to compile because the variable and its decl
 The method of typing used in most compiled languages is explicit typing.
 When a variable is declared, its type is also declared.
 This type cannot change for the duration of the variable's existence.
-When a variable is declared, additional information, such as whether its value may be changed, if it is accessible from anywhere in the program, and whether it is local or global all must be specified by the programmer.\**\**
+When a variable is declared, additional information, such as whether its value may be changed, if it is accessible from anywhere in the program, and whether it is local or global all must be specified by the programmer.\** \**
 .FS
 Local variables only last for the duration of a function.
 .FE
@@ -1930,10 +1929,11 @@ The elif statement can be created by appending an if to an else statement.
 .SC
 if (con1)
 	statement1;
-else if (con2)
+else if (con2) {
 	statement2;
-else
 	statement3;
+} else
+	statement4;
 .SE
 .PP \" Ternaries
 Ternaries are used to assign values based on the value of a statement.
@@ -2451,7 +2451,7 @@ The shell, in its simplest terms, is a way to launch programs.
 .PP \" What are the different shell scripting languages (Bourne shell, bash, ZSH, fish, PowerShell)
 Shell script is a blanket term for a number of different langauges across a variety of systems.
 Each language that falls under the category of `shell script' has its own traits.
-A few of the most popular shell languages are POSIX compliant shell, BASH, and PowerShell.\**\**
+A few of the most popular shell languages are POSIX compliant shell, BASH, and PowerShell.\** \**
 .FS
 POSIX | Portable Operating System Interface
 .FE
@@ -2487,6 +2487,10 @@ By knowing of just a few basic programs, a programmer can utilize the shell for 
 Takes multiple file names as input and concatenates their content as output.
 .IP \f[C]cal\f[]
 Displays a calendar for a specific month, or year.
+.IP \f[C]cd\f[]
+Change the current working directory.
+.IP \f[C]chmod\f[]
+Change the permissions of a file.
 .IP \f[C]cp\f[]
 Copies the content of one or more files to another file or directory.
 .IP \f[C]date\f[]
@@ -2501,6 +2505,8 @@ Launches the user's default editor.
 Searches for a particular file name or characteristic and returns all files matching that description.
 .IP \f[C]grep\f[]
 Searches for text patterns within a file.
+.IP \f[C]jobs\f[]
+List all tasks running in the background.
 .IP \f[C]ls\f[]
 Lists files in a directory.
 .IP \f[C]man\f[]
@@ -2512,6 +2518,12 @@ Moves the path of one or more files to another path.
 .IP \f[C]rm\f[]
 Deletes files
 .BI permanently .
+.IP \f[C]seq\f[]
+Output numbers in a sequence, with optional parameters for start and step.
+.IP \f[C]sleep\f[]
+Do nothing for a certain amount of seconds.
+.IP \f[C]sort\f[]
+Sort the contents of a file alphabetically.
 .IP \f[C]sudo\f[]
 Executes a command with root permissions.\**
 .FS
@@ -2522,53 +2534,488 @@ Edits a file with root permissions.\**
 .FS
 The sudoedit command is equivalent to \f[C]sudo -e\f[].
 .FE
+.IP \f[C]touch\f[]
+Create an empty file.
+.IP \f[C]uniq\f[]
+Remove duplicated lines in a file.
 .IP \f[C]wc\f[]
 Count the number of characters, words, and lines in a file.
 .	H2 "Piping and selective execution"
+.PP \" file paths
+\m[red]FILL IN ABOUT FILE PATHS LATER\m[]
 .PP \" how to execute one program
+A program can be executed in the shell by calling it by its name.
+Any file located in the system's path is callable in the shell.
+.SC
+cat
+.SE
+If a program is not in the shell, it can be called by using its file location.
+.SC
+/bin/cat
+.SE
+A file must have execution permissions to be used in the shell.
+This acts as a security protection, as files that have not been given execution permissions may contain malicious code.
+Files can be given execution permissions via the chmod command.
+.SC
+chmod +x prog.sh
+.SE
+After being given file permissions, a file can be executed.
+If it is in the same working directory, it can be called using its path.
+.SC
+ ./prog.sh
+.SE
 .PP \" flags (- and --)
-.PP \" return codes
-.PP \" How shell script executes programs in a unique way
-.PP \" Common symbols
-.IP <
-.IP >
-.IP &
-.IP |
-.IP &&
-.IP ||
-.IP []
-.IP \`\`
-.EQ
-delim off
-.EN
-.IP $
-.IP $()
-.IP $(())
-.EQ
-delim on
-.EN
+A program can be optionally customized.
+Sometimes, a user may want a program to behave differently from its default behavior.
+For example, one might want to recursively delete a directory and all of its files.
+Usually, this behavior is done with the rm program.
+.SC
+rm directory
+.SE
+However, by default deleting whole directories is not allowed for safety reasons.
+Using the example above, the directory will not be deleted and the following error message will be shown.
+.SC
+rm: cannot remove \[aq]directory\[aq]: Is a directory
+.SE
+So what is a user to do?
+Luckily, there is a way to delete non-empty directories with the rm program with the use of flags.
+Flags are denoted by a preceding dash for short flags (one character long) and two preceding dashes for long flags (more than one character long).
+Short flags are generally older and are part of the standards.
+Long flags are either aliases to short flags or flags added more recently that may not be part of the standards.
+Some flags require arguments while others do not.
+In the case of the rm program, two flags,
+.CW -r
+and
+.CW -f ,
+can allow the deletion of directories.
+The -r flag specifies that deletion should be recursive.
+The -f flag specifies that the directory should be deleted without prompting the user or instituting any protections.
+Now the previous rm command can be modified to produce the output that was expected.
+.SC
+rm -rf directory
+.SE
+Or, the command can be written using the long form options
+.CW --recursive "" (
+and
+.CW --force ).
+.SC
+rm --recursive --force directory
+.SE
+.PP \" return codes and conditional execution (&& and ||)
+When a program has completed its task, it will terminate.
+Upon termination, an exit code will be emitted.
+This code will be zero if the program exited successfully (ie without any errors).
+A program may return any other number to indicate that the program exited unsuccessfully.
+Using this property, the shell can perform
+.I "conditional execution" .
+Conditional execution causes the shell to execute a command based on whether the previous command executed with or without error.
+The && operator will execute a command only if the previous command exited successfully.
+.SC
+echo hi && echo bye
+.SE
+The || operator executes a command only if the previous command exited unsuccessfully.
+.SC
+echo hi || echo bye
+.SE
+If one wishes to execute multiple commands in tandem, without regard for whether the previous commands executed successfully, the semicolon character can be used.
+This command uses the semicolon character to wait for three seconds and then output the phrase \*QYour break is over.\*U.
+.SC
+sleep 3; echo Your break is over.
+.SE
+.PP \" test program ([])
+The test program takes advantage of conditional execution.
+The test program is called as a left square bracket, and the program is terminated with a right square bracket.
+The program uses a combination of values and flags to determine if a statement is true or false.
+An example of a flag used in the test program is the -z flag.
+The -z flag tests that a string is empty, and will return 0 (successful) if that statement is true.
+In the event that the string is not empty, the test program will return 1 (unsuccessful).
+This can be used advantageously to test whether a variable has been initialized.
+.SC
+[ -z "\[Do]string" ] && echo string is empty || echo string is not empty
+.SE
+.PP \" Piping (|)
+Piping is another way that programs can interract with each other in the shell.
+Using a pipe, represented by the vertical bar, the output of one program can be taken as the input of another program.
+Multiple programs can be piped together to produce specific output.
+Just like a garden hose, the program output flows through until it reaches the end of the pipe.
+Pipes can be used to accomplish abstract tasks that would otherwise require dozens of lines of code in a typical programming language.
+A task that is perfect for using pipes would be to count the number of files in a directory that contain the letter f.
+For this task we would need ls, to list the files in the directory, grep, to search for a pattern in a line, and wc, to count the number of patterns returned by grep.
+Pipes can easilly accomplish this task in one line.
+.SC
+ls | grep f | wc -l
+.SE
+.PP \" Parallelization (&)
+The shell has multitasking built in.
+Doing multiple tasks at once can decrease the time it takes to complete an objective.
+Additionally, tasks can be moved to the background so that the shell can be used while another task is running.
+In computer science, doing multiple tasks at once is called parallelization, because many things are being done simultaneously on different threads.
+In the shell the ampersand character is used to specify that a task should be run in the background.
+Once a background task has been completed, a message will be sent to stderr indicating that the task has terminated.
+.PP
+Only one task at a time can be in the foreground.
+Thus when the sleep command is executed, the foreground cannot be used for the duration that the sleep program is running.
+However, with parallelization, the sleep command can execute in the background while another program executes in the foreground.
+This command executes the sleep command in the background while the echo command is allowed to executed in the foreground.
+.SC
+sleep 3 & echo This is the foreground.
+.SE
+Because an almost unlimited amount of tasks can execute in the background, it is imperative that tasks can be tracked.
+The jobs command displays all tasks executing in the background.
+This can be useful for checking if a process is still working or has already been completed or failed.
+.PP \" Redirection (<, >, <, >>) of file streams
+Most shell programs have simple input and output.
+They will usually get their input from a file or an argument supplied in stdin.
+The program will then typically output a string of text to stdout.
+However, there are many instances in which a programmer would want the output of a program redirected into a file.
+This book, for instance, was not orignially in its current heavilly formatted form.
+It started out as markup; plaintext written in a file.
+Then the file's contents were piped through multiple command line programs to format tables, equations, footnotes, and paragraphs before finally being converted into pdf form.
+By default at the end of the pipeline the pdf version of this book was output to stdout.
+While impressive, the contents of a pdf in stdout is completely useless.
+The output will dissapear rather than being openable by a pdf viewer to view or print.
+Therefore, it is necessary to
+.I redirect
+the output to a file.
+The shell uses the single right angle bracket operator to redirect output.
+.SC
+troff -ms proguide.ms > proguide.pdf
+.SE
+By default, the right angle bracket operator will redirect from the file stream stdout.
+To redirect output from stderr, the programmer may specify that only stream 2 will be output into a file.
+.SC
+troff -ms proguide.ms 2> proguide.pdf
+.SE
+.PP
+The single right angle bracket operator will delete the contents of a file before replacing them with the output from the terminal.
+By using the double right angle bracket operator, output can be appended to a file rather than blanking it.
+The technique of using the numeral two followed by the redirection operator still work with the append operator.
+Content can easilly be added to a file without the need for a text editor with the append operator.
+.SC
+echo Another Value >> values.txt
+.SE
+.PP
+The left angle bracket operator outputs the content of a file to the terminal.
+.SC
+< file.txt
+.SE
+This can be a good alternative to cat, as it does not require the added overhead of calling another program other than the shell.
+Multiple files can be output to the terminal in succession by using multiple left angle bracket characters.
+.SC
+< file1.txt < file2.txt
+.SE
+.PP \" variables (\[Do])
+Shell script allows for values to be assigned to variables.
+Variables are assigned using an equal sign with no surrounding spaces.
+.SC
+var=1
+.SE
+The variable can be called with a preceding dollar sign.
+.SC
+echo \[Do]var
+.SE
+However, these variables are unlike those found in other programming langages.
+They are more like placeholders than variables.
+When called, they will evaluate to their true form.
+This can cause shell variables to exhibit idiosyncratic properties.
+When the name of a program is assigned to the value of a variable, that variable can be called to launch that program.
+.SC
+var=cat
+\[Do]var file1.txt file2.txt
+.SE
+.PP \" command substitution ( \[Do]() )
+The output of commands can be assigned to variables using
+.I command substitution .
+Command substitution is done by placing a shell command within parentheses preceded by a dollar sign.
+.SC
+\[Do]var=\[Do](ls)
+.SE
+Command substitution may also be used as input for other commands.
+By using the cat command and supplying it as an argument a command substitution of the ls command, every file in a directory can be concatenated.
+.SC
+cat \[Do](ls)
+.SE
+.PP \" Arithmetic ( \[Do](()) )
+Rudimentary arithmetic can be performed in the shell language with double parentheses preceded by a dollar sign.
+Addition (+), subtraction (-), multiplication (*), division (/), and modulus (%) can be performed in the shell.
+.SC
+echo \[Do]((1+2-3*4/5%6))
+.SE
+Variables can be called during shell arithmetic without a preceding dollar sign, as all non numbers are assumed to be variables by the shell.
+There are some limitations to shell arithmetic in that it cannot process decimal (floating point) numbers.
+The statement
+.CW \[Do]((9/6))
+will evaluate to 1 rather than 1.5.
+This limitation can be overcome by using an external program meant for processing mathematical expressions such as the
+.CW bc
+program.
 .	H2 "Complex Elements"
+.PP \" aliases
+The shell
+.I alias
+is much like a variable.
+Similarly, it expands to its true for once it is called.
+Aliases can be created by using the
+.CW alias
+command.
+After the alias command is called, the name of the alias is declared just as if it were a variable. Aliases can be used to make it easier to call an otherwise long command.
+A common use of the alias command is to call a program with its options.
+In my shell startup script, I made an alias called
+.CW lsp
+which calles the ls command using its options for color, listing format, and human readable sizes.
+.SC
+alias lsp=ls -l --human-readable --color=always
+.SE
+Unlike variables, aliases can be called without using the dollar sign.
+.SC
+lsp
+.SE
+Aliases act just like if a programmer were to type out their value manually.
+Therefore, it is possible to supply options after an alias is called.
+The lsp command could be called and told to list the contents of a directory called
+.CW folder .
+.SC
+lsp folder
+.SE
+.PP \" functions
+Functions allow for multiple commands to be bundled together into one.
+Functions are identical to any other command.
+They can be called, take parameters, and can even exit successfully or unsuccessfully.
+Functions are declared in shell by entering the name of the function proceeded by parentheses and a left curly bracket.
+.SC
+func(){
+.SE
+Functions are ended with a right curly bracket.
+.SC
+}
+.SE
+Within the function body, any number of commands can be executed.
+What makes shell functions unique is that they use implicit variables.
+Instead of a function needing to name parameters in its definition, it uses numbers to represent the order of arguments provided to the function.
+\[Do]0 is always defined and will hold the name of the function.
+When \[Do]0 is called within the shell, it will name the binary that the shell originates from.
+\[Do]1\*-\[Do]\[if] hold the arguments supplied by the user to the function.
+If the user does not provide an argument, the variable will still be accessible, but it will not hold any value.
+Functions exit automatically once all their commands have been run.
+However, a function may be exit prematurely using the
+.CW return
+command.
+The return command can optionally take a number as a paramter which indicates that the function was successful (zero) or that it was unsuccessful (any number other than zero).
+.PP
+Now let's try a practical example.
+Whenever a code project is made, it is best practice to include it in a directory that has a certain structure.
+It should include a readme file, which explains what the project is about and how to use it.
+A license, to make known who owns the code and what permissions they give to people using their code.
+Additionally, it should include a
+.CW bin
+directory for executables and an
+.CW src
+directory for source code.
+If the project is going to be collaborated on, it should be in a
+.I git
+repository.
+Git is a version control system that allows for stages of a project to be tracked and modified by multiple people.
+When git is used, a
+.CW .gitignore
+file can be used to specify files or directories that should not be committed.
+In the case of a code reposiory, the bin directory should not be committed because binaries tend to be very large and are not useful for code collaboration.
+Put together, the structure is this.
+.SC
+<ProjectName>
+|   .gitignore -> "bin/"
+|   LICENSE
+|   README.md -> "# <ProjectName"
+|
++---bin
+\\---src
+    +---main
+    |   \\---resources
+    \\---test
+        \\---resources
+.SE
+.PP
+Creating this code repository would require manually entering many commands.
+Instead of having to type out these commands every time a code project is created, these commands can be bundled into a function.
+This function should have a short yet descriptive name, such as
+.CW mproj .
+.SC
+mproj() {
+	mkdir \[Do]1 || return 1
+	cd \[Do]1
+	echo "# \[Do]1" > README.md
+	touch LICENSE
+	echo "bin/" > .gitignore
+	mkdir -p {bin,src/{main,test}/resources}
+	git init >/dev/null
+}
+.SE
+.PP \" startup profile
+All shells have what is known as a startup profile.
+This profile executes commands whenever a shell is launched.
+The profile could be used to greet a user whenever they launch the shell.
+.SC
+echo Hello, \[Do]USER.
+.SE
+More useful, the startup profile can be used to store commands that the user enters often and execute them automatically.
+\m[red]Add about how aliases and functions persist when put in the startup profile and will die when the shell is exited if they are not in the startup profile.\m[]
+The file that is used as the shell's profile varies depending on the shell that is used.
+In POSIX shell, the file that is used as the startup profile is called
+.CW "~/.profile" .
+.PP \" wild cards (*)
+Shell wildcards are used to match files that begin or end with certain characters.
+The shell wild card is represented by the asterisk character.
+For example, to output all files beginning with la, The literal la would be present followed by an asterisk.
+.SC
+echo la*
+.SE
+To output all text files, the asterisk would be used followed by the extension
+.CW .txt .
+.SC
+echo *.txt
+.SE
+If one were to want to use a literal asterisk in the shell, a backlash character would be used.
+.SC
+echo \\* is an asterisk.
+.SE
 .PP \" if-else
-.PP \" while and for
-.PP \" single vs double strings
-.PP \" prompt (PS1)
+In addition to conditional execution, shell script has a more formal if-else statement.
+Instead of being terminated by indentation or brackets, shell script if statements are terminated with the word if spelled backwards
+.CW fi ). (
+The if statement is started by the word if, followed by a logical statement surrounded by square brackets.
+Afterwards, the keyword
+.CW then
+is used to indicate that the code to be executed is starting.
+Optionally, an else statement can be included to execute when the if statement returns false.
+Finally, the
+.CW fi
+keyword is entered to complete the construct.
+Let's try a simple if statement, that will output \*Qeven\*U if
+.CW \[Do]i
+holds an even number and \*Qodd\*U if the
+.CW \[Do]i
+holds an odd number.
+.SC
+if [ \[Do]((i%2)) -eq 0 ]
+then
+	echo even
+else
+	echo odd
+fi
+.SE
+.PP \" why if-else is unnecessary
+While it certainly isn't
+.I wrong
+to use if-else statement in shell script, it also isn't necessary.
+Conditional logic is cleaner, shorter, and can replace almost all instances of if-else statements.
+The only reason to ever use an if-else statement in shell is when there are multiple statements to be executed depending on whether a condition is true or false.
+For most situations, simple conditional execution will suffice.
+The even odd program that was made with if statements can be created in just one line using only conditional execution.
+.SC
+[ \[Do]((i%2)) -eq 0 ] && echo even || echo odd
+.SE
+.PP \" while
+The
+.CW while
+keyword in sh takes the form of the if statement.
+However, instead of starting execution with
+.CW then
+and ending with
+.CW fi ,
+it starts execution with the
+.CW do
+keyword and ends with the
+.CW done
+keyword.
+The following code will continue executing until
+.CW \[Do]i
+is greater than or equal to 10, outputting the value of
+.CW \[Do]i
+on each iteration.
+.SC
+i=0
+while [ i -lt 10 ]
+do
+	echo \[Do]i
+	i=\[Do]((i+1))
+done
+.SE
+The
+.CW until
+keywords functions the same as the
+.CW while
+keyword except that it will continue executing as long as the statement is false.
+.SC
+i=0
+until [ i -ge 10 ]
+do
+	echo \[Do]i
+	i=\[Do]((i+1))
+done
+.SE
+.PP \" for
+The
+.CW for
+keyword will iterate through a list of values.
+The syntax consists of the
+.CW for
+keyword, followed by the name of a temporary variable.
+The values to be iterated through are provided after the
+.CW in
+keyword.
+Following the values, a for loop has the same
+.CW do
+and
+.CW done
+keywords that the while and until loop have.
+In its style, it is very similar to a Python for loop.
+Values can be manually inputted by the user, in the case of this for loop which outputs every letter of the alphabet on a seperate line.
+.SC
+for c in a b c d e f g h i j k l m n o p q r s t u v w x y z
+do
+	echo \[Do]c
+done
+.SE
+To iterate through a range of numbers, the
+.CW seq
+command is used.
+The seq command takes three arguments: start, step, and stop.
+The while loop from above that iterates through the numbers 0\*-9 can be replicated more compactly with a for loop.
+.SC
+for i in \[Do](seq 0 1 9)
+do
+	echo \[Do]i
+done
+.SE
+.PP \" single vs double strings (mention eval)
+Strings can be declared in SH with either single or double quotes.
+This distinction is not meaningless.
+Strings declared with single quotes are literal, and all special characters such as \[Do] and \` will be ignored.
+Double quoted strings will execute code between backticks and after dollar signs.
+This distinction is important.
+Double quoted strings can represent variables, execute commands, and even perform arithmetic.
+All statements that a programmer wishes to be read literally must be escaped with a backslash in double quoted strings.
 .bp
 .H "C: The Final Frontier"
 .PP \" history (reference the chist pdf by ritchie)
 .PP \" why c is a low level high level language
-.PP \" whats in stdio.h and hello world
-.PP \" main method
-.PP \" types
-.PP \" type safety
-.PP \" functions
+.PP \" On similarities to java and most other modern langauges (bracketing) because c is the father of modern programming languages
+.PP \" Primitives in C (everything is a number)
+.PP \" Standard output (putc, fputs, putchar, puts)
+.PP \" printf and fprintf
+.PP \" Standard input (getc, getchar, scanf, fgets)
+.PP \" main method (int argc, char **argv) (talk about command line arguments and mention getopt)
+.PP \" hello world
 .	H2 Preprocessing
 .PP \" include files
 .PP \" Magic numbers and strings with define
 .PP \" Macros with define
 .	H2 "Memory Management"
+.PP \" type safety
 .PP \" Declaring arrays
 .PP \" Pointers
 .PP \" Structs
+.PP \" bit fields
+.PP \" Unions
 .PP \" Malloc and free
 .PP \" Calloc
 .PP \" Reollac and reollac array
@@ -2626,7 +3073,7 @@ Programming setups are a happy compromise between comfort and professionalism.
 Keep in mind that you will be spending hours in hacking sessions, so make sure that the chair you use will be comfortable to sit in for long periods of time.
 For those who are health-inclined, a standing/walking desk might be right.
 Many people who have standings desks are very content and even claim that it improves their brain stimulation.
-Linux and Git creator Linus Torvalds has a setup in which he uses his computer while walking on a treadmill at low speed\**.
+Linux and Git creator Linus Torvalds has a setup in which he uses his computer while walking on a treadmill at low speed.\**
 .FS
 .pdfhref -W https://www.youtube.com/watch?v=SOXeXauRAm0
 .FE
@@ -2638,11 +3085,10 @@ It is highly recommended to get a keyboard with high key travel.
 Mechanical keyboards are the best, but gel keyboards may also do.
 Keyboards with short key travel, like those typically found on laptops, will cause repetitive strain injury.
 As an additional note, it is a de facto requirement for programming to be able to touch type.
-The higher the WPM\**,
+The higher the WPM, the better.\**
 .FS
-Words per minute
+WPM | Words per minute
 .FE
-the better.
 A rate of about forty WPM is the minimum requirement to effectively be able to write programs.
 .bp
 .H "Exercise Keys"
@@ -2734,7 +3180,6 @@ class Book {
 	public int pages() {
 		return pages.size();
 	}
-
 }
 .ED
 .EX "Journal Class"
@@ -2752,7 +3197,7 @@ class Journal extends Book {
 	}
 
 	public void addPage(String page) {
-		addPage(page, "" + LocalDate.now());
+		addPage(page, LocalDate.now().toString());
 	}
 
 	public void addPage(String page, String date) {
@@ -2760,7 +3205,7 @@ class Journal extends Book {
 	}
 
 	public void insertPage(String page, int index) {
-		insertPage(page, "" + LocalDate.now(), index);
+		insertPage(page, LocalDate.now().toString(), index);
 	}
 
 	public void insertPage(String page, String date, int index) {
@@ -2768,7 +3213,7 @@ class Journal extends Book {
 	}
 
 	public void setPage(String page, int index) {
-		setPage(page, "" + LocalDate.now(), index);
+		setPage(page, LocalDate.now().toString(), index);
 	}
 
 	public void setPage(String page, String date, int index) {

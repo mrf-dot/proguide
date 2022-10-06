@@ -12,7 +12,7 @@ class Journal extends Book {
 	}
 
 	public void addPage(String page) {
-		addPage(page, "" + LocalDate.now());
+		addPage(page, LocalDate.now().toString());
 	}
 
 	public void addPage(String page, String date) {
@@ -20,7 +20,7 @@ class Journal extends Book {
 	}
 
 	public void insertPage(String page, int index) {
-		insertPage(page, "" + LocalDate.now(), index);
+		insertPage(page, LocalDate.now().toString(), index);
 	}
 
 	public void insertPage(String page, String date, int index) {
@@ -28,7 +28,7 @@ class Journal extends Book {
 	}
 
 	public void setPage(String page, int index) {
-		setPage(page, "" + LocalDate.now(), index);
+		setPage(page, LocalDate.now().toString(), index);
 	}
 
 	public void setPage(String page, String date, int index) {
