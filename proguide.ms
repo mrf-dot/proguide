@@ -1,4 +1,4 @@
-.\" Duffys' suggestions:
+.\" Duffy's Suggestions:
 .\" Limit usage of technical terms
 .\" Use MORE footnotes (I actually didn't even think about this, but the footnotes stop after page five or so)
 .\" Use less time devoted to specific topics that are unimportant to beginners such as floats
@@ -212,12 +212,13 @@ The tokens are then formed into a syntactic tree, which explains the flow of the
 This tree is then expressed in terms of object files.
 These object files are then combined into a single tree, written in assembly code.
 From this point the assembly code is converted into their machine instruction counterparts and the program is ready to be executed.
-.PP \" Compilation vs interpreted
+.PP \" interpreted advantages
 There are benefits and disadvantages to using compilation rather than interpretation.
 Interpreted programs do not need to be compiled.
 Because compiled programs are far larger than their source code, programs written in interpreted languages are far more economical to store.
 Interpreted programs may also attempt to correct errors at run time, which is impossible with already compiled programs.
 Interpreted languages can be more easily edited and debugged because source code can be changed without the need for recompilation.
+.PP \" interpreted disadvantages
 However, there are some notable drawbacks to interpreted languages.
 Because interpreted programs are read one line at a time, it is difficult to make optimizations like automatically concatenating strings or adding two integer constants together.
 As the program must be converted into machine code in real time, interpreted programs are more resource intensive.
@@ -2994,16 +2995,110 @@ Double quoted strings will execute code between backticks and after dollar signs
 This distinction is important.
 Double quoted strings can represent variables, execute commands, and even perform arithmetic.
 All statements that a programmer wishes to be read literally must be escaped with a backslash in double quoted strings.
+The content of strings (whether single or double) can be read as a command using the
+.CW eval
+command.
+.SC
+eval \[aq]echo code in a single-quoted string.\[aq]
+.SE
 .bp
 .H "C: The Final Frontier"
-.PP \" history (reference the chist pdf by ritchie)
+.PP \" What is C?
+C is the most used programming language in the world.
+Everything from embedded software to artificial intelligence algorithms have been written in C.
+The C language is renowned for its simplicity, ease, and speed.
+Due to C's age and low resource requirements, it ommits many of the common metaphors known to higher level langauges.
+C is very close to the \*Qmetal\*U of a computer.
+Some experienced C programmers can even see exactly what instructions will be sent to the machine in their C programs.
+Yes, there is a learning curve.
+It can be difficult for some developers to distance themselves from the ideas of objects, classes, and types.
+However, even if one does not do the majority of their programming in C, learning C can help bring a greater understanding and appreciation of what a computer actually does and how it truly functions.
+.\" 23 paragraphs to go: good luck you bastard!!!
 .PP \" why c is a low level high level language
+C serves as a sort of middle ground between low and high level languages.
+It has access to advanced faculties such as structures and control flows yet has the ability to manipulate the machine on the bit level.
+Indeed, programmers skilled in both C and Assembly can see how their C code is directly translated into machine instructions.
+Thus, C has been applied and continues to be applied from simple embedded software to complex modern-day web browsers.
+Knowing C gives a programmer that freedom to directly manipulate their machines while using powerful high level abstractions.
 .PP \" On similarities to java and most other modern langauges (bracketing) because c is the father of modern programming languages
+Most major languages take at least some inspiration from C.
+C was one of the first langauges to implement control flow blocks such as for and while loops.
+Before C all control flow had to be done with
+.I goto
+statements.
+If statements could only conditionally execute one command.
+The result was spaghetti code, in which large code bases were nearly impossible to trace.
+By introducing bracketed blocks, multiple commands could be executed under one condition.
+C still has goto statements but, except in certain rare circumstances, they are unnecessary.
+.PP
+The basic constructs in C are very similar to what was in the previous Java section.
+The if-else, while, for, and case constructs all follow the same rules and forms.
+Therefore, this text will not restate how these constructs are formed or how they function.
+It is recommended that the analogous parts of the Java section are reread in order to refresh your memory.
 .PP \" Primitives in C (everything is a number)
-.PP \" Standard output (putc, fputs, putchar, puts)
+Primitives in C are numeric types.
+The primary and only difference among them is the amount of bits they can store.
+This is, the highest (and lowest) number that can be possibly held.
+The
+.CW char
+primitive is the smallest type.
+It can hold only a single byte.
+This is the amount of room required to represent the highest ASCII character value, hence the name.
+Thenceforth the integer types go on through
+.CW short ,
+.CW int ,
+.CW long ,
+and
+.CW "long long" .
+The exact amount of bytes stored in these primitives depends on the compiler used.
+In general practice the char variable can be used for storing ASCII values or put together to form strings, while the int can be used to store most numbers that would need to be computed by a programmer.
+.PP \" floats and doubles
+C has two primitives that may be used to store floating point numbers.
+The
+.CW float ,
+which is single precision, and the
+.CW double ,
+which is double precision.
+These types are suitable for when a non-whole number is used but absolute accuracy is not needed.
+This applies to applications such as finding the average of a data set or finding the difference between an expected and actual result.
+.PP \" void
+The void type represents nothing.
+Although variables can be typed as void, this is quite useless in practical programs.
+The void type is more meant for functions which yield no return values, and another application that will be discussed in the memory management section of this chapter.
+.PP \" unsigned vs signed
+The
+.CW unsigned
+keyword is used to denote that a variable cannot hold negative values.
+By allowing for an extra bit which would otherwise denote the sign of the number, the variable can hold two times as high a number as was previously possible.
+.SC
+char a; // can hold a 7 bit number (-127, 127)
+unsigned char b; // can hold an 8 bit number (0, 255)
+.SE
+.PP \" Standard output
+The streams are manipulated by using the standard input/output functions.
+In order to access these functions, this line of code must be present at the top of the C file.
+.SC
+#include <stdio.h>
+.SE
+Four functions are most used for interacting in a basic way with the streams.
+.PP \" putc
+The first,
+.CW "putc
+outputs a single character to a stream specified by the programmer.
+It takes two arguments, the first being the character value and the second being the stream.
+The following code uses putc to print an uppercase A to
+.I stdout .
+.SC
+char c = \[aq]A\[aq];
+putc(c, stdout);
+.SE
+.PP \" putchar
+.PP \" fputs
+.PP \" puts
 .PP \" printf and fprintf
-.PP \" Standard input (getc, getchar, scanf, fgets)
-.PP \" main method (int argc, char **argv) (talk about command line arguments and mention getopt)
+.PP \" Standard input (getc, getchar, scanf, fgets) refer to getc and scanf manpage
+.PP \" main method (int argc, char **argv)
+.PP \" command line arguments (mention getopt)
 .PP \" hello world
 .	H2 Preprocessing
 .PP \" include files
@@ -3011,17 +3106,19 @@ All statements that a programmer wishes to be read literally must be escaped wit
 .PP \" Macros with define
 .	H2 "Memory Management"
 .PP \" type safety
+.PP \" typecasting
 .PP \" Declaring arrays
 .PP \" Pointers
 .PP \" Structs
 .PP \" bit fields
 .PP \" Unions
-.PP \" Malloc and free
-.PP \" Calloc
-.PP \" Reollac and reollac array
+.PP \" sizeof
+.PP \" Malloc (refer to malloc manpage)
+.PP \" free
+.PP \" Reollac
 .PP \" C Strings
 .PP \" String operations
-.	H2 Practice
+.	H2 Practice \" just reuse some c projects you've already done
 .LP
 For some hands-on experience with C, complete the following challenges.
 .nr a 0 1

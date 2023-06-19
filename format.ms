@@ -35,4 +35,5 @@
 \# 1 inch margins
 .nr PS 12p
 .nr LL 6.5i
+.PO 1i
 .nr HY 0
