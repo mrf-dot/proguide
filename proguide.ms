@@ -1506,7 +1506,8 @@ mill = 1,000,000
 Type letters can be used to denote whether a variable is an integer, exponent, float, or string.
 Usage of an operator can prevent errors such as displaying an integer number as a float.
 a number preceding a type letter specifies how many digits a number should be aligned with.
-The type letters are d (integer), e (scientific notation), f (float), and s (string). For example, if you wanted to print out a float to only two decimal points, you could do that in the following way.
+The type letters are d (integer), e (scientific notation), f (float), and s (string).
+For example, if you wanted to print out a float to only two decimal points, you could do that in the following way.
 .SC
 # declare and initialize a float called \[aq]x\[aq]
 x = 2.23014232
