@@ -12,7 +12,7 @@
 .\" The first section is too praiseful, it shouldn't be in first person about me but it should explain about the basics of what computer science is.
 .\" The truth table isn't really a truth table, move it to the resources section and then make it into a better format.
 .\" Make the book generally easier to read for a non-techie (Kevin's suggestion: you lost me after a bit)
-.\" Don't repeat yourself by explaining concepts multiple time (eg in the programming constructs section and the Python section
+.\" Don't repeat yourself by explaining concepts multiple time (eg in the programming constructs section and the Python section)
 .so format.ms
 .de EX
 .LP
@@ -447,7 +447,7 @@ elif n mod 3 = 0
 elif n mod 5 = 0
 	print "Buzz"
 else
-	print "Fizzbuzz"
+	print n
 .SE
 In comparison to the first code, this is much easier to follow and requires far less indentation.
 .PP
@@ -1506,7 +1506,13 @@ mill = 1,000,000
 Type letters can be used to denote whether a variable is an integer, exponent, float, or string.
 Usage of an operator can prevent errors such as displaying an integer number as a float.
 a number preceding a type letter specifies how many digits a number should be aligned with.
-The type letters are d (integer), e (scientific notation), f (float), and s (string).
+The type letters are d (integer), e (scientific notation), f (float), and s (string). For example, if you wanted to print out a float to only two decimal points, you could do that in the following way.
+.SC
+# declare and initialize a float called \[aq]x\[aq]
+x = 2.23014232
+# print that float using an f string
+print(f"{x:.2f}") # outputs: 2.23
+.SE
 .LP \" executing code in strings
 F-Strings are not only capable of displaying variables.
 They may also be used to execute code.
