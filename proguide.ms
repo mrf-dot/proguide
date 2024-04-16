@@ -1,4 +1,3 @@
-.\" Duffy's Suggestions:
 .\" Limit usage of technical terms
 .\" Use MORE footnotes (I actually didn't even think about this, but the footnotes stop after page five or so)
 .\" Use less time devoted to specific topics that are unimportant to beginners such as floats
@@ -11,7 +10,7 @@
 .\" RNG doesnt need so much time devoted to it
 .\" The first section is too praiseful, it shouldn't be in first person about me but it should explain about the basics of what computer science is.
 .\" The truth table isn't really a truth table, move it to the resources section and then make it into a better format.
-.\" Make the book generally easier to read for a non-techie (Kevin's suggestion: you lost me after a bit)
+.\" Make the book generally easier to read for a non-techie
 .\" Don't repeat yourself by explaining concepts multiple time (eg in the programming constructs section and the Python section)
 .so format.ms
 .de EX
